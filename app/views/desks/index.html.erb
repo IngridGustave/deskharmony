@@ -4,7 +4,7 @@
     <p>votre <span class="blue-title">dashboard</span></p>
   </div>
   <div class="search">
-    <%= simple_form_for [@desk, @appointment] do |f| %>
+    <%= simple_form_for desks_path, method: :get do |f| %>
     <%= f.input :start_at,
       as: :string,
       input_html: { data: { controller: "datepicker" } } %>
