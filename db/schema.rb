@@ -20,6 +20,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_152922) do
     t.datetime "updated_at", null: false
   end
 
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_141548) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.bigint "user_id", null: false
+    t.bigint "desk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["desk_id"], name: "index_appointments_on_desk_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "desks", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -28,6 +52,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_152922) do
     t.datetime "updated_at", null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "team_users", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_users_on_team_id"
+    t.index ["user_id"], name: "index_team_users_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,10 +79,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_152922) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "job_title"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "appointments", "desks"
+  add_foreign_key "appointments", "users"
+  add_foreign_key "team_users", "teams"
+  add_foreign_key "team_users", "users"
 end
