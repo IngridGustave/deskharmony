@@ -5,8 +5,12 @@
   </div>
   <div class="search">
     <%= simple_form_for [@desk, @appointment] do |f| %>
-    <%= f.input :start_at %>
-    <%= f.input :end_at %>
+    <%= f.input :start_at,
+      as: :string,
+      input_html: { data: { controller: "datepicker" } } %>
+    <%= f.input :end_at,
+      as: :string,
+      input_html: { data: { controller: "datepicker" } } %>
     <%= f.submit "Valider", class: "btn-sky"%>
     <% end %>
   </div>
