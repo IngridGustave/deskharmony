@@ -1,3 +1,5 @@
+require 'date'
+
 class DesksController < ApplicationController
   def index
 
@@ -5,31 +7,31 @@ class DesksController < ApplicationController
     @appointment = Appointment.new
 
     # génération des données pour l'envoyer au controller Stimulus au format json
-    # simulation des disponibilités;
+    start_at = params[:startdate] if params[:startdate].present?
+    end_at = params[:enddate] if params[:enddate].present?
+    puts"--------------"
+    puts start_at
     data = []
 
-    if params["/desks"].present?
-  start_at = params["/desks"][:start_at]
-  end_at = params["/desks"][:end_at]
-      puts"----------------------"
-      puts ' ok donnees'
-    end
-
     @desks.each do |desk|
-       if   start_at && end_at
-         available = Appointment.where( "start_at > ? AND end_at < ?", start_at, end_at)
-         puts available
+
+       if start_at
+         date_start = Date.parse(start_at)
+         date_end = Date.parse(end_at)
+         booked = Appointment.where( "start_at > ? AND end_at < ?", date_start, date_end ).exists?
+         puts booked
        end
-       if !available
-        data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
+
+       if booked
+        data << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
        else
-          data << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
+          data << {id: desk.id, name: desk.name, level: desk.level, dispo: true, start_at: start_at, end_at: end_at}
        end
-
-
     end
-
-
+    puts"mes données----------------------------------------------"
+puts data
+ puts"mes données----------------------------------------------"
+    # envoi des données au controller stimulus
      respond_to do |format|
       format.html
       format.json { render json: data }
