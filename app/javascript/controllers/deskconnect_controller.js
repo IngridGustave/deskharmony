@@ -30,15 +30,9 @@ export default class extends Controller {
                 desk_drawing.style.fill = "red"
               }
             }
-
           })
         })
-
       })
-
-
-
-
   }
 
   book(e) {
@@ -81,17 +75,12 @@ export default class extends Controller {
       },
       body: JSON.stringify(requestData)
     })
-
       .then(response => {
         if (response.ok) {
           console.log("ok");
-
         } else {
           console.error("echec", response.status);
         }
       })
-      .catch(error => console.error('Erreur lors de la requête :', error))
   }
-
-
 }

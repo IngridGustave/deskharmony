@@ -14,7 +14,6 @@ class DesksController < ApplicationController
     data = []
 
     @desks.each do |desk|
-
        if start_at
          date_start = Date.parse(start_at)
          date_end = Date.parse(end_at)
@@ -28,15 +27,10 @@ class DesksController < ApplicationController
           data << {id: desk.id, name: desk.name, level: desk.level, dispo: true, start_at: start_at, end_at: end_at}
        end
     end
-    puts"mes données----------------------------------------------"
-puts data
- puts"mes données----------------------------------------------"
     # envoi des données au controller stimulus
      respond_to do |format|
       format.html
       format.json { render json: data }
     end
   end
-
-
 end
