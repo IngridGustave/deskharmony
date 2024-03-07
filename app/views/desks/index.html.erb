@@ -20,8 +20,22 @@
     <div class="bureau-modal" data-deskconnect-target="modal">
       // implémenter formulaire
       Valider votre réservation
-      <p class="start"></p>
-      <p class="end"></p>
+  <%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
+    <%= f.input :start_at,
+      as: :string,
+      input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}}
+     %>
+    <%= f.input :end_at,
+     as: :string,
+     input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}}
+     %>
+    <%= f.input :desk_id,
+     input_html: { data: {deskconnect_target: "bureauid"}}
+    %>
+    <%= f.submit "Réserver",
+              class: "btn-sky",
+              data: {action: "click->deskconnect#submit"} %>
+  <% end %>
       <div  class="btn-sky dis-none" data-action="click->deskconnect#submit">Valider</div>
     </div>
     <div class="container flex">
