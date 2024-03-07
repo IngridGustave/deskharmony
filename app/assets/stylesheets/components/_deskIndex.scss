@@ -1,0 +1,58 @@
+#index-content{
+  position: relative;
+  padding-top: 50px;
+
+  &::before{
+    position: absolute;
+    content: "";
+    width: 800px;
+    height:800px;
+
+    background: asset-url('bluehalo.png');
+    background-size: contain;
+    background-position: center;
+    top:50px;
+    right:0px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+.search{
+  width:60%;
+  background-color: white;
+  border: 2px solid $sky;
+  padding: 8px 16px;
+  margin-bottom: 32px;
+
+  form{
+    display: flex;
+    height:40px;
+    column-gap: 16px;
+  }
+}
+
+.bureau{
+  position: relative;
+}
+
+.bureau-modal{
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $sky;
+}
+
+.bureau-level{
+
+  width: 200px;
+  background-color: white;
+  height: 300px;
+}

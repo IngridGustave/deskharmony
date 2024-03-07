@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+#
+
+puts " destroy in progress"
+Desk.destroy_all
+Appointment.destroy_all
+puts "destroy finished"
+" seeds in progress"
+User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
+for n in 0..19
+  Desk.create!(name: n, level: 1, description: "super!")
+end
+" seeds have been created"
