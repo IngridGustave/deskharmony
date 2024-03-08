@@ -1,24 +1,6 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-#
 
-puts " destroy in progress"
-#User.destroy_all
-Desk.destroy_all
-Appointment.destroy_all
-Level.destroy_all
-puts "destroy finished"
-" seeds in progress"
-#User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
-Level.create!(name: "etage1", svg:
-  "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg' data-deskconnect-target='link'>
+<%= levelSvg %>
+<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg' data-deskconnect-target='link'>
             <mask id='mask0_346_949' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
             <path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white'/>
             </mask>
@@ -71,11 +53,4 @@ Level.create!(name: "etage1", svg:
               <rect x='551.876' y='271.789' width='190.861' height='11.2854' rx='5.64268' fill='#D9D9D9'/>
               <rect x='811.159' y='274.61' width='190.861' height='8.46402' rx='4.23201' fill='#D9D9D9'/>
             </g>
-          </svg>"
-)
-
-level = Level.find_by(name: "etage1")
-for n in 0..19
-  Desk.create!(name: n, level: 1, description: "super!" , level_id:level)
-end
-" seeds have been created"
+          </svg>
