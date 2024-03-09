@@ -2,11 +2,31 @@ body{
   background-color: $bg-main;
 }
 
+*{
+  padding:0;
+  margin:0;
+
+}
+
 .dis-none{
   display: none;
 }
 
 .flex{
   display: flex;
-  gap:16px;
+  justify-content: space-between;
+  padding:0;
+  column-gap: 16px;
+}
+
+
+
+.container{
+  padding:0;
+  position: relative;
+  z-index: 2;
+}
+
+.b-rounded{
+  border-radius: 8px;
 }

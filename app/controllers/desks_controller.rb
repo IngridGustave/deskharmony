@@ -9,6 +9,12 @@ class DesksController < ApplicationController
     # génération des données pour l'envoyer au controller Stimulus au format json
     start_at = params[:startdate] if params[:startdate].present?
     end_at = params[:enddate] if params[:enddate].present?
+    if params[:level].present?
+       level =  params[:level]
+       @levelSvg = Level.find_by(name: level)
+       @levelSvg = @levelSvg.svg
+       puts @levelSvg
+    end
 
     data = []
 
@@ -27,7 +33,8 @@ class DesksController < ApplicationController
          date_end = time_rails_plus_une_heure
         end
         # recherche des dispos
-         booked = Appointment.where("(? < end_at) AND (? > start_at) AND desk_id = ?", date_start, date_end, desk.name).exists?
+         desk_id = Desk.find_by(name: desk.name)
+         booked = Appointment.where("(? < end_at) AND (? > start_at) AND desk_id = ?", date_start, date_end, desk_id).exists?
 
   # on remplit le tableau si il y a des créneaux ou non de trouvé
        if booked
@@ -43,6 +50,8 @@ class DesksController < ApplicationController
      respond_to do |format|
       format.html
       format.json { render json: data }
+      format.text { render partial: "desks/svg", locals: {levelSvg: @levelSvg}, formats: [:html] }
+
     end
   end
 end
