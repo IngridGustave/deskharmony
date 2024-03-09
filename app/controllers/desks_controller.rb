@@ -11,11 +11,9 @@ class DesksController < ApplicationController
     end_at = params[:enddate] if params[:enddate].present?
     if params[:level].present?
        level =  params[:level]
-
        @levelSvg = Level.find_by(name: level)
        @levelSvg = @levelSvg.svg
-       datalevel= {svg: @levelSvg }
-
+       puts @levelSvg
     end
 
     data = []
@@ -52,9 +50,8 @@ class DesksController < ApplicationController
      respond_to do |format|
       format.html
       format.json { render json: data }
-      if level
-         format.json { render json: datalevel }
-      end
+      format.text { render partial: "desks/svg", locals: {levelSvg: @levelSvg}, formats: [:html] }
+
     end
   end
 end

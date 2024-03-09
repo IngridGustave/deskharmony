@@ -1,26 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
-import * as d3 from "d3"
+
 // Connects to data-controller="deskconnect"
 export default class extends Controller {
   static targets = ['link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level"]
   connect() {
-    this._loadingLevel();
+
     this._fetchSvg();
   }
-
-  _loadingLevel() {
-    const url = "/desks?level=etage1"
-    fetch(url, {
-      method: "GET",
-      headers: { "Accept": "application/json" },
-    })
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data)
-
-      })
-  }
-
 
   form(e) {
     e.preventDefault();
@@ -85,6 +71,8 @@ export default class extends Controller {
 
 
   _fetchSvg() {
+    this._loadingLevel();
+
     fetch('/desks', {
       method: "GET",
       headers: { "Accept": "application/json" },
@@ -111,6 +99,22 @@ export default class extends Controller {
         }
       })
     })
+  }
+
+  _loadingLevel() {
+    const url = "/desks?level=etage1"
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/plain" },
+    })
+      .then(response => response.text())
+      .then((data) => {
+        data = data.replaceAll("&lt;", "<")
+        data = data.replaceAll("&gt;", ">")
+        data = data.replaceAll("&#39", "'")
+        data = data.replaceAll(";", "")
+        this.levelTarget.innerHTML = data;
+      })
   }
 
 }
