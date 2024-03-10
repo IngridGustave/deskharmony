@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
 
   def create
+
     appointment =  Appointment.new(appointment_params)
     desk = Desk.find_by(name: params[:appointment][:desk_id])
     puts '-----------------------'

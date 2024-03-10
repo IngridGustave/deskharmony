@@ -72,10 +72,69 @@ Level.create!(name: "etage1", svg:
               <rect x='811.159' y='274.61' width='190.861' height='8.46402' rx='4.23201' fill='#D9D9D9'/>
             </g>
           </svg>"
-)
-
+);
+Level.create!(name: "etage2", svg:
+  "
+<svg width='942' height='559' viewBox='0 0 942 559' fill='none' xmlns='http://www.w3.org/2000/svg'>
+<path d='M2 10.0001C2 5.58178 5.58172 2.00006 10 2.00006H932.007C936.426 2.00006 940.007 5.58178 940.007 10.0001V548.864C940.007 553.282 936.426 556.864 932.007 556.864H9.99999C5.58171 556.864 2 553.282 2 548.864V10.0001Z' fill='white'/>
+<rect x='659.509' y='499.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 659.509 499.727)' fill='#D9D9D9' data-bureau='20' data-action='click->deskconnect#book'/>
+<rect x='585.214' y='469.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 585.214 469.117)' fill='#D9D9D9'/>
+<rect x='548.509' y='501.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 548.509 501.727)' fill='#D9D9D9' data-bureau='21' data-action='click->deskconnect#book'/>
+<rect x='474.214' y='471.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 474.214 471.117)' fill='#D9D9D9'/>
+<rect x='0.199463' y='22.6899' width='32.4104' height='504.079' rx='8' fill='#D9D9D9'/>
+<rect x='909.237' y='27.8077' width='32.4104' height='504.079' rx='8' fill='#D9D9D9'/>
+<rect y='34' width='34' height='942' rx='8' transform='rotate(-90 0 34)' fill='#D9D9D9'/>
+<rect y='559' width='34' height='938' rx='8' transform='rotate(-90 0 559)' fill='#D9D9D9'/>
+<rect x='168.509' y='260.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 260.727)' fill='#D9D9D9' data-bureau='22' data-action='click->deskconnect#book'/>
+<rect x='94.2134' y='230.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 230.117)' fill='#D9D9D9'/>
+<rect x='168.509' y='143.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 143.727)' fill='#D9D9D9' data-bureau='23' data-action='click->deskconnect#book'/>
+<rect x='94.2134' y='113.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 113.117)' fill='#D9D9D9'/>
+<rect x='168.509' y='498.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 498.727)' fill='#D9D9D9' data-bureau='24' data-action='click->deskconnect#book'/>
+<rect x='94.2134' y='468.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 468.117)' fill='#D9D9D9'/>
+<rect x='168.509' y='381.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 381.727)' fill='#D9D9D9' data-bureau='25' data-action='click->deskconnect#book'/>
+<rect x='94.2134' y='351.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 351.117)' fill='#D9D9D9'/>
+<rect x='333.509' y='260.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 260.727)' fill='#D9D9D9' data-bureau='26' data-action='click->deskconnect#book'/>
+<rect x='259.213' y='230.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 230.117)' fill='#D9D9D9' />
+<rect x='333.509' y='143.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 143.727)' fill='#D9D9D9' data-bureau='28' data-action='click->deskconnect#book'/>
+<rect x='259.213' y='113.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 113.117)' fill='#D9D9D9'/>
+<rect x='333.509' y='498.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 498.727)' fill='#D9D9D9' data-bureau='29' data-action='click->deskconnect#book'/>
+<rect x='259.213' y='468.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 468.117)' fill='#D9D9D9' />
+<rect x='333.509' y='381.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 381.727)' fill='#D9D9D9' data-bureau='30' data-action='click->deskconnect#book'/>
+<rect x='259.213' y='351.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 351.117)' fill='#D9D9D9'/>
+<rect x='579' y='144.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 579 144.509)' fill='#D9D9D9' data-bureau='31' data-action='click->deskconnect#book'/>
+<rect x='609.61' y='70.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 609.61 70.2134)' fill='#D9D9D9'/>
+<rect x='465' y='141.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 465 141.509)' fill='#D9D9D9' data-bureau='32' data-action='click->deskconnect#book'/>
+<rect x='495.61' y='67.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 495.61 67.2134)' fill='#D9D9D9'/>
+<rect x='775.509' y='499.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 775.509 499.727)' fill='#D9D9D9' data-bureau='33' data-action='click->deskconnect#book'/>
+<rect x='701.214' y='469.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 701.214 469.117)' fill='#D9D9D9'/>
+<rect x='804' y='144.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 804 144.509)' fill='#D9D9D9' data-bureau='34' data-action='click->deskconnect#book'/>
+<rect x='834.61' y='70.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 834.61 70.2134)' fill='#D9D9D9'/>
+<rect x='687' y='145.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 687 145.509)' fill='#D9D9D9' data-bureau='35' data-action='click->deskconnect#book'/>
+<rect x='717.61' y='71.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 717.61 71.2134)' fill='#D9D9D9'/>
+<rect x='581' y='260.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 581 260.509)' fill='#D9D9D9' data-bureau='36' data-action='click->deskconnect#book'/>
+<rect x='611.61' y='186.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 611.61 186.213)' fill='#D9D9D9'/>
+<rect x='467' y='257.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 467 257.509)' fill='#D9D9D9' data-bureau='37' data-action='click->deskconnect#book'/>
+<rect x='497.61' y='183.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 497.61 183.213)' fill='#D9D9D9'/>
+<rect x='806' y='260.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 806 260.509)' fill='#D9D9D9' data-bureau='38' data-action='click->deskconnect#book'/>
+<rect x='836.61' y='186.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 836.61 186.213)' fill='#D9D9D9'/>
+<rect x='689' y='261.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 689 261.509)' fill='#D9D9D9' data-bureau='39' data-action='click->deskconnect#book'/>
+<rect x='719.61' y='187.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 719.61 187.213)' fill='#D9D9D9'/>
+</svg>"
+);
 level = Level.find_by(name: "etage1")
 for n in 0..19
   Desk.create!(name: n, level: 1, description: "super!" , level_id:level)
 end
+level = Level.find_by(name: "etage2")
+for n in 20..39
+  Desk.create!(name: n, level: 2, description: "super!" , level_id:level)
+end
+#level = Level.find_by(name: "etage3")
+#for n in 40..58
+#  Desk.create!(name: n, level: 3, description: "super!" , level_id:level)
+#end
+#level = Level.find_by(name: "etage4")
+#for n in 60..78
+#  Desk.create!(name: n, level: 4, description: "super!" , level_id:level)
+#end
 " seeds have been created"
