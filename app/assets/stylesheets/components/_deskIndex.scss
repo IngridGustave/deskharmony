@@ -161,3 +161,19 @@ svg{
     padding:8px 16px;
   }
 }
+
+.calendar {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  // margin-top: 50px;
+  // margin-bottom: 50px;
+  justify-content: center;
+  padding: 20px;
+  width:100%;
+  background-color: white;
+}
+
+.bg-sky {
+  background-color: $sky;
+}

@@ -138,3 +138,7 @@ end
 #  Desk.create!(name: n, level: 4, description: "super!" , level_id:level)
 #end
 " seeds have been created"
+
+puts " appointment in progress"
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-10 11:00:00", end_at: "2024-03-10 12:00:00")
+puts " appointment in created"

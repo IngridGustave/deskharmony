@@ -5,6 +5,7 @@ class DesksController < ApplicationController
 
     @desks = Desk.all
     @appointment = Appointment.new
+    @appointments_week = Appointment.where("DATE(start_at) >= ? AND DATE(start_at) <= ?", Date.today.all_week.begin, Date.today.all_week.end)
 
     # génération des données pour l'envoyer au controller Stimulus au format json
     start_at = params[:startdate] if params[:startdate].present?
