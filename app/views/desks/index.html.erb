@@ -35,7 +35,6 @@
       <div class="title">
         <p>votre <span class="blue-title">dashboard</span></p>
       </div>
-      <%= render "week_calendar", appointments_week: @appointments_week%>
       <div class="search b-rounded">
         <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" }  do |f| %>
           <%= f.input :start_at,
@@ -73,5 +72,6 @@
           </ul>
         </div>
       </div>
+      <%= render "week_calendar", appointments_week: @appointments_week%>
      </div>
     </div>

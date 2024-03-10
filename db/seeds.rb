@@ -16,7 +16,7 @@ Appointment.destroy_all
 Level.destroy_all
 puts "destroy finished"
 " seeds in progress"
-User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
+#User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
 Level.create!(name: "etage1", svg:
   "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg' data-deskconnect-target='link'>
             <mask id='mask0_346_949' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
