@@ -17,6 +17,10 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def index
+    @appointments = Appointment.all
+  end
+
   private
 
   def appointment_params

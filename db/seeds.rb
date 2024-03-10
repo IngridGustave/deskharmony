@@ -16,7 +16,7 @@ Appointment.destroy_all
 Level.destroy_all
 puts "destroy finished"
 " seeds in progress"
-#User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
+User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
 Level.create!(name: "etage1", svg:
   "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg' data-deskconnect-target='link'>
             <mask id='mask0_346_949' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
@@ -138,3 +138,7 @@ end
 #  Desk.create!(name: n, level: 4, description: "super!" , level_id:level)
 #end
 " seeds have been created"
+
+puts " appointment in progress"
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-10 11:00:00", end_at: "2024-03-10 12:00:00")
+puts " appointment in created"
