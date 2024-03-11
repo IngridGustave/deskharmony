@@ -5,7 +5,11 @@ class DesksController < ApplicationController
 
     @desks = Desk.all
     @appointment = Appointment.new
-    @appointments_week = Appointment.where("DATE(start_at) >= ? AND DATE(start_at) <= ?", Date.today.all_week.begin, Date.today.all_week.end)
+    @start_of_last_week = Date.today.prev_week.beginning_of_week
+    @end_of_last_week = Date.today.prev_week.end_of_week
+    @last_week_dates = @start_of_last_week..@end_of_last_week
+    @date = Date.parse(params.fetch(:date, Date.today.to_s))
+    @appointments_week = Appointment.where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
 
     # génération des données pour l'envoyer au controller Stimulus au format json
     start_at = params[:startdate] if params[:startdate].present?
@@ -57,6 +61,7 @@ class DesksController < ApplicationController
      respond_to do |format|
       format.html
       format.json { render json: data }
+      format.json { render json: @date }
       format.text { render partial: "desks/svg", locals: {levelSvg: @levelSvg}, formats: [:html] }
 
     end

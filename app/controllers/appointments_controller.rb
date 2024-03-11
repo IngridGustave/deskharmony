@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: [:destroy]
 
   def create
 
@@ -21,9 +22,30 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.all
   end
 
+  def show
+    @appointment = Appointment.find(params[:id])
+    @level = Level.find_by(name: @appointment.desk.level)
+    @levelSvg = @level.svg
+  end
+
+
+  def destroy
+    if @appointment.destroy
+      redirect_to desks_path
+    else
+      render :show, status: :unprocessable_entity
+    end
+  end
+
+
   private
 
   def appointment_params
    params.require(:appointment).permit(:start_at, :end_at, :desk_id)
   end
+
+  def set_appointment
+    @appointment = Appointment.find(params[:id])
+  end
+
 end

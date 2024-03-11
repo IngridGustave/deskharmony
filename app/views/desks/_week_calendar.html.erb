@@ -1,6 +1,17 @@
 <div class="container p-3 my-3 bg-white border mt-5">
+
+<%= link_to "Previous week", desks_path(date: @date - 1.week)  %>
+<%= link_to "Next week", desks_path(date: @date + 1.week)  %>
+
+  <div data-controller="week-calendar">
+  <div data-week-calendar-target="dialog">
+    <P>Do you want to delete this appointment?</h1>
+    <button data-action="click->week-calendar#close">No</button>
+    <button data-action="click->confirmation#confirm">Yes</button>
+  </div>
+
   <div class="d-flex justify-content-between">
-    <% Date.today.all_week.each do |day|  %>
+    <% @date.all_week.each do |day|  %>
       <div class="border calendar">
       <%= day.strftime('%a %d %b %y')  %>
       </div>
@@ -8,14 +19,19 @@
   </div>
 
   <div class="d-flex justify-content-between">
-    <% Date.today.all_week.each do |day| %>
+    <% @date.all_week.each do |day| %>
       <div class="border calendar <%= "bg-sky" if day == Date.today %> d-flex flex-column align-items-start">
       <% @appointments_week.where(start_at: day.all_day).each do |appointment_week| %>
-        <div class="border rounded-pill bg-light text-center mb-2">
+        <div data-action="click->week-calendar#open" data-id= "<%= appointment_week.id %>" class="border rounded-pill bg-light text-center mb-2 p-2 clickable">
           <%= "#{appointment_week.start_at.strftime('%H:%M')} - #{appointment_week.end_at.strftime('%H:%M')} Desk n°#{appointment_week.desk_id}" %>
+          <% appointment_week.id %>
+           <%# <%= link_to "Plus d'information", appointment_path(appointment_week), class:"button-pink btn-center" %>
+          <%# <p><i class="bi bi-trash d-none"></i></p> %>
         </div>
       <% end %>
+
       </div>
     <% end %>
   </div>
+
 </div>
