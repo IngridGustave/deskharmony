@@ -10,14 +10,14 @@
 #
 
 puts " destroy in progress"
-#User.destroy_all
+User.destroy_all
 Desk.destroy_all
 Appointment.destroy_all
 Level.destroy_all
 puts "destroy finished"
 " seeds in progress"
-#User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave" )
-Level.create!(name: "etage1", svg:
+User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave", nickname: "paulo" )
+Level.create!(name: "1", svg:
   "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg' data-deskconnect-target='link'>
             <mask id='mask0_346_949' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
             <path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white'/>
@@ -73,7 +73,7 @@ Level.create!(name: "etage1", svg:
             </g>
           </svg>"
 );
-Level.create!(name: "etage2", svg:
+Level.create!(name: "2", svg:
   "
 <svg width='942' height='559' viewBox='0 0 942 559' fill='none' xmlns='http://www.w3.org/2000/svg'>
 <path d='M2 10.0001C2 5.58178 5.58172 2.00006 10 2.00006H932.007C936.426 2.00006 940.007 5.58178 940.007 10.0001V548.864C940.007 553.282 936.426 556.864 932.007 556.864H9.99999C5.58171 556.864 2 553.282 2 548.864V10.0001Z' fill='white'/>
@@ -140,5 +140,5 @@ end
 " seeds have been created"
 
 puts " appointment in progress"
-Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-10 11:00:00", end_at: "2024-03-10 12:00:00")
+#Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-10 11:00:00", end_at: "2024-03-10 12:00:00")
 puts " appointment in created"

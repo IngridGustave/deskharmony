@@ -57,8 +57,25 @@
   background: asset-url('bluehalo.png');
   background-size: 600px 600px;
   background-repeat: no-repeat;
+  opacity: 1;
   z-index: -1;
   filter: drop-shadow(16px 16px 50px rgb(255, 246, 197)) ;
+  animation: move 10s infinite alternate;
+
+}
+
+@keyframes move {
+  0%{
+    left:-600px;
+    bottom: -400px;
+    opacity: 1;
+  }
+
+  100%{
+    left:0px;
+    bottom:0px;
+    opacity: 0.5;
+  }
 
 }
 
