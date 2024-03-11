@@ -54,7 +54,12 @@ export default class extends Controller {
           if (desk.dispo) {
             desk_drawing.style.fill = "#00D0DD"
             this.infoNiveauTarget.innerText = `Niveau ${desk.level}`;
-            this.infoDispoTarget.innerText = `Disponibilité actuelle`;
+            if (this.start_dateTarget.value) {
+              this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value} à ${this.end_dateTarget.value}`;
+            } else {
+              this.infoDispoTarget.innerText = "disponibilité actuel"
+            }
+
           } else {
             desk_drawing.style.fill = "#B243BB"
           }
@@ -82,7 +87,6 @@ export default class extends Controller {
   }
 
   changeLevel(event) {
-    console.log(event.target.textContent)
     const url = `/desks?startdate=${this.start_dateTarget.value}&enddate=${this.end_dateTarget.value}`;
     const url_level = '/desks?level=' + event.target.textContent
     fetch(url_level, {
