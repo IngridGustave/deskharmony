@@ -49,6 +49,7 @@ class DesksController < ApplicationController
           data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
        end
     end
+    puts data
 
 
 

@@ -4,15 +4,18 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level", "levelid", "desk_book"]
   connect() {
-    this.loadingLevel();
+    const url = '/desks'
+    const level = 1
+    this.loadingLevel({ url: url, level: level });
 
   }
 
   form(e) {
     e.preventDefault();
     const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}&enddate=${this.end_dateTarget.value}`;
-    this.loadingLevel();
-    this._fetchSvg(url);
+    const level = parseInt(this.infoNiveauTarget.textContent.charAt(this.infoNiveauTarget.textContent.length - 1));
+    this.loadingLevel({ url: url, level: level });
+    //this._fetchSvg(url);
   }
 
   book(e) {
@@ -21,19 +24,15 @@ export default class extends Controller {
     this.bureauidTarget.value = e.target.dataset.bureau
     this.desk_bookTarget.innerText = "Réservation bureau n°" + e.target.dataset.bureau
     //this.levelidTarget.value = e.target.dataset.bureau
-    this
     this.modalTarget.style.display = "flex";
-
     this.modalTarget.style.width = (window.innerWidth + 1000) + "px";
     this.modalTarget.style.height = (window.innerHeight + 1000) + "px";
-
-
-    const startdate = e.target.dataset.startdate;
-    const enddate = e.target.dataset.enddate;
+    //const startdate = e.target.dataset.startdate;
+    //const enddate = e.target.dataset.enddate;
   }
 
   submit() {
-    this._fetchForm();
+    // this._fetchForm();
   }
 
   _fetchSvg(url) {
@@ -43,9 +42,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
         this._addStyleToSvg(data);
-
       })
   }
 
@@ -66,13 +63,29 @@ export default class extends Controller {
     })
   }
 
-  loadingLevel(e, etage = "etage1") {
-    const param = e ? e.target.dataset.etage : etage;
-    this.infoNiveauTarget.innerText = param.charAt(param.length - 1)
-    console.log(param.charAt(param.length - 1));
+  loadingLevel(options) {
+    const { url, level } = options;
+    const url_level = '/desks?level=' + level
+    fetch(url_level, {
+      method: "GET",
+      headers: { "Accept": "text/plain" },
+    })
+      .then(response => response.text())
+      .then((data) => {
+        data = data.replaceAll("&lt;", "<")
+        data = data.replaceAll("&gt;", ">")
+        data = data.replaceAll("&#39", "'")
+        data = data.replaceAll(";", "")
+        this.levelTarget.innerHTML = data;
+        this._fetchSvg(url);
+      })
+  }
 
-    const url = `/desks?level=${param}`
-    fetch(url, {
+  changeLevel(event) {
+    console.log(event.target.textContent)
+    const url = `/desks?startdate=${this.start_dateTarget.value}&enddate=${this.end_dateTarget.value}`;
+    const url_level = '/desks?level=' + event.target.textContent
+    fetch(url_level, {
       method: "GET",
       headers: { "Accept": "text/plain" },
     })
@@ -84,12 +97,10 @@ export default class extends Controller {
         data = data.replaceAll(";", "")
         this.levelTarget.innerHTML = data;
         this._fetchSvg('/desks');
-        //console.log(this.levelTarget.innerHTML);
       })
-
-
-
   }
+
+
 
   _fetchForm() {
     const url = this.formTarget.action;
@@ -105,7 +116,6 @@ export default class extends Controller {
     })
       .then(response => { response.text() })
       .then(data => {
-        console.log(data)
       });
   }
 

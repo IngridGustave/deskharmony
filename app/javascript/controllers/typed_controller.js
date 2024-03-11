@@ -10,25 +10,25 @@ export default class extends Controller {
     var typed = new Typed(this.book1Target, {
       // Placez vos options ici
       strings: ["Pierrot", "Votre réservation a été confirmée"],
-      typeSpeed: 50,
+      typeSpeed: 30,
       loop: true
     });
     var typed = new Typed(this.book2Target, {
       // Placez vos options ici
       strings: ["Ruth", "Vous avez reçu un message"],
-      typeSpeed: 50,
+      typeSpeed: 30,
       loop: true
     });
     var typed = new Typed(this.book3Target, {
       // Placez vos options ici
       strings: ["Huguette", "Votre bureau a été réservée"],
-      typeSpeed: 50,
+      typeSpeed: 30,
       loop: true
     });
     var typed = new Typed(this.book4Target, {
       // Placez vos options ici
       strings: ["Paulette", "Votre réservation a été annulée"],
-      typeSpeed: 50,
+      typeSpeed: 30,
       loop: true
     });
   }
