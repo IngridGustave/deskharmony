@@ -6,9 +6,11 @@
 <div class="title">
   <p><%= "bureau n°#{@appointment.id}" %></p>
   <p><%= "le #{@appointment.start_at.strftime("%d/%m/%y")} de #{@appointment.start_at.strftime("%H:%M")} à #{@appointment.end_at.strftime("%H:%M")}"  %></p>
+  <%  @levelSvg %> <%# ne fonctionne pas  %>
+
 </div>
 <div class="div">
-  <%= link_to "Supprimer", appointment_path(@appointment), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous vraiment vraiment sur?" }, class:"card-alink backgroundRed" %>
+  <%= link_to "Supprimer votre réservation", appointment_path(@appointment), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous vraiment vraiment sur?" }, class:"card-alink backgroundRed" %>
 </div>
 
 </div>

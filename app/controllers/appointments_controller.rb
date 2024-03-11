@@ -24,6 +24,8 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @level = Level.find_by(name: @appointment.desk.level)
+    @levelSvg = @level.svg
   end
 
 
