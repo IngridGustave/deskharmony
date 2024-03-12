@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.where(user: current_user)
   end
 
   def show

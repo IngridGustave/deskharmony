@@ -9,7 +9,7 @@ class DesksController < ApplicationController
     @end_of_last_week = Date.today.prev_week.end_of_week
     @last_week_dates = @start_of_last_week..@end_of_last_week
     @date = Date.parse(params.fetch(:date, Date.today.to_s))
-    @appointments_week = Appointment.where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
+    @appointments_week = Appointment.where(user: current_user).where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
 
     # génération des données pour l'envoyer au controller Stimulus au format json
     start_at = params[:startdate] if params[:startdate].present?

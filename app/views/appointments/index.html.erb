@@ -36,7 +36,7 @@
     <div class="cards-appointments ">
       <% @appointments.each do |appointment| %>
         <% if appointment.start_at.to_date < Date.today %>
-        <div class="card-appointments clickable" data-action="click->appointment-historic#open" data-id=<%= appointment.id %>>
+        <div class="card-past-appointments clickable" data-action="click->appointment-historic#open" data-id=<%= appointment.id %>>
         <p><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
         <p><%= "Le #{appointment.start_at.strftime("%d/%m/%y")} de #{appointment.start_at.strftime('%H:%M')} à #{appointment.end_at.strftime('%H:%M')}" %></p>
         </div>
