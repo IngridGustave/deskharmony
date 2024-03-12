@@ -140,5 +140,31 @@ end
 " seeds have been created"
 
 puts " appointment in progress"
-#Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-10 11:00:00", end_at: "2024-03-10 12:00:00")
+Appointment.create!(user_id: 1, desk_id: 10, start_at: "2024-01-15 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 23, start_at: "2024-01-16 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 24, start_at: "2024-01-27 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 19, start_at: "2024-01-28 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 2, start_at: "2024-01-29 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 2, start_at: "2024-02-05 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 6, start_at: "2024-02-06 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 10, start_at: "2024-02-07 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-02-14 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 2, start_at: "2024-02-15 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 3, start_at: "2024-02-16 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-02-19 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 8, start_at: "2024-02-20 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 6, start_at: "2024-02-21 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-02-26 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-02-27 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 23, start_at: "2024-02-29 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 10, start_at: "2024-03-04 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 18, start_at: "2024-03-05 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-06 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-11 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 4, start_at: "2024-03-12 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 3, start_at: "2024-03-14 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 23, start_at: "2024-03-19 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 2, start_at: "2024-03-20 09:00:00", end_at: "2024-03-10 18:00:00")
+Appointment.create!(user_id: 1, desk_id: 1, start_at: "2024-03-22 09:00:00", end_at: "2024-03-10 18:00:00")
+
 puts " appointment in created"
