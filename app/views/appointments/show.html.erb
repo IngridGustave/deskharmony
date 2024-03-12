@@ -4,7 +4,7 @@
   <p>votre <span class="blue-title">réservation</span></p>
 </div>
 <div class="title">
-  <p><%= "bureau n°#{@appointment.id}" %></p>
+  <p><%= "bureau n°#{@appointment.desk.name}" %></p>
   <p><%= "le #{@appointment.start_at.strftime("%d/%m/%y")} de #{@appointment.start_at.strftime("%H:%M")} à #{@appointment.end_at.strftime("%H:%M")}"  %></p>
   <%  @levelSvg %> <%# ne fonctionne pas  %>
 
