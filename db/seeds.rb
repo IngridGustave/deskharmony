@@ -18,65 +18,61 @@ puts "destroy finished"
 " seeds in progress"
 User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave", nickname: "paulo" )
 Level.create!(name: "1", svg:
-  "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg' data-deskconnect-target='link'>
-            <mask id='mask0_346_949' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
-            <path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white'/>
-            </mask>
-            <g mask='url(#mask0_346_949)'>
-              <path d='M0 7.99999C0 3.58172 3.58172 0 8 0H930.007C934.426 0 938.007 3.58172 938.007 8V546.864C938.007 551.282 934.426 554.864 930.007 554.864H7.99999C3.58171 554.864 0 551.282 0 546.864V7.99999Z' fill='white'/>
-              <rect x='90.0288' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='1' data-action='click->deskconnect#book'/>
-              <rect x='152.149' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='2' data-action='click->deskconnect#book'/>
-              <rect x='223.271' y='81.8189' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='48.6155' y='80.8784' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='90.0288' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='3' data-action='click->deskconnect#book'/>
-              <rect x='152.149' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='4' data-action='click->deskconnect#book'/>
-              <rect x='223.271' y='183.387' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='48.6155' y='182.447' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='90.0288' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='5' data-action='click->deskconnect#book'/>
-              <rect x='152.149' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='6' data-action='click->deskconnect#book'/>
-              <rect x='223.271' y='284.955' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='48.6155' y='284.015' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='90.0288' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='7' data-action='click->deskconnect#book'/>
-              <rect x='152.149' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='8' data-action='click->deskconnect#book'/>
-              <rect x='223.271' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='48.6155' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='349.312' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='9' data-action='click->deskconnect#book'/>
-              <rect x='411.431' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='10' data-action='click->deskconnect#book'/>
-              <rect x='482.554' y='81.8189' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='307.898' y='80.8784' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='349.312' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='11' data-action='click->deskconnect#book'/>
-              <rect x='411.431' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='12' data-action='click->deskconnect#book'/>
-              <rect x='482.554' y='183.387' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='307.898' y='182.447' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='349.312' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='13' data-action='click->deskconnect#book'/>
-              <rect x='411.431' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='14' data-action='click->deskconnect#book'/>
-              <rect x='482.554' y='284.955' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='307.898' y='284.015' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='349.312' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='15' data-action='click->deskconnect#book'/>
-              <rect x='411.431' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='16' data-action='click->deskconnect#book'/>
-              <rect x='482.554' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='307.898' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-              <rect x='541.973' y='1.88086' width='32.4104' height='438.248' rx='8' fill='#D9D9D9'/>
-              <rect x='-1.80054' y='20.6898' width='32.4104' height='504.079' rx='8' fill='#D9D9D9'/>
-              <rect x='907.237' y='25.8076' width='32.4104' height='504.079' rx='8' fill='#D9D9D9'/>
-              <rect x='-1.80054' y='31.9752' width='33.8561' height='1036.23' rx='8' transform='rotate(-90 -1.80054 31.9752)' fill='#D9D9D9'/>
-              <rect x='-1.80054' y='556.745' width='33.8561' height='1036.23' rx='8' transform='rotate(-90 -1.80054 556.745)' fill='#D9D9D9'/>
-              <rect x='611.596' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 611.596 189.03)' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#form'/>
-              <rect x='642.206' y='114.734' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 642.206 114.734)' fill='#D9D9D9'/>
-              <rect x='700.725' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 700.725 189.03)' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#form'/>
-              <rect x='731.334' y='114.734' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 731.334 114.734)' fill='#D9D9D9'/>
-              <rect x='789.853' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 789.853 189.03)' fill='#D9D9D9' data-bureau='19' data-action='click->deskconnect#form'/>
-              <rect x='820.463' y='114.734' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 820.463 114.734)' fill='#D9D9D9'/>
-              <rect x='-1.80054' y='556.745' width='33.8561' height='1036.23' rx='8' transform='rotate(-90 -1.80054 556.745)' fill='#D9D9D9'/>
-              <rect x='551.876' y='271.789' width='190.861' height='11.2854' rx='5.64268' fill='#D9D9D9'/>
-              <rect x='811.159' y='274.61' width='190.861' height='8.46402' rx='4.23201' fill='#D9D9D9'/>
-            </g>
-          </svg>"
+  "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg'>
+<mask id='mask0_27_98' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
+<path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white' />
+</mask>
+<g mask='url(#mask0_27_98)'>
+<path d='M8 5H930.007C931.664 5 933.007 6.34314 933.007 8V546.864C933.007 548.521 931.664 549.864 930.007 549.864H7.99999C6.34314 549.864 5 548.521 5 546.864V7.99999C5 6.34314 6.34314 5 8 5Z' fill='#D9D9D9' fill-opacity='0.4' stroke='#D9D9D9' stroke-width='2'/>
+<rect x='90.0288' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='1' data-action='click->deskconnect#book'/>
+<rect x='152.149' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='2' data-action='click->deskconnect#book'/>
+<rect x='223.271' y='81.8189' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='48.6155' y='80.8784' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='90.0288' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='3' data-action='click->deskconnect#book'/>
+<rect x='152.149' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='4' data-action='click->deskconnect#book'/>
+<rect x='223.271' y='183.387' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='48.6155' y='182.447' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='90.0288' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='5' data-action='click->deskconnect#book'/>
+<rect x='152.149' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='6' data-action='click->deskconnect#book'/>
+<rect x='223.271' y='284.955' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='48.6155' y='284.015' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='90.0288' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='7' data-action='click->deskconnect#book'/>
+<rect x='152.149' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='8' data-action='click->deskconnect#book'/>
+<rect x='223.271' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='48.6155' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='349.312' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='9' data-action='click->deskconnect#book'/>
+<rect x='411.431' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='10' data-action='click->deskconnect#book'/>
+<rect x='482.554' y='81.8189' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='307.898' y='80.8784' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='349.312' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='11' data-action='click->deskconnect#book'/>
+<rect x='411.431' y='151.412' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='12' data-action='click->deskconnect#book'/>
+<rect x='482.554' y='183.387' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='307.898' y='182.447' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='349.312' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='13' data-action='click->deskconnect#book'/>
+<rect x='411.431' y='252.98' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='14' data-action='click->deskconnect#book'/>
+<rect x='482.554' y='284.955' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='307.898' y='284.015' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='349.312' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='15' data-action='click->deskconnect#book'/>
+<rect x='411.431' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='16' data-action='click->deskconnect#book'/>
+<rect x='482.554' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='307.898' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
+<rect x='545' y='4' width='13' height='438'  fill='#D9D9D9'/>
+<rect x='611.596' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 611.596 189.03)' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
+<rect x='642.206' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 642.206 114.735)' fill='#D9D9D9'/>
+<rect x='700.725' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 700.725 189.03)' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>
+<rect x='731.334' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 731.334 114.735)' fill='#D9D9D9'/>
+<rect x='789.853' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 789.853 189.03)' fill='#D9D9D9' data-bureau='19' data-action='click->deskconnect#book'/>
+<rect x='820.463' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 820.463 114.735)' fill='#D9D9D9'/>
+<rect x='551.876' y='271.789' width='190.861' height='11.2854'  fill='#D9D9D9'/>
+<rect x='811.159' y='274.61' width='120' height='8.46402'  fill='#D9D9D9'/>
+</g>
+</svg>
+"
 );
 Level.create!(name: "2", svg:
   "
-<svg width='942' height='559' viewBox='0 0 942 559' fill='none' xmlns='http://www.w3.org/2000/svg'>
-<path d='M2 10.0001C2 5.58178 5.58172 2.00006 10 2.00006H932.007C936.426 2.00006 940.007 5.58178 940.007 10.0001V548.864C940.007 553.282 936.426 556.864 932.007 556.864H9.99999C5.58171 556.864 2 553.282 2 548.864V10.0001Z' fill='white'/>
+<svg width='942' height='559' viewBox='0 0 942 559' fill='none'  xmlns='http://www.w3.org/2000/svg'>
+<path d='M2 10.0001C2 5.58178 5.58172 2.00006 10 2.00006H932.007C936.426 2.00006 940.007 5.58178 940.007 10.0001V548.864C940.007 553.282 936.426 556.864 932.007 556.864H9.99999C5.58171 556.864 2 553.282 2 548.864V10.0001Z' fill='white' fill-opacity='50%'/>
 <rect x='659.509' y='499.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 659.509 499.727)' fill='#D9D9D9' data-bureau='20' data-action='click->deskconnect#book'/>
 <rect x='585.214' y='469.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 585.214 469.117)' fill='#D9D9D9'/>
 <rect x='548.509' y='501.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 548.509 501.727)' fill='#D9D9D9' data-bureau='21' data-action='click->deskconnect#book'/>
@@ -121,6 +117,11 @@ Level.create!(name: "2", svg:
 <rect x='719.61' y='187.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 719.61 187.213)' fill='#D9D9D9'/>
 </svg>"
 );
+
+
+
+
+
 level = Level.find_by(name: "etage1")
 for n in 0..19
   Desk.create!(name: n, level: 1, description: "super!" , level_id:level)

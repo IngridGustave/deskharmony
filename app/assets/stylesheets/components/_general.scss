@@ -30,3 +30,14 @@ body{
 .b-rounded{
   border-radius: 8px;
 }
+
+.center{
+  align-items: center;
+  justify-content: center;
+  height:100%;
+
+  img{
+    height:300px;
+    width:300px;
+  }
+}

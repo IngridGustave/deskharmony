@@ -4,6 +4,8 @@
   overflow: hidden;
 }
 
+
+
 .topbluehalo{
   position: absolute;
   top:-400px;
@@ -87,13 +89,14 @@
   row-gap: 32px;
   h1{
     color:white;
-    font-size: 48px;
+    font-size: 36px;
   }
 
 
   h2{
     color:white;
-    font-size: 32px;
+    font-size: 22px;
+    margin-bottom: 24px;
   }
   a{
     display: block;
@@ -105,7 +108,7 @@
     color: $bg-main;
     padding: 8px 16px;
     font-size: 24px;
-    box-shadow: 0 0 10px 10px rgba($color: #D3FD3E, $alpha: 0.5);
+    box-shadow: 0 0 10px 5px rgba($color: #D3FD3E, $alpha: 0.5);
   }
 }
 

@@ -52,6 +52,7 @@
     <div class="bureau" >
       <div class="container flex">
         <div class="container-svg">
+           <div class="titre-level">Bureau</div>
           <div id="svg-container" data-deskconnect-target="level">
 
           <%= render "svg" , levelSvg: @levelSvg %>
@@ -65,9 +66,10 @@
 
         </div>
         <div class="bureau-level">
+          <div class="titre-level">Etage</div>
           <ul>
-            <li data-etage="1" data-action="click->deskconnect#changeLevel">1</li>
-            <li data-etage="2" data-action="click->deskconnect#changeLevel">2</li>
+            <li data-etage="1" data-action="click->deskconnect#changeLevel"><p>1</p> <div class="etage-shape"></div></li>
+            <li data-etage="2" data-action="click->deskconnect#changeLevel"><p>2</p> <div class="etage-shape"></div></li>
 
           </ul>
         </div>
