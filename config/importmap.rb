@@ -40,3 +40,4 @@ pin "d3-timer" # @3.0.1
 pin "d3-transition" # @3.0.1
 pin "d3-zoom" # @3.0.0
 pin "typed.js" # @2.1.0
+pin "@rails/actioncable", to: "@rails--actioncable.js" # @7.1.3
