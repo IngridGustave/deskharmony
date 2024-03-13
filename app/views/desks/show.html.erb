@@ -2,16 +2,37 @@
 <div class="booking">
   <div class="booking__container-desk">
     <div class="booking__desk">
-      <h2>Bureau #18</h2>
+      <h2><%= "Bureau n°#{ @desk.name}"%></h2>
     </div>
     <div class="booking__container-form">
       <h2>Réservation en 3 clics!</h2>
       <form class="booking__form">
-        <label for="booking-start">Du</label>
-        <input type="date" id="booking-start" name="booking-start" />
-        <label for="booking-end">Au</label>
-        <input type="date" id="booking-end" name="booking-end" />
-        <button type="submit">Valider</button>
+<%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
+      <%= f.input :start_at,
+        as: :string,
+        label: false,
+        placeholder: "Début de réservation",
+        input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}
+        }
+      %>
+      <%= f.input :end_at,
+        as: :string,
+        label: false,
+        placeholder: "Fin de réservation",
+        input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}
+      }
+      %>
+      <%= f.input :desk_id,
+        as: :hidden,
+        label: false,
+        input_html: { data: {deskconnect_target: "bureauid"}}
+      %>
+
+      <%= f.submit "Réserver",
+        class: "btn-light-sky",
+        data: {action: "click->deskconnect#submit"} %>
+      <% end %>
+
       </form>
     </div>
   </div>
