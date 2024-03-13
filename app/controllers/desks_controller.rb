@@ -66,4 +66,17 @@ class DesksController < ApplicationController
 
     end
   end
+
+  def show
+    @desk = Desk.find(params[:id])
+    @appointment = Appointment.new
+    @levels = Level.where(desk: params[:id])
+    @level = Level.new
+  end
+
+  private
+
+  def desk_params
+    params.require(:desk).permit(:name, :level, :description)
+  end
 end
