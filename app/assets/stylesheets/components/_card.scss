@@ -79,3 +79,26 @@
   }
 
 }
+
+.cards-appointments{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-appointments{
+  border-radius: 4px;
+  background-color: white;
+  text-align: center;
+  padding: 16px;
+  border: 1px solid $sky;
+}
+
+.card-past-appointments{
+  border-radius: 4px;
+  background-color: white;
+  opacity: 0.6;
+  text-align: center;
+  padding: 16px;
+  border: 1px solid $sky;
+}
