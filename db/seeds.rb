@@ -123,7 +123,7 @@ Level.create!(name: "2", svg:
 
 
 level = Level.find_by(name: "etage1")
-for n in 0..19
+for n in 1..19
   Desk.create!(name: n, level: 1, description: "super!" , level_id:level)
 end
 level = Level.find_by(name: "etage2")
