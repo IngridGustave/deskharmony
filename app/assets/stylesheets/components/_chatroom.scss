@@ -1,6 +1,5 @@
 .chatroom {
-  background: white;
-  margin-top: 9px;
+  background-color: rgba(255,255,255,0.3);
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
@@ -17,6 +16,7 @@
     height: 100%;
     overflow: scroll;
     padding: 1rem;
+    padding-top: 70px;
   }
 
   #new_message {
@@ -27,4 +27,11 @@
       margin-bottom: 0;
     }
   }
+}
+
+
+.display-message{
+  background-color: white;
+  color:black;
+  border-radius: 8px;
 }

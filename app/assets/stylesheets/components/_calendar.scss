@@ -1,11 +1,14 @@
 .calendar-design{
   background-color: rgba(255,255,255,0.3)!important;
-  padding-top: 32px!important;
+  padding: 16px!important;
+  border: 1px solid white;
+  height: 100%;
+
 }
 
 .button-calendar{
   display: flex;
-  margin-bottom: 16px;
+  margin: 16px 0;
   gap: 16px;
     a{
     display: block;
