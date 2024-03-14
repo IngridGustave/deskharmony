@@ -92,7 +92,7 @@
 }
 
 .bureau-level{
-  width: 200px;
+  width: 250px;
     background-color: rgba(255,255,255,0.3);
   height: 300px;
   display: flex;
@@ -212,4 +212,23 @@ svg{
 
 .clickable {
   cursor: pointer;
+}
+
+
+.features-container{
+  display: flex;
+  row-gap: 32px;
+  justify-content: space-between;
+   min-height:300px;
+   margin-bottom: 100px;
+}
+
+.chatroom-container{
+  position: relative;
+  width: 250px;
+  border: 1px solid white;
+ }
+
+.calendar-container{
+  width:70%;
 }
