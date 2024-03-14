@@ -58,7 +58,7 @@
           <div class="row-booking-list">
             <%@appointment_comings.each do |appointment|  %>
                <p>
-                  <%=appointment.user.last_name  %>
+                  <%=appointment.user.nickname  %>
                </p>
                <p>
                  <%= appointment.start_at.strftime("%A %d %B")  %>
@@ -89,7 +89,7 @@
      <% if !@appointment_passed.empty?%>
        <div class="row-booking-list">
         <%@appointment_passed.each do |appointment|  %>
-          <p><%=appointment.user.last_name  %></p>
+          <p><%=appointment.user.nickname  %></p>
           <p><%= appointment.start_at.strftime("%A %d %B")  %></p>
           <p><%=appointment.start_at.strftime("%H:%M") %></p>
           <p><%=appointment.end_at.strftime("%H:%M") %></p>
