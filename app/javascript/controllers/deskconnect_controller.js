@@ -88,7 +88,8 @@ export default class extends Controller {
 
   changeLevel(event) {
     const url = `/desks?startdate=${this.start_dateTarget.value}&enddate=${this.end_dateTarget.value}`;
-    const url_level = '/desks?level=' + event.target.textContent
+    console.log(event.target.dataset.etage);
+    const url_level = '/desks?level=' + event.target.dataset.etage
     fetch(url_level, {
       method: "GET",
       headers: { "Accept": "text/plain" },

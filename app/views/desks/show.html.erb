@@ -1,12 +1,15 @@
 
-<div class="booking">
-  <div class="booking__container-desk">
-    <div class="booking__desk">
-      <h2><%= "Bureau n°#{ @desk.name}"%></h2>
-    </div>
-    <div class="booking__container-form">
+<div class="container">
+  <div class="booking">
+    <div class="booking-title">
+       <h2><%= "Bureau n°#{ @desk.name}"%></h2>
+       <div class="booking-svg">
+          <%= render partial: "desks/svg" , locals: {levelSvg: @levelSvg } %>
+       </div>
+     </div>
+     <div class="booking-container-form">
       <h2>Réservation en 3 clics!</h2>
-      <form class="booking__form">
+      <form class="booking-form">
 <%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
       <%= f.input :start_at,
         as: :string,
@@ -29,90 +32,72 @@
       %>
 
       <%= f.submit "Réserver",
-        class: "btn-light-sky",
+        class: "btn-white",
         data: {action: "click->deskconnect#submit"} %>
       <% end %>
 
       </form>
     </div>
   </div>
-  <div class="booking__container-list">
-    <h2>Réservations prévues & passées</h2>
-    <div data-title="Réservation à venir" class="booking__list">
-      <table>
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Date</th>
-            <th>De</th>
-            <th>A</th>
-          </tr>
-        <thead>
-        <tbody>
-          <tr>
-            <td>Pierrot</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-          <tr>
-            <td>Juliette</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-          <tr>
-            <td>Lucie</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-          <tr>
-            <td>Marion</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-        </tbody>
-      </table>
+
+
+</div>
+
+
+<div class="container">
+<div class="booking-list-container">
+  <div class="titre-booking">Réservations à venir</div>
+  <div class="booking-list-border">
+    <div class="first-row-booking-list">
+      <span>Nom</span>
+      <span>Jour</span>
+      <span>De</span>
+      <span>A</span>
     </div>
-    <div data-title="Réservation passées" class="booking__list">
-      <table>
-        <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Date</th>
-          <th>De</th>
-          <th>A</th>
-        </tr>
-        <thead>
-        <tbody>
-          <tr>
-            <td>Pierrot</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-          <tr>
-            <td>Juliette</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-          <tr>
-            <td>Lucie</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-          <td>17h30</td>
-          </tr>
-          <tr>
-            <td>Marion</td>
-            <td>Lundi 7 mars</td>
-            <td>10h30</td>
-            <td>17h30</td>
-          </tr>
-        </tbody>
-      </table>
+        <% if !@appointment_comings.empty?%>
+          <div class="row-booking-list">
+            <%@appointment_comings.each do |appointment|  %>
+               <p>
+                  <%=appointment.user.last_name  %>
+               </p>
+               <p>
+                 <%= appointment.start_at.strftime("%A %d %B")  %>
+               </p>
+               <p>
+                 <%=appointment.start_at.strftime("%H:%M") %>
+               </p>
+               <p>
+                 <%=appointment.end_at.strftime("%H:%M") %>
+               </p>
+             <% end %>
+           </div>
+         <% else %>
+          <p>Pas de réservation à venir</p>
+         <% end %>
+   </div>
+   </div>
+
+<div class="booking-list-container">
+    <div class="titre-booking">Réservations passées</div>
+  <div class="booking-list-border">
+    <div class="first-row-booking-list">
+      <span>Nom</span>
+      <span>Jour</span>
+      <span>De</span>
+      <span>A</span>
     </div>
+     <% if !@appointment_passed.empty?%>
+       <div class="row-booking-list">
+        <%@appointment_passed.each do |appointment|  %>
+          <p><%=appointment.user.last_name  %></p>
+          <p><%= appointment.start_at.strftime("%A %d %B")  %></p>
+          <p><%=appointment.start_at.strftime("%H:%M") %></p>
+          <p><%=appointment.end_at.strftime("%H:%M") %></p>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Pas de réservation à venir</p>
+      <% end %>
+   </div>
   </div>
 </div>
