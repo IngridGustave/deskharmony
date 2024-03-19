@@ -12,10 +12,9 @@ export default class extends Controller {
 
   form(e) {
     e.preventDefault();
-    const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}&enddate=${this.end_dateTarget.value}`;
+    const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
     const level = parseInt(this.infoNiveauTarget.textContent.charAt(this.infoNiveauTarget.textContent.length - 1));
     this.loadingLevel({ url: url, level: level });
-    //this._fetchSvg(url);
   }
 
   book(e) {
@@ -23,12 +22,10 @@ export default class extends Controller {
     this.modalstartTarget.value = this.start_dateTarget.value
     this.bureauidTarget.value = e.target.dataset.bureau
     this.desk_bookTarget.innerText = "Réservation bureau n°" + e.target.dataset.bureau
-    //this.levelidTarget.value = e.target.dataset.bureau
     this.modalTarget.style.display = "flex";
-    this.modalTarget.style.width = (window.innerWidth + 1000) + "px";
-    this.modalTarget.style.height = (window.innerHeight + 1000) + "px";
-    //const startdate = e.target.dataset.startdate;
-    //const enddate = e.target.dataset.enddate;
+    this.modalTarget.style.width = (window.innerWidth) + "px";
+    this.modalTarget.style.height = (window.innerHeight) + 400 + "px";
+    document.body.classList.add('modal-open');
   }
 
   submit() {
@@ -87,7 +84,7 @@ export default class extends Controller {
   }
 
   changeLevel(event) {
-    const url = `/desks?startdate=${this.start_dateTarget.value}&enddate=${this.end_dateTarget.value}`;
+    const url = `/desks?startdate=${this.start_dateTarget.value}`;
     console.log(event.target.dataset.etage);
     const url_level = '/desks?level=' + event.target.dataset.etage
     fetch(url_level, {

@@ -1,42 +1,43 @@
-  <div id="index-content" data-controller="deskconnect">
+<div id="index-content" data-controller="deskconnect">
 
-          <div class="bureau-modal" data-deskconnect-target="modal">
+<!-- fenetre modal reservation bureau -->
+  <div class="bureau-modal" data-deskconnect-target="modal">
+    <div class="bureau-modal-container">
+      <span class="desk_book" data-deskconnect-target="desk_book"></span>
+      <%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
+        <%= f.input :start_at,
+          as: :string,
+          label: false,
+          placeholder: "Début de réservation",
+          input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}}
+        %>
+        <%= f.input :end_at,
+          as: :string,
+          label: false,
+          placeholder: "Fin de réservation",
+          input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}}
+        %>
+        <%= f.input :desk_id,
+           as: :hidden,
+           label: false,
+           input_html: { data: {deskconnect_target: "bureauid"}}
+        %>
+        <%= f.submit "Réserver",
+           class: "btn-light-sky",
+           data: {action: "click->deskconnect#submit"}
+        %>
+      <% end %>
+    </div>
+  </div>
+<!-- Fin fenetre modal reservation bureau -->
 
-            <div class="bureau-modal-container">
-              <span class="desk_book" data-deskconnect-target="desk_book"></span>
-             <%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
-              <%= f.input :start_at,
-                as: :string,
-                label: false,
-                placeholder: "Début de réservation",
-                input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}
-                }
-               %>
-              <%= f.input :end_at,
-               as: :string,
-               label: false,
-               placeholder: "Fin de réservation",
-               input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}
-             }
-               %>
-              <%= f.input :desk_id,
-              as: :hidden,
-              label: false,
-               input_html: { data: {deskconnect_target: "bureauid"}}
-              %>
-
-              <%= f.submit "Réserver",
-                        class: "btn-light-sky",
-                        data: {action: "click->deskconnect#submit"} %>
-             <% end %>
-             </div>
-          </div>
-    <div class="container">
-      <div class="title">
-        <p>votre <span class="blue-title">dashboard</span></p>
-      </div>
-      <div class="search b-rounded">
-        <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" }  do |f| %>
+<!-- Champ de recherche par date -->
+  <div class="container">
+    <div class="title">
+      <p>votre <span class="blue-title">dashboard</span></p>
+    </div>
+    <div class="search b-rounded">
+      <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" }  do |f| %>
           <%= f.input :start_at,
             as: :string,
             input_html: { data: { controller: "datepicker", deskconnect_target: "start_date" }, class: "start_at_input" },
@@ -46,17 +47,19 @@
             input_html: { data: { controller: "datepicker", deskconnect_target: "end_date" }, class: "end_at_input" },
             label: false %>
           <%= f.submit "Valider", class: "btn-sky", data: {action: "click->deskconnect#form"}%>
-        <% end %>
-      </div>
+      <% end %>
     </div>
-    <div class="bureau" >
-      <div class="container flex">
-        <div class="container-svg">
-           <div class="titre-level">Bureau</div>
-          <div id="svg-container" data-deskconnect-target="level">
+  </div>
+<!-- FinChamp de recherche par date -->
 
-          <%= render "svg" , levelSvg: @levelSvg %>
-            </div>
+<!-- Bureau SVG +etage -->
+  <div class="bureau" >
+    <div class="container flex">
+      <div class="container-svg">
+        <div class="titre-level">Bureau</div>
+          <div id="svg-container" data-deskconnect-target="level">
+            <%= render "svg" , levelSvg: @levelSvg %>
+          </div>
           <div class="bureau-information-niveau" >
              <p><span class="b-rounded" data-deskconnect-target ="infoNiveau"></span></p>
           </div>
@@ -64,27 +67,30 @@
             <span class="b-rounded" data-deskconnect-target ="infoDispo">Disponibilité des bureaux actuellement</span>
           </div>
 
-        </div>
-        <div class="bureau-level">
-          <div class="titre-level">Etage</div>
-          <ul>
-            <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
-            <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
-
-          </ul>
-        </div>
-             </div>
       </div>
-
-      <div class="container">
-      <div class="features-container">
-        <div class="calendar-container">
-           <%= render "week_calendar", appointments_week: @appointments_week%>
-        </div>
-        <div class="chatroom-container">
-          <div class="titre-level">Chat</div>
-             <%= render partial: "chatrooms/chatroom", locals: {chatroom: @chatroom, message: @message }%>
-        </div>
+      <div class="bureau-level">
+        <div class="titre-level">Etage</div>
+        <ul>
+          <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
+           <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
+        </ul>
       </div>
-</div>
     </div>
+  </div>
+  <!-- Fin Bureau SVG +etage -->
+
+  <!-- Calendrier + chat -->
+  <div class="container">
+    <div class="features-container">
+      <div class="calendar-container">
+        <%= render "week_calendar", appointments_week: @appointments_week%>
+      </div>
+      <div class="chatroom-container">
+        <div class="titre-level">Chat</div>
+          <%= render partial: "chatrooms/chatroom", locals: {chatroom: @chatroom, message: @message }%>
+        </div>
+      </div>
+    </div>
+  <!-- Fin Calendrier + chat -->
+
+  </div>

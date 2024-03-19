@@ -41,14 +41,17 @@
   position: absolute;
   width:100%;
   height:100%;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  top:0%;
+  left: 0%;
   background-color: rgba($color: #000000, $alpha: 0.7);
   justify-content: center;
   align-items: center;
   border: 1px solid $sky;
   z-index: 10;
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 .bureau-modal-container{

@@ -2,12 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:destroy]
 
   def create
-
     appointment =  Appointment.new(appointment_params)
     desk = Desk.find_by(name: params[:appointment][:desk_id])
-    puts '-----------------------'
-    puts desk
-    puts '-----------------------'
     appointment.desk = desk
     appointment.user = current_user
     if appointment.save
