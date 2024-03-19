@@ -1,8 +1,8 @@
 .calendar-design{
   background-color: rgba(255,255,255,0.3)!important;
   padding: 16px!important;
-  border: 1px solid white;
-  height: 100%;
+  // border: 1px solid white;
+  // height: 100%;
 
 }
 
@@ -19,4 +19,72 @@
     border-radius: 10px;
 
   }
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  padding: 20px;
+  width:100%;
+  // background-color: white;
+  border-radius:16px;
+  border: solid;
+  border-color: white;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 16px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+thead th:nth-child(1) {
+  width: 20%;
+  border-bottom: 1px dashed white;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+  border-bottom: 1px dashed white;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+  border-bottom: 1px dashed white;
+}
+
+thead th:nth-child(4) {
+  width: 20%;
+  border-bottom: 1px dashed white;
+}
+
+thead th:nth-child(5) {
+  width: 20%;
+  border-bottom: 1px dashed white;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
+table th:not(:last-child),
+table td:not(:last-child) {
+ border-right: 1px dashed white;
+}
+
+.bg-purple{
+  background-color: rgb(178, 67, 187);
+  color: white;
+}
+
+.current-week{
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px black;
 }

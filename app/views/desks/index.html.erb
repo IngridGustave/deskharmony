@@ -12,6 +12,7 @@
           input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}}
         %>
         <%= f.input :end_at,
+          as: :hidden,
           as: :string,
           label: false,
           placeholder: "Fin de réservation",
@@ -34,7 +35,7 @@
 <!-- Champ de recherche par date -->
   <div class="container">
     <div class="title">
-      <p>votre <span class="blue-title">dashboard</span></p>
+      <p>Votre <span class="blue-title">dashboard</span></p>
     </div>
     <div class="search b-rounded">
       <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" }  do |f| %>

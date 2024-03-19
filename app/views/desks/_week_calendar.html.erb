@@ -1,10 +1,9 @@
-<div class="calendar-design">
+<div class="calendar-design neon-effect">
   <div class="titre-level">Calendrier</div>
   <div class="button-calendar">
-        <%= link_to "Previous week", desks_path(date: @date - 1.week)  %>
-      <%= link_to "Next week", desks_path(date: @date + 1.week)  %>
+        <%= link_to "<<", desks_path(date: @date - 1.week)  %>
+      <%= link_to ">>", desks_path(date: @date + 1.week)  %>
   </div>
-
 
   <div data-controller="week-calendar">
   <div data-week-calendar-target="dialog">
@@ -13,29 +12,35 @@
     <button data-action="click->confirmation#confirm">Yes</button>
   </div>
 
-  <div class="d-flex justify-content-between">
-    <% @date.all_week.each do |day|  %>
-      <div class="border calendar">
-      <%= day.strftime('%a %d %b %y')  %>
-      </div>
-    <% end %>
-  </div>
+    <p class="current-week">Semaine du <%= @date.beginning_of_week.strftime('%d/%m/%Y') %> au <%= (@date.beginning_of_week + 4.days).strftime('%d/%m/%Y') %></p>
 
-  <div class="d-flex justify-content-between">
-    <% @date.all_week.each do |day| %>
-      <div class="border calendar <%= "bg-sky" if day == Date.today %> d-flex flex-column align-items-start">
-      <% @appointments_week.where(start_at: day.all_day).each do |appointment_week| %>
-        <div data-action="click->week-calendar#open" data-id= "<%= appointment_week.id %>"data-bureau ="<%= appointment_week.desk.id %>" class="border rounded-pill bg-light text-center mb-2 p-2 clickable">
-          <%= " Desk n°#{appointment_week.desk.name}" %>
-          <% appointment_week.id %>
-           <%# <%= link_to "Plus d'information", appointment_path(appointment_week), class:"button-pink btn-center" %>
-          <%# <p><i class="bi bi-trash d-none"></i></p> %>
-        </div>
-      <% end %>
-
-      </div>
-    <% end %>
-  </div>
+        <table>
+          <thead>
+          <tr>
+            <th class="<%= "bg-white-transparent" if Date.today.monday? %>"><div class="card-weekday">Lundi</div></th>
+            <th class="<%= "bg-white-transparent" if Date.today.tuesday? %>"><div class="card-weekday">Mardi</div></th>
+            <th class="<%= "bg-white-transparent" if Date.today.wednesday? %>"><div class="card-weekday">Mercredi</div></th>
+            <th class="<%= "bg-white-transparent" if Date.today.thursday? %>"><div class="card-weekday">Jeudi</div></th>
+            <th class="<%= "bg-white-transparent" if Date.today.friday? %>"><div class="card-weekday">Vendredi</div></th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <% @date.all_week.to_a.reject { |date| date.saturday? || date.sunday? }.each do |day| %>
+                <td class="<%= "bg-white-transparent" if day == Date.today %>">
+                  <% @appointments_week.where(start_at: day.all_day).each do |appointment_week| %>
+                    <div data-action="click->week-calendar#open" data-id= "<%= appointment_week.id %>"data-bureau ="<%= appointment_week.desk.id %>" class="rounded-pill bg-purple text-center mb-2 p-2 clickable">
+                      <%= "Bureau n°#{appointment_week.desk.name} Etage n°#{appointment_week.desk.level}" %>
+                      <% appointment_week.id %>
+                       <%# <%= link_to "Plus d'information", appointment_path(appointment_week), class:"button-pink btn-center" %>
+                      <%# <p><i class="bi bi-trash d-none"></i></p> %>
+                    </div>
+                    </td>
+                  <% end %>
+               <% end %>
+            </tr>
+          </tbody>
+        </table>
 
 </div>
 </div>

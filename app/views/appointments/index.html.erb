@@ -14,8 +14,8 @@
             <% if appointment.start_at.to_date >= Date.today %>
             <div class="card-appointments neon-effect">
             <div class="card-desks">
-              <p class="card-desk"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
-              <p class="card-booking-date"><%= "#{appointment.start_at.strftime("%d/%m/%y")}"%></p>
+              <p data-action="click->appointment-historic#open" data-id=<%= appointment.desk.id %> class="card-desk clickable"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
+              <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
               <i data-action="click->appointment-historic#remove" data-id=<%= appointment.id %> class="clickable fa-regular fa-trash-can"></i>
             </div>
             </div>
@@ -36,7 +36,7 @@
         <div class="card-past-appointments neon-effect" data-id=<%= appointment.id %>>
         <div class="card-desks">
           <p class="card-desk"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
-          <p class="card-booking-date"><%= "#{appointment.start_at.strftime("%d/%m/%y")}"%></p>
+          <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
         </div>
         </div>
         <% end %>

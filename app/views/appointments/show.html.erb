@@ -1,11 +1,11 @@
 <div id="index-content">
   <div class="container">
     <div class="title">
-  <p>votre <span class="blue-title">réservation</span></p>
+  <p>Votre <span class="blue-title">réservation</span></p>
 </div>
 <div class="title">
-  <p><%= "bureau n°#{@appointment.desk.name}" %></p>
-  <p><%= "le #{@appointment.start_at.strftime("%d/%m/%y")} de #{@appointment.start_at.strftime("%H:%M")} à #{@appointment.end_at.strftime("%H:%M")}"  %></p>
+  <p><%= "Bureau n°#{@appointment.desk.name}" %></p>
+  <p><%= "Réservé pour le #{@appointment.start_at.strftime("%d/%m/%y")}"  %></p>
   <%  @levelSvg %> <%# ne fonctionne pas  %>
 
 </div>
