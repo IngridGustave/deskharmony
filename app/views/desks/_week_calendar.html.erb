@@ -26,7 +26,7 @@
       <div class="border calendar <%= "bg-sky" if day == Date.today %> d-flex flex-column align-items-start">
       <% @appointments_week.where(start_at: day.all_day).each do |appointment_week| %>
         <div data-action="click->week-calendar#open" data-id= "<%= appointment_week.id %>"data-bureau ="<%= appointment_week.desk.id %>" class="border rounded-pill bg-light text-center mb-2 p-2 clickable">
-          <%= "#{appointment_week.start_at.strftime('%H:%M')} - #{appointment_week.end_at.strftime('%H:%M')} Desk n°#{appointment_week.desk.name}" %>
+          <%= " Desk n°#{appointment_week.desk.name}" %>
           <% appointment_week.id %>
            <%# <%= link_to "Plus d'information", appointment_path(appointment_week), class:"button-pink btn-center" %>
           <%# <p><i class="bi bi-trash d-none"></i></p> %>
