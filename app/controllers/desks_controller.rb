@@ -26,7 +26,7 @@ class DesksController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: data }
-      format.json { render json: @date }
+      # format.json { render json: @date }
       format.text { render partial: "desks/svg", locals: {levelSvg: @levelSvg}, formats: [:html] }
     end
   end

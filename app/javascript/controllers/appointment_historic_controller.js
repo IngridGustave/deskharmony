@@ -7,8 +7,9 @@ export default class extends Controller {
   }
 
   open(event) {
-    const appointmentId = event.currentTarget.dataset.id;
-    window.location.href = '/appointments/' + appointmentId;
+    const deskId = event.currentTarget.dataset.id;
+    console.log(deskId)
+    window.location.href = '/desks/' + deskId;
   }
 
   remove(event){

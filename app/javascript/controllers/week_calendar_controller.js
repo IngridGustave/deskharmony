@@ -11,7 +11,7 @@ export default class extends Controller {
   open(event) {
     const bureauId = event.currentTarget.dataset.bureau;
     const appointmentId = event.currentTarget.dataset.id;
-    window.location.href = '/desks/' + bureauId;
+    window.location.href = '/appointments';
 
   }
 
@@ -19,4 +19,16 @@ export default class extends Controller {
     this.dialogTarget.style.display = 'none';
   }
 
+  nextWeek(){
+    console.log("next week")
+    const url = `/desks?date=2024-03-26`;
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/plain" },
+    })
+      .then(response => response.text())
+      .then((data) => {
+        console.log(data)
+      })
+  }
 }
