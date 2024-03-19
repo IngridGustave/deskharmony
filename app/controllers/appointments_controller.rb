@@ -31,9 +31,9 @@ class AppointmentsController < ApplicationController
 
   def destroy
     if @appointment.destroy
-      redirect_to desks_path
+      redirect_to appointments_path
     else
-      render :show, status: :unprocessable_entity
+      render :index, status: :unprocessable_entity
     end
   end
 

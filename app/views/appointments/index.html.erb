@@ -7,7 +7,7 @@
 <div class="hero_banner">
   <div class="container">
     <div class="title">
-      <p>réservations <span class="blue-title">à venir</span></p>
+      <p>Réservations <span class="blue-title">à venir</span></p>
     </div>
   </div>
 
@@ -17,9 +17,12 @@
     <div class="cards-appointments">
       <% @appointments.each do |appointment| %>
             <% if appointment.start_at.to_date >= Date.today %>
-            <div class="card-appointments clickable" data-action="click->appointment-historic#open" data-id=<%= appointment.id %>>
-            <p><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
-            <p><%= "Le #{appointment.start_at.strftime("%d/%m/%y")} de #{appointment.start_at.strftime('%H:%M')} à #{appointment.end_at.strftime('%H:%M')}" %></p>
+            <div class="card-appointments neon-effect">
+            <div class="card-desks">
+              <p class="card-desk"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
+              <p class="card-booking-date"><%= "#{appointment.start_at.strftime("%d/%m/%y")}"%> <%="#{appointment.start_at.strftime('%H:%M')} à #{appointment.end_at.strftime('%H:%M')}" %></p>
+              <i data-action="click->appointment-historic#remove" data-id=<%= appointment.id %> class="clickable fa-regular fa-trash-can"></i>
+            </div>
             </div>
             <% end %>
       <% end %>
@@ -28,7 +31,7 @@
 
   <div class="container mt-5 pt-5">
     <div class="title">
-      <p>réservations <span class="blue-title">passées</span></p>
+      <p>Réservations <span class="blue-title">passées</span></p>
     </div>
   </div>
 
@@ -36,9 +39,11 @@
     <div class="cards-appointments ">
       <% @appointments.each do |appointment| %>
         <% if appointment.start_at.to_date < Date.today %>
-        <div class="card-past-appointments clickable" data-action="click->appointment-historic#open" data-id=<%= appointment.id %>>
-        <p><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
-        <p><%= "Le #{appointment.start_at.strftime("%d/%m/%y")} de #{appointment.start_at.strftime('%H:%M')} à #{appointment.end_at.strftime('%H:%M')}" %></p>
+        <div class="card-past-appointments neon-effect" data-id=<%= appointment.id %>>
+        <div class="card-desks">
+          <p class="card-desk"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
+          <p class="card-booking-date"><%= "#{appointment.start_at.strftime("%d/%m/%y")}"%> <%="#{appointment.start_at.strftime('%H:%M')} à #{appointment.end_at.strftime('%H:%M')}" %></p>
+        </div>
         </div>
         <% end %>
     <% end %>
