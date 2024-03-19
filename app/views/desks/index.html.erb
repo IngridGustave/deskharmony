@@ -1,4 +1,4 @@
-<div id="index-content" data-controller="deskconnect">
+  <div class="sidebar__container" id="index-content" data-controller="deskconnect">
 
 <!-- fenetre modal reservation bureau -->
   <div class="bureau-modal" data-deskconnect-target="modal">
@@ -69,29 +69,34 @@
           </div>
 
       </div>
-      <div class="bureau-level">
-        <div class="titre-level">Etage</div>
-        <ul>
-          <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
-           <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- Fin Bureau SVG +etage -->
 
-  <!-- Calendrier + chat -->
-  <div class="container">
-    <div class="features-container">
-      <div class="calendar-container">
-        <%= render "week_calendar", appointments_week: @appointments_week%>
-      </div>
-      <div class="chatroom-container">
-        <div class="titre-level">Chat</div>
-          <%= render partial: "chatrooms/chatroom", locals: {chatroom: @chatroom, message: @message }%>
+      <div class="container">
+      <div class="features-container">
+        <div class="calendar-container">
+           <%= render "week_calendar", appointments_week: @appointments_week%>
+        </div>
+        <div class="chatroom-container">
+          <div class="titre-level">Chat</div>
+            <% @chatroom.messages.each do |message| %>
+              <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+                <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                  <%= render "messages/message", message: message %>
+                </div>
+              </div>
+            <% end %>
+            <%= simple_form_for [@chatroom, @message],
+              html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+            %>
+            <%= f.input :content,
+              label: false,
+              placeholder: "Message #{@chatroom.name}",
+              wrapper_html: {class: "flex-grow-1"}
+            %>
+            <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
+          <% end %></div>
         </div>
       </div>
+  <%= render "shared/sidebar" %>
+      </div>
     </div>
-  <!-- Fin Calendrier + chat -->
-
-  </div>
+</div>
