@@ -1,11 +1,15 @@
+<<<<<<< HEAD
   <div class="sidebar__container" id="index-content" data-controller="deskconnect">
   <div class="container-halo">
       <div class="toprightbluehalo"></div>
       <div class="pattern"></div>
   </div>
 
+=======
+<div class="sidebar__container" id="index-content" data-controller="deskconnect">
+>>>>>>> 56af3d240a489c6d31d1553fc4c7e49481a7d917
 
-<!-- fenetre modal reservation bureau -->
+  <!-- fenetre modal reservation bureau -->
   <div class="bureau-modal" data-deskconnect-target="modal">
     <div class="bureau-modal-container">
       <span class="desk_book" data-deskconnect-target="desk_book"></span>
@@ -24,20 +28,20 @@
           input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}}
         %>
         <%= f.input :desk_id,
-           as: :hidden,
-           label: false,
-           input_html: { data: {deskconnect_target: "bureauid"}}
+          as: :hidden,
+          label: false,
+          input_html: { data: {deskconnect_target: "bureauid"}}
         %>
         <%= f.submit "Réserver",
-           class: "btn-light-sky",
-           data: {action: "click->deskconnect#submit"}
+          class: "btn-light-sky",
+          data: {action: "click->deskconnect#submit"}
         %>
       <% end %>
     </div>
   </div>
-<!-- Fin fenetre modal reservation bureau -->
+  <!-- Fin fenetre modal reservation bureau -->
 
-<!-- Champ de recherche par date -->
+  <!-- Champ de recherche par date -->
   <div class="container">
     <div class="title">
       <p>Votre <span class="blue-title">dashboard</span></p>
@@ -57,9 +61,9 @@
       <% end %>
     </div>
   </div>
-<!-- FinChamp de recherche par date -->
+  <!-- FinChamp de recherche par date -->
 
-<!-- Bureau SVG +etage -->
+  <!-- Bureau SVG +etage -->
   <div class="bureau" >
     <div class="container flex">
       <div class="container-svg neon-effect">
@@ -68,48 +72,59 @@
             <%= render "svg" , levelSvg: @levelSvg %>
           </div>
           <div class="bureau-information-niveau" >
-             <p><span class="b-rounded" data-deskconnect-target ="infoNiveau"></span></p>
+            <p><span class="b-rounded" data-deskconnect-target ="infoNiveau"></span></p>
           </div>
           <div class="bureau-information" >
             <span class="b-rounded" data-deskconnect-target ="infoDispo">Disponibilité des bureaux actuellement</span>
           </div>
 
       </div>
+<<<<<<< HEAD
 <div class="bureau-level neon-effect">
+=======
+      <div class="bureau-level">
+>>>>>>> 56af3d240a489c6d31d1553fc4c7e49481a7d917
         <div class="titre-level">Etage</div>
         <ul>
           <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
-           <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
+          <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
         </ul>
       </div>
     </div>
-      <div class="container">
+    <div class="container">
       <div class="features-container">
         <div class="calendar-container">
-           <%= render "week_calendar", appointments_week: @appointments_week%>
+          <%= render "week_calendar", appointments_week: @appointments_week%>
         </div>
         <div class="chatroom-container">
           <div class="titre-level">Chat</div>
-            <% @chatroom.messages.each do |message| %>
-              <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-                <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-                  <%= render "messages/message", message: message %>
+          <div
+            data-controller="chatroom-subscription"
+            data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+            data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+            <div data-chatroom-subscription-target="messages">
+              <% @chatroom.messages.each do |message| %>
+                <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+                  <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                    <%= render "messages/message", message: message %>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
             <%= simple_form_for [@chatroom, @message],
               html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
             %>
-            <%= f.input :content,
-              label: false,
-              placeholder: "Message #{@chatroom.name}",
-              wrapper_html: {class: "flex-grow-1"}
-            %>
-            <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
-          <% end %></div>
+              <%= f.input :content,
+                label: false,
+                placeholder: "Message #{@chatroom.name}",
+                wrapper_html: {class: "flex-grow-1"}
+              %>
+              <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
+            <% end %>
+          </div>
         </div>
       </div>
-  <%= render "shared/sidebar" %>
-      </div>
+      <%= render "shared/sidebar" %>
     </div>
+  </div>
 </div>
