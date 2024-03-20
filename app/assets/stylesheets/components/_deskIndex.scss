@@ -96,13 +96,13 @@
 
 .bureau-level{
   width: 250px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.3)!important;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 1px solid white;
+
 
   ul{
     display: flex;
@@ -172,6 +172,7 @@
   position: relative;
   width: 70%;
   margin-bottom: 75px;
+   background-color: rgba(255,255,255,0.3)!important;
 }
 
 svg{
@@ -181,6 +182,7 @@ svg{
 
 
 .bureau-information-niveau{
+  display: none;
   position: absolute;
   transform: rotate(-90deg) translateY(-50%);
   left:-65px;
@@ -239,4 +241,47 @@ svg{
 
 .calendar-container{
   width:70%;
+}
+
+
+.container-halo{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index: 1;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+
+}
+
+.toprightbluehalo{
+  position: absolute;
+  top:-400px;
+  right:-200px;
+  width: 800px;
+  height:800px;
+  background: asset-url('bluehalo.png');
+  background-size: 800px 800px;
+  background-repeat: no-repeat;
+
+   filter: drop-shadow(0 -6mm 4mm rgb(255, 238, 89));
+  z-index: -1;
+  opacity: 1;
+
+}
+.pattern{
+  position: absolute;
+  top:-330px;
+  right:0;
+  width:60%;
+  height: 50%;
+  background: asset-url('pattern_deskharmony.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  transform: rotate(0deg);
+
+  z-index: 2;
 }

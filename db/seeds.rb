@@ -21,10 +21,10 @@ User.create!(email:"toi@deskharmony.com", password: "coucou", first_name: "Mikae
 Level.create!(name: "1", svg:
   "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg'>
 <mask id='mask0_27_98' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
-<path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white' />
+<path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white' fill-opacity='1'/>
 </mask>
 <g mask='url(#mask0_27_98)'>
-<path d='M8 5H930.007C931.664 5 933.007 6.34314 933.007 8V546.864C933.007 548.521 931.664 549.864 930.007 549.864H7.99999C6.34314 549.864 5 548.521 5 546.864V7.99999C5 6.34314 6.34314 5 8 5Z' fill='#D9D9D9' fill-opacity='0.4' stroke='#D9D9D9' stroke-width='2'/>
+<path d='M8 5H930.007C931.664 5 933.007 6.34314 933.007 8V546.864C933.007 548.521 931.664 549.864 930.007 549.864H7.99999C6.34314 549.864 5 548.521 5 546.864V7.99999C5 6.34314 6.34314 5 8 5Z'  />
 <rect x='90.0288' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='1' data-action='click->deskconnect#book'/>
 <rect x='152.149' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='2' data-action='click->deskconnect#book'/>
 <rect x='223.271' y='81.8189' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
@@ -57,7 +57,7 @@ Level.create!(name: "1", svg:
 <rect x='411.431' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='16' data-action='click->deskconnect#book'/>
 <rect x='482.554' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
 <rect x='307.898' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-<rect x='545' y='4' width='13' height='438'  fill='#D9D9D9'/>
+<rect x='545' y='6' width='13' height='438'  fill='#D9D9D9'/>
 <rect x='611.596' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 611.596 189.03)' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
 <rect x='642.206' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 642.206 114.735)' fill='#D9D9D9'/>
 <rect x='700.725' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 700.725 189.03)' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>

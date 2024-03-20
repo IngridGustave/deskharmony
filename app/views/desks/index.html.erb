@@ -1,4 +1,9 @@
   <div class="sidebar__container" id="index-content" data-controller="deskconnect">
+  <div class="container-halo">
+      <div class="toprightbluehalo"></div>
+      <div class="pattern"></div>
+  </div>
+
 
 <!-- fenetre modal reservation bureau -->
   <div class="bureau-modal" data-deskconnect-target="modal">
@@ -57,7 +62,7 @@
 <!-- Bureau SVG +etage -->
   <div class="bureau" >
     <div class="container flex">
-      <div class="container-svg">
+      <div class="container-svg neon-effect">
         <div class="titre-level">Bureau</div>
           <div id="svg-container" data-deskconnect-target="level">
             <%= render "svg" , levelSvg: @levelSvg %>
@@ -70,7 +75,7 @@
           </div>
 
       </div>
-<div class="bureau-level">
+<div class="bureau-level neon-effect">
         <div class="titre-level">Etage</div>
         <ul>
           <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
