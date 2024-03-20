@@ -11,7 +11,7 @@
           placeholder: "Début de réservation",
           input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}}
         %>
-        <%= f.input :end_at,
+        <% f.input :end_at,
           as: :hidden,
           as: :string,
           label: false,
@@ -37,17 +37,18 @@
     <div class="title">
       <p>Votre <span class="blue-title">dashboard</span></p>
     </div>
-    <div class="search b-rounded">
+    <div class="search neon-effect">
       <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" }  do |f| %>
           <%= f.input :start_at,
             as: :string,
-            input_html: { data: { controller: "datepicker", deskconnect_target: "start_date" }, class: "start_at_input" },
+            input_html: { data: { controller: "datepicker", deskconnect_target: "start_date" }, class: "start_at_input card-search" },
             label: false %>
-          <%= f.input :end_at,
+          <% f.input :end_at,
+          as: :hidden,
             as: :string,
             input_html: { data: { controller: "datepicker", deskconnect_target: "end_date" }, class: "end_at_input" },
             label: false %>
-          <%= f.submit "Valider", class: "btn-sky", data: {action: "click->deskconnect#form"}%>
+          <%= f.submit "Rechercher", class: "btn-sky", data: {action: "click->deskconnect#form"}%>
       <% end %>
     </div>
   </div>

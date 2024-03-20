@@ -18,7 +18,6 @@ export default class extends Controller {
   }
 
   book(e) {
-    this.modalendTarget.value = this.end_dateTarget.value
     this.modalstartTarget.value = this.start_dateTarget.value
     this.bureauidTarget.value = e.target.dataset.bureau
     this.desk_bookTarget.innerText = "Réservation bureau n°" + e.target.dataset.bureau
@@ -52,7 +51,7 @@ export default class extends Controller {
             desk_drawing.style.fill = "#00D0DD"
             this.infoNiveauTarget.innerText = `Niveau ${desk.level}`;
             if (this.start_dateTarget.value) {
-              this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value} à ${this.end_dateTarget.value}`;
+              this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value}`;
             } else {
               this.infoDispoTarget.innerText = "disponibilité actuel"
             }
