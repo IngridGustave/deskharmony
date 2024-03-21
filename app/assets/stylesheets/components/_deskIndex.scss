@@ -285,3 +285,34 @@ svg{
 
   z-index: 2;
 }
+
+.svginsertion{
+ position:absolute;
+ width:100%;
+ height:100%;
+
+}
+
+foreignObject{
+  opacity: 1;
+  z-index: 1000;
+  position: relative;
+  overflow: visible;
+
+
+}
+
+rect{
+  position: relative;
+  z-index: 100;
+}
+
+.menu-context{
+  display: block;
+  position: absolute;
+
+  height: 300px;
+  background-color: #ADFF00;
+  border: 3px solid red;
+  z-index: 1000;
+}
