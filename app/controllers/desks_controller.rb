@@ -2,6 +2,16 @@ require 'date'
 
 class DesksController < ApplicationController
 
+  def weekcalendar
+    @date = Date.parse(params.fetch(:date, Date.today.to_s))+ 1.week
+    @appointments_week = Appointment.where(user: current_user).where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
+    respond_to do |format|
+      format.html
+      format.text { render partial: "desks/week_calendar", locals: {appointments_week: @appointments_week}, formats: [:html] }
+    end
+  end
+
+
   def index
     @desks = Desk.all
     @appointment = Appointment.new
@@ -89,4 +99,6 @@ class DesksController < ApplicationController
     end
     return data
   end
+
+
 end

@@ -5,14 +5,21 @@ export default class extends Controller {
 
 
   connect() {
+
   }
 
   display(e) {
+    const template = document.querySelector("#subMenuTemplatee");
 
-    let div = document.createElement('div');
-    div.innerText = "jjsjlqkjlqk"
-    div.classList.add('menu-context');
-    e.target.appendChild(div);
-
+    if (!e.target.classList.contains("menu-context")) {
+      let div = document.createElement('div');
+      let btnShow = document.createElement('a');
+      btnShow.innerText = "Bureau"
+      div.classList.add('menu-context');
+      e.target.appendChild(div);
+    }
   }
+
+
+
 }

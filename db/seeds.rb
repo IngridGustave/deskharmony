@@ -64,7 +64,7 @@ Level.create!(name: "1", svg:
 <rect x='551.876' y='271.789' width='190.861' height='11.2854'  fill='#D9D9D9'/>
 <rect x='811.159' y='274.61' width='120' height='8.46402'  fill='#D9D9D9'/>
 <foreignObject x='90.0288' y='49.8437' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='1'> </div>
 </foreignObject>
 </svg>
 "

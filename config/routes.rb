@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   end
 
   resources :appointments
-  resources :desks
+  resources :desks do
+    collection do
+      get :weekcalendar
+    end
+  end
 end
