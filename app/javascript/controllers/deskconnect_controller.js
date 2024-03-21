@@ -43,6 +43,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data);
         this._addStyleToSvg(data);
       })
   }
@@ -110,24 +111,25 @@ export default class extends Controller {
 
   _fetchForm() {
     const formData = new FormData(this.formModalTarget);
-
     const url = this.formModalTarget.action;
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 
     fetch("/appointments", {
       method: "POST",
-      headers: { "Accept": "application/json" },
+      headers: { "Accept": "text/plain" },
       body: new FormData(this.formModalTarget)
     })
-      .then(response => {
-
-        return response.json();
-      })
+      .then(response => response.text())
       .then(data => {
+        let weekCalendar = document.querySelector('.calendar-design.neon-effect');
+        weekCalendar.outerHTML = data;
         const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
         this._fetchSvg(url);
       });
+
+
   }
+
 
 }
