@@ -1,6 +1,6 @@
-<div class="sidebar">
+<div class="sidebar" data-controller="sousmenu">
     <ul>
-      <li>
+      <li >
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
       </li>
       <li>
@@ -12,11 +12,19 @@
       <li>
         <%= link_to "", "/appointments", class: "fa-solid fa-folder-open fa-xl" %>
       </li>
-      <li>
+      <li data-action ="click->sousmenu#display" data-sousmenu-target="bureau">
         <%= link_to "", "", class: "fa-solid fa-users fa-xl" %>
       </li>
-      <li>
+      <li id="etage" data-action ="click->sousmenu#display" >
         <%= link_to "", "/desks", class: "fa-solid fa-stairs fa-xl" %>
+        <ul class="sousmenu" data-sousmenu-target="etage">
+          <% @desks.each do |desk| %>
+            <li>bureau <%= desk.name %></li>
+          <% end %>
+
+
+
+        </ul>
       </li>
       <li>
         <%= link_to "", "", class: "fa-solid fa-magnifying-glass fa-xl" %>
