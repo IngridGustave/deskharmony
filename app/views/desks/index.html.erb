@@ -57,7 +57,7 @@
   <div class="bureau" >
     <div class="container flex">
       <div class="container-svg">
-        <div class="titre-level">Bureau</div>
+        <h1 class="titre-level">Bureau</h1>
           <div id="svg-container" data-deskconnect-target="level">
             <%= render "svg" , levelSvg: @levelSvg %>
           </div>
@@ -70,7 +70,7 @@
 
       </div>
       <div class="bureau-level">
-        <div class="titre-level">Etage</div>
+        <h1 class="titre-level">Etage</h1>
         <ul>
           <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
           <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
@@ -82,9 +82,10 @@
         <div class="calendar-container">
           <%= render "week_calendar", appointments_week: @appointments_week%>
         </div>
-        <div class="chatroom-container neon-effect">
-          <div class="titre-level">Chat</div>
+        <div class="chatroom__container neon-effect">
+          <h1 class="titre-level">Chat</h1>
           <div
+            class="chatroom__subscription"
             data-controller="chatroom-subscription"
             data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
             data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
