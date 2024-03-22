@@ -25,6 +25,7 @@ end
 
   def index
     @appointments = Appointment.where(user: current_user)
+    @desks = Desk.all
   end
 
   def show

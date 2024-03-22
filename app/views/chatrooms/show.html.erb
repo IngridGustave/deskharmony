@@ -27,4 +27,4 @@ data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
     <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
   <% end %>
 </div>
-<%= render "shared/sidebar" %>
+<%= render "shared/sidebar", desks: @desks %>
