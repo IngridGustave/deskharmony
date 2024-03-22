@@ -32,7 +32,7 @@ export default class extends Controller {
     document.body.classList.remove('modal-open');
     this.modalTarget.style.display = "none";
     e.preventDefault();
-    this._fetchForm();
+    this._fetchForm(e);
 
   }
 
@@ -43,7 +43,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         this._addStyleToSvg(data);
       })
   }
@@ -109,8 +108,10 @@ export default class extends Controller {
 
 
 
-  _fetchForm() {
-    const formData = new FormData(this.formModalTarget);
+  _fetchForm(e) {
+    const formData = new FormData(e.target.parentNode);
+    const parent = e.target.parentNode.parentNode.parentNode.parentNode;
+
     const url = this.formModalTarget.action;
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -126,10 +127,13 @@ export default class extends Controller {
         weekCalendar.outerHTML = data;
         const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
         this._fetchSvg(url);
+        parent.remove();
       });
 
 
   }
+
+
 
 
 }

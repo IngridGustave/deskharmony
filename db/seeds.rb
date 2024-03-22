@@ -66,6 +66,78 @@ Level.create!(name: "1", svg:
 <foreignObject x='90.0288' y='49.8437' width='56.7181' height='87.4615'>
     <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='1'> </div>
 </foreignObject>
+
+<foreignObject x='152.149' y='49.8437' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='2'> </div>
+</foreignObject>
+
+<foreignObject x='90.0288' y='151.412' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='3'> </div>
+</foreignObject>
+
+<foreignObject x='152.149' y='151.412' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='4'> </div>
+</foreignObject>
+
+<foreignObject x='90.0288' y='252.98' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='5'> </div>
+</foreignObject>
+
+<foreignObject x='152.149' y='252.98' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='6'> </div>
+</foreignObject>
+
+<foreignObject x='90.0288' y='354.548' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='7'> </div>
+</foreignObject>
+
+<foreignObject x='152.149' y='354.548' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='8'> </div>
+</foreignObject>
+
+<foreignObject x='349.312' y='49.8437' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='9'> </div>
+</foreignObject>
+
+<foreignObject x='411.431' y='49.8437' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='10'> </div>
+</foreignObject>
+
+<foreignObject x='349.312' y='151.412' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='11'> </div>
+</foreignObject>
+
+<foreignObject x='411.431' y='151.412' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='12'> </div>
+</foreignObject>
+
+<foreignObject x='349.312' y='252.98' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='13'> </div>
+</foreignObject>
+
+<foreignObject x='411.431' y='252.98' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='14'> </div>
+</foreignObject>
+
+<foreignObject x='349.312' y='354.548' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='15'> </div>
+</foreignObject>
+
+<foreignObject x='411.431' y='354.548' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='16'> </div>
+</foreignObject>
+
+<foreignObject x='611.596' y='189.03' width='59.2482' height='83.7268' transform='rotate(-90 611.596 189.03)'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='17'> </div>
+</foreignObject>
+
+<foreignObject x='700.725' y='189.03' width='59.2482' height='83.7268' transform='rotate(-90 700.725 189.03)'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='18'> </div>
+</foreignObject>
+<foreignObject x='789.853' y='189.03' width='59.2482' height='83.7268'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='19' transform='rotate(-90 789.853 189.03)'> </div>
+</foreignObject>
+
 </svg>
 "
 );

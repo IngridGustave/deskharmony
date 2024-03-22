@@ -4,13 +4,18 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:destroy]
 
   def create
+    puts "--------------------------------------"
+    puts "--------------------------------------"
      @date = Date.parse(params.fetch(:date, Date.today.to_s))
     @appointments_week = Appointment.where(user: current_user).where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
     appointment =  Appointment.new(appointment_params)
     desk = Desk.find_by(name: params[:appointment][:desk_id])
-    appointment.desk = desk
+
+    appointment.desk_id = params[:appointment][:desk_id]
     appointment.user = current_user
     appointment.save
+
+
 
 respond_to do |format|
     format.html

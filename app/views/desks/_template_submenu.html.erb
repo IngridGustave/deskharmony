@@ -1,0 +1,39 @@
+
+
+<div class="submenu">
+ <i class="fa-solid fa-xmark"></i>
+  <h3>Prochaine disponibilité :</h3>
+  <% desks.each do |date| %>
+    <div class="direct-book">
+
+        <%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
+        <%= f.input :start_at,
+          as: :string,
+          label: false,
+          placeholder: "Début de réservation",
+          input_html: { value: date ,data: { controller: "datepicker", deskconnect_target: "modalstart"}}
+        %>
+        <% f.input :end_at,
+          as: :hidden,
+          as: :string,
+          label: false,
+          placeholder: "Fin de réservation",
+          input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}}
+        %>
+        <%= f.input :desk_id,
+          as: :hidden,
+          label: false,
+          input_html: { value: desk.id}
+        %>
+        <%= f.submit "Réserver",
+          class: "btn-light-sky",
+          data: {action: "click->deskconnect#submit"}
+        %>
+
+      <% end %>
+    </div>
+
+  <% end %>
+   <%= link_to "bureau", desk_path(desk) %>
+
+ </div>

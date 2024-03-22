@@ -11,6 +11,30 @@ class DesksController < ApplicationController
     end
   end
 
+  def available
+    nameDesk = params[:bureau];
+    @desk = Desk.find_by(name: nameDesk );
+
+    date = Date.today
+    @desk_available =[]
+    # boucle
+     while @desk_available.size < 4 do
+      appointment = Appointment.where(user: current_user).where(desk: @desk).where("DATE(start_at) = ? ", date);
+      if !appointment.present?
+        @desk_available << date
+      end
+      date = date + 1
+    end
+
+    @appointment= Appointment.new
+    @desks = @desk_available
+
+       respond_to do |format|
+      format.html
+      format.text { render partial: "desks/template_submenu", locals: {desks: @desks, desk: @desk}, formats: [:html] }
+    end
+  end
+
 
   def index
     @desks = Desk.all
@@ -71,11 +95,6 @@ class DesksController < ApplicationController
   end
 
   def generateJsonDesk(desks, start_at, level)
-    puts desks
-    puts "--------"
-    puts start_at
-    puts "--------"
-    puts level
     data = []
     desks.each do |desk|
       current_time = Time.now
