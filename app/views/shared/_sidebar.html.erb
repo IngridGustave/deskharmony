@@ -19,9 +19,9 @@
         <%= link_to "", "", class: "fa-solid fa-desktop fa-xl dropdown-toggle", id: "dropDown1", data:{bs_toggle:"dropdown"} %>
         <div class="dropdown-menu" aria-labelledby="dropDown1">
             <a class="dropdown-item" >
-              <%# <% @desks.each do |desk| %>
-              <%# <%= desk.name %>
-              <%# <% end %>
+              <% desks.each do |desk| %>
+              <%= link_to "bureau #{desk.name}", desk_path(desk) %>
+              <% end %>
             </a>
         </div>
       </li>

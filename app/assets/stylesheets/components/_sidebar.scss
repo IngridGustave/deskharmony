@@ -47,6 +47,12 @@
       justify-content: center;
       align-items: center;
     }
+
+    a{
+      &::after{
+        display: none;
+      }
+    }
   }
 
   .dropdown-menu {
