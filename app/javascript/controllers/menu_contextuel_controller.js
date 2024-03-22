@@ -12,6 +12,21 @@ export default class extends Controller {
     if (!e.target.classList.contains("menu-context")) {
       let div = document.createElement('div');
       div.classList.add('menu-context');
+      console.log(e.target.dataset.position);
+      if (e.target.dataset.position == "right") {
+        div.style.top = "-30px";
+      }
+      if (e.target.dataset.position == "bottom") {
+        div.style.bottom = "-20px";
+      }
+      if (e.target.dataset.position == "left") {
+        div.style.right = "110px";
+        div.style.left = "auto";
+        div.style.top = "-40px";
+
+
+      }
+
       e.target.appendChild(div);
       div.innerHTML = data;
     }

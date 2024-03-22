@@ -55,87 +55,87 @@ Level.create!(name: "1", svg:
 <rect x='482.554' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
 <rect x='307.898' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
 <rect x='545' y='6' width='13' height='438'  fill='#D9D9D9'/>
-<rect x='611.596' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 611.596 189.03)' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
-<rect x='642.206' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 642.206 114.735)' fill='#D9D9D9'/>
-<rect x='700.725' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 700.725 189.03)' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>
-<rect x='731.334' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 731.334 114.735)' fill='#D9D9D9'/>
-<rect x='789.853' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 789.853 189.03)' fill='#D9D9D9' data-bureau='19' data-action='click->deskconnect#book'/>
-<rect x='820.463' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 820.463 114.735)' fill='#D9D9D9'/>
+<rect x='611.596' y='120' width='83.7268' height='59.2482' rx='8'' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
+<rect x='642.206' y='50' width='28.2134' height='27.0086' rx='8' ' fill='#D9D9D9'/>
+<rect x='700.725' y='120' width='83.7268' height='59.2482' rx='8' ' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>
+<rect x='731.334' y='50' width='28.2134' height='27.0086' rx='8' ' fill='#D9D9D9'/>
+<rect x='789.853' y='120' width='83.7268' height='59.2482' rx='8' ' fill='#D9D9D9' data-bureau='19' data-action='click->deskconnect#book'/>
+<rect x='820.463' y='50' width='28.2134' height='27.0086' rx='8' ' fill='#D9D9D9'/>
 <rect x='551.876' y='271.789' width='190.861' height='11.2854'  fill='#D9D9D9'/>
 <rect x='811.159' y='274.61' width='120' height='8.46402'  fill='#D9D9D9'/>
 <foreignObject x='90.0288' y='49.8437' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='1'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='1' data-position='right' > 1 </div>
 </foreignObject>
 
 <foreignObject x='152.149' y='49.8437' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='2'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='2' data-position='right'> 2</div>
 </foreignObject>
 
 <foreignObject x='90.0288' y='151.412' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='3'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='3' data-position='right'> 3</div>
 </foreignObject>
 
 <foreignObject x='152.149' y='151.412' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='4'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='4' data-position='right'>4 </div>
 </foreignObject>
 
 <foreignObject x='90.0288' y='252.98' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='5'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='5' data-position='right'>5 </div>
 </foreignObject>
 
 <foreignObject x='152.149' y='252.98' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='6'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='6' data-position='right'>6 </div>
 </foreignObject>
 
 <foreignObject x='90.0288' y='354.548' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='7'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='7' data-position='bottom'> 7</div>
 </foreignObject>
 
 <foreignObject x='152.149' y='354.548' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='8'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='8' data-position='bottom'>8 </div>
 </foreignObject>
 
 <foreignObject x='349.312' y='49.8437' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='9'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='9' data-position='right'> 9</div>
 </foreignObject>
 
 <foreignObject x='411.431' y='49.8437' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='10'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='10' data-position='right'> 10</div>
 </foreignObject>
 
 <foreignObject x='349.312' y='151.412' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='11'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='11' data-position='right'>11 </div>
 </foreignObject>
 
 <foreignObject x='411.431' y='151.412' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='12'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='12' data-position='right'> 12</div>
 </foreignObject>
 
 <foreignObject x='349.312' y='252.98' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='13'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='13' data-position='right'>13 </div>
 </foreignObject>
 
 <foreignObject x='411.431' y='252.98' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='14'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='14' data-position='right'>14 </div>
 </foreignObject>
 
 <foreignObject x='349.312' y='354.548' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='15'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='15' data-position='bottom'>15 </div>
 </foreignObject>
 
 <foreignObject x='411.431' y='354.548' width='56.7181' height='87.4615'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='16'> </div>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='16' data-position='bottom'>16 </div>
 </foreignObject>
 
-<foreignObject x='611.596' y='189.03' width='59.2482' height='83.7268' transform='rotate(-90 611.596 189.03)'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='17'> </div>
+<foreignObject x='611.596' y='120' width='83.7268' height='59.2482'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='17' data-position='left'> 17</div>
 </foreignObject>
 
-<foreignObject x='700.725' y='189.03' width='59.2482' height='83.7268' transform='rotate(-90 700.725 189.03)'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='18'> </div>
+<foreignObject x='700.725' y='120' width='83.7268' height='59.2482'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='18' data-position='left'>18 </div>
 </foreignObject>
-<foreignObject x='789.853' y='189.03' width='59.2482' height='83.7268'>
-    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='19' transform='rotate(-90 789.853 189.03)'> </div>
+<foreignObject x='789.853' y='120' width='83.7268' height='59.2482'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='19' data-position='left' > 19</div>
 </foreignObject>
 
 </svg>
