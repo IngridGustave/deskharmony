@@ -30,7 +30,6 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data);
         let weekCalendar = document.querySelector('.calendar-design.neon-effect');
         console.log(weekCalendar)
         weekCalendar.outerHTML = data;
