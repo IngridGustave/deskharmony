@@ -15,10 +15,7 @@ export default class extends Controller {
       e.target.appendChild(div);
       div.innerHTML = data;
     }
-    const foreignObjects = document.querySelectorAll("foreignObject");
-    foreignObjects.forEach((foreignObject) => {
-      foreignObject.style.display = "block";
-    })
+
   }
 
   display(e) {
@@ -40,5 +37,13 @@ export default class extends Controller {
           this._availableDesk(data, e)
         })
     }
+  }
+
+  remove(e) {
+    e.target.parentNode.parentNode.remove();
+    const foreignObjects = document.querySelectorAll("foreignObject");
+    foreignObjects.forEach((foreignObject) => {
+      foreignObject.style.display = "block";
+    })
   }
 }

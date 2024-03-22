@@ -173,11 +173,15 @@
   width: 70%;
   margin-bottom: 75px;
    background-color: rgba(255,255,255,0.3)!important;
+
 }
 
 svg{
   width:100%;
   height:auto;
+  overflow: visible;
+  z-index: 1000;
+  position: relative;
 }
 
 
@@ -299,11 +303,13 @@ svg{
  width:100%;
  height:100%;
 
+
 }
 
 foreignObject{
+  display: block;
   opacity: 1;
-  z-index: 200;
+  z-index: 1000;
   position: relative;
   overflow: visible;
 
@@ -320,10 +326,11 @@ rect{
   position: absolute;
   left:110%;
   width: 300px;
-  height: 300px;
   background-color: $sky;
   border-radius: 16px;
-  z-index: 1000;
+   padding: 24px;
+   border: 2px solid white;
+   z-index: 1000;
 }
 
 .active{
@@ -332,7 +339,15 @@ rect{
 
 .submenu{
   position: relative;
+  padding:px;
 
+  i{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 36px;
+    cursor: pointer;
+    }
 }
 
 .direct-book{
@@ -352,6 +367,8 @@ rect{
     color: $sky;
     font-weight: 300;
     text-decoration: none;
+    border: 1px solid white;
+
 
    }
 }
