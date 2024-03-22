@@ -233,11 +233,19 @@ svg{
    margin-bottom: 100px;
 }
 
-.chatroom-container{
-  position: relative;
-  width: 250px;
-  border: 1px solid white;
- }
+.chatroom {
+  &__container {
+    position: relative;
+    width: 250px;
+    height: 500px;
+  }
+
+  &__subscription {
+    padding: 16px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+}
 
 .calendar-container{
   width:70%;

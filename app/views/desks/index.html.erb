@@ -61,6 +61,7 @@
   <!-- Bureau SVG +etage -->
   <div class="bureau" >
     <div class="container flex">
+
       <div class="container-svg neon-effect">
         <div class="titre-level">Bureau</div>
           <div id="svg-container" data-deskconnect-target="level" data-controller="menu-contextuel">
@@ -90,9 +91,10 @@
         <div class="calendar-container">
           <%= render "week_calendar", appointments_week: @appointments_week%>
         </div>
-        <div class="chatroom-container">
-          <div class="titre-level">Chat</div>
+        <div class="chatroom__container neon-effect">
+          <h1 class="titre-level">Chat</h1>
           <div
+            class="chatroom__subscription"
             data-controller="chatroom-subscription"
             data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
             data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
