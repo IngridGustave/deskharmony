@@ -21,4 +21,5 @@ Rails.application.routes.draw do
       get :available
     end
   end
+  resources :users
 end
