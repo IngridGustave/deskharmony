@@ -1,12 +1,12 @@
 
 
-<div class="submenu">
- <i class="fa-solid fa-xmark"></i>
+<div class="submenu ">
+ <i class="fa-solid fa-xmark" data-action="click->menu-contextuel#remove"></i>
   <h3>Prochaine disponibilité :</h3>
   <% desks.each do |date| %>
     <div class="direct-book">
 
-        <%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
+        <%= simple_form_for @appointment, html: {class: "space", data:{ deskconnect_target: 'formModal'}} do |f| %>
         <%= f.input :start_at,
           as: :string,
           label: false,
@@ -26,7 +26,7 @@
           input_html: { value: desk.id}
         %>
         <%= f.submit "Réserver",
-          class: "btn-light-sky",
+          class: "btn-form",
           data: {action: "click->deskconnect#submit"}
         %>
 
@@ -34,6 +34,6 @@
     </div>
 
   <% end %>
-   <%= link_to "bureau", desk_path(desk) %>
+   <%= link_to "bureau", desk_path(desk), class: "btn-submenu" %>
 
  </div>

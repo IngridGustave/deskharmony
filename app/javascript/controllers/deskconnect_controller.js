@@ -115,6 +115,11 @@ export default class extends Controller {
     const url = this.formModalTarget.action;
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+    const foreignObjects = document.querySelectorAll("foreignObject");
+    foreignObjects.forEach((foreignObject) => {
+      foreignObject.style.display = "block";
+    })
+
 
     fetch("/appointments", {
       method: "POST",
