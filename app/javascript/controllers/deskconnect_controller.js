@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="deskconnect"
 export default class extends Controller {
-  static targets = ['link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level", "levelid", "desk_book"]
+  static targets = ['formModal', 'link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level", "levelid", "desk_book"]
   connect() {
     const url = '/desks'
     const level = 1
@@ -13,12 +13,12 @@ export default class extends Controller {
   form(e) {
     e.preventDefault();
     const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
+    console.log(url)
     const level = parseInt(this.infoNiveauTarget.textContent.charAt(this.infoNiveauTarget.textContent.length - 1));
     this.loadingLevel({ url: url, level: level });
   }
 
   book(e) {
-    this.modalendTarget.value = this.end_dateTarget.value
     this.modalstartTarget.value = this.start_dateTarget.value
     this.bureauidTarget.value = e.target.dataset.bureau
     this.desk_bookTarget.innerText = "Réservation bureau n°" + e.target.dataset.bureau
@@ -28,8 +28,12 @@ export default class extends Controller {
     document.body.classList.add('modal-open');
   }
 
-  submit() {
-    // this._fetchForm();
+  submit(e) {
+    document.body.classList.remove('modal-open');
+    this.modalTarget.style.display = "none";
+    e.preventDefault();
+    this._fetchForm();
+
   }
 
   _fetchSvg(url) {
@@ -39,6 +43,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data);
         this._addStyleToSvg(data);
       })
   }
@@ -52,7 +57,7 @@ export default class extends Controller {
             desk_drawing.style.fill = "#00D0DD"
             this.infoNiveauTarget.innerText = `Niveau ${desk.level}`;
             if (this.start_dateTarget.value) {
-              this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value} à ${this.end_dateTarget.value}`;
+              this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value}`;
             } else {
               this.infoDispoTarget.innerText = "disponibilité actuel"
             }
@@ -105,20 +110,26 @@ export default class extends Controller {
 
 
   _fetchForm() {
-    const url = this.formTarget.action;
+    const formData = new FormData(this.formModalTarget);
+    const url = this.formModalTarget.action;
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    fetch(url, {
+
+    fetch("/appointments", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-CSRF-Token": csrfToken
-      },
-      body: new FormData(this.formTarget)
+      headers: { "Accept": "text/plain" },
+      body: new FormData(this.formModalTarget)
     })
-      .then(response => { response.text() })
+      .then(response => response.text())
       .then(data => {
+        let weekCalendar = document.querySelector('.calendar-design.neon-effect');
+        weekCalendar.outerHTML = data;
+        const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
+        this._fetchSvg(url);
       });
+
+
   }
+
 
 }

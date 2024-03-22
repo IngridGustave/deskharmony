@@ -1,8 +1,9 @@
 <div class="calendar-design neon-effect">
   <h1 class="titre-level">Calendrier</h1>
+
   <div class="button-calendar">
         <%= link_to "<<", desks_path(date: @date - 1.week)  %>
-      <%= link_to ">>", desks_path(date: @date + 1.week)  %>
+      <%= link_to ">>", desks_path(date: @date + 1.week), data:{action: "click->week-calendar#nextWeek"}  %>
   </div>
 
   <div data-controller="week-calendar">

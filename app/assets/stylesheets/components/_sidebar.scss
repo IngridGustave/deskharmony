@@ -31,6 +31,8 @@
   }
 
   li {
+    position: relative;
+
     &:first-child {
       margin-bottom: 32px;
     }
@@ -53,4 +55,22 @@
     color: #122133;
     box-shadow: 0 0 10px 0 rgba(#000000, .75);
   }
+}
+
+.sousmenu{
+  display: none!important;
+  height: 300px;
+  width: 600px;
+  position: absolute;
+  left:150%;
+  bottom: 0;
+  background-color: #00FFFF;
+  border-color: 2px red solid;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.active{
+  display: flex!important;
 }

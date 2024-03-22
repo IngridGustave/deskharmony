@@ -2,10 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="week-calendar"
 export default class extends Controller {
-  static targets = ["dialog"]
+  //static targets = ["dialog"]
 
   connect() {
-    this.dialogTarget.style.display = 'none';
+    console.log("connect")
+    //   this.dialogTarget.style.display = 'none';
   }
 
   open(event) {
@@ -16,19 +17,23 @@ export default class extends Controller {
   }
 
   close() {
-    this.dialogTarget.style.display = 'none';
+    //  this.dialogTarget.style.display = 'none';
   }
 
-  nextWeek(){
+  nextWeek(e) {
+    e.preventDefault();
     console.log("next week")
-    const url = `/desks?date=2024-03-26`;
+    const url = "/desks/weekcalendar"
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/plain" },
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data)
+        console.log(data);
+        let weekCalendar = document.querySelector('.calendar-design.neon-effect');
+        console.log(weekCalendar)
+        weekCalendar.outerHTML = data;
       })
   }
 }

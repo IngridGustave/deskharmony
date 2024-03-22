@@ -20,6 +20,20 @@
 
 }
 
+.toprightbluehalo{
+  position: absolute;
+  top:-200px;
+  right:-400px;
+  width: 2000px;
+  height:1000px;
+  background: asset-url('bluehalo.png');
+  background-size: 1000px 600px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(16px 16px 20px white) ;
+  z-index: -1;
+
+}
+
 
 .rightbluehalo{
   position: absolute;

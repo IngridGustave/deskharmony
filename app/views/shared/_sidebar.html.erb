@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" data-controller="sousmenu">
     <ul>
       <li>
         <img class="avatar " src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
@@ -12,7 +12,7 @@
       <li>
         <%= link_to "", "/appointments", class: "fa-solid fa-folder-open fa-xl" %>
       </li>
-      <li>
+      <li data-action ="click->sousmenu#display" data-sousmenu-target="bureau">
         <%= link_to "", "", class: "fa-solid fa-users fa-xl" %>
       </li>
       <li  class="nav-item dropdown" >

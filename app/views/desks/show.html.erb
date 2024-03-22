@@ -85,8 +85,6 @@
         <%@appointment_passed.each do |appointment|  %>
           <p><%=appointment.user.nickname  %></p>
           <p><%= appointment.start_at.strftime("%A %d %B")  %></p>
-          <p><%=appointment.start_at.strftime("%H:%M") %></p>
-          <p><%=appointment.end_at.strftime("%H:%M") %></p>
           <% end %>
         </div>
       <% else %>

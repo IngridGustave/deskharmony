@@ -20,11 +20,8 @@ User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikae
 User.create!(email:"toi@deskharmony.com", password: "coucou", first_name: "Mikaellette", last_name: "kellette", job_title: "maitre", nickname: "paulette" )
 Level.create!(name: "1", svg:
   "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg'>
-<mask id='mask0_27_98' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='939' height='555'>
-<path d='M0 7.99999C0 3.58172 3.58172 0 8 0H931C935.418 0 939 3.58172 939 8V546.864C939 551.282 935.418 554.864 931 554.864H8.00001C3.58173 554.864 0 551.282 0 546.864V7.99999Z' fill='white' />
-</mask>
-<g mask='url(#mask0_27_98)'>
-<path d='M8 5H930.007C931.664 5 933.007 6.34314 933.007 8V546.864C933.007 548.521 931.664 549.864 930.007 549.864H7.99999C6.34314 549.864 5 548.521 5 546.864V7.99999C5 6.34314 6.34314 5 8 5Z' fill='#D9D9D9' fill-opacity='0.4' stroke='#D9D9D9' stroke-width='2'/>
+
+<path d='M8 5H930.007C931.664 5 933.007 6.34314 933.007 8V546.864C933.007 548.521 931.664 549.864 930.007 549.864H7.99999C6.34314 549.864 5 548.521 5 546.864V7.99999C5 6.34314 6.34314 5 8 5Z'  />
 <rect x='90.0288' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='1' data-action='click->deskconnect#book'/>
 <rect x='152.149' y='49.8437' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='2' data-action='click->deskconnect#book'/>
 <rect x='223.271' y='81.8189' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
@@ -57,7 +54,7 @@ Level.create!(name: "1", svg:
 <rect x='411.431' y='354.548' width='56.7181' height='87.4615' rx='8' fill='#D9D9D9' data-bureau='16' data-action='click->deskconnect#book'/>
 <rect x='482.554' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
 <rect x='307.898' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
-<rect x='545' y='4' width='13' height='438'  fill='#D9D9D9'/>
+<rect x='545' y='6' width='13' height='438'  fill='#D9D9D9'/>
 <rect x='611.596' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 611.596 189.03)' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
 <rect x='642.206' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 642.206 114.735)' fill='#D9D9D9'/>
 <rect x='700.725' y='189.03' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 700.725 189.03)' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>
@@ -66,7 +63,9 @@ Level.create!(name: "1", svg:
 <rect x='820.463' y='114.735' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 820.463 114.735)' fill='#D9D9D9'/>
 <rect x='551.876' y='271.789' width='190.861' height='11.2854'  fill='#D9D9D9'/>
 <rect x='811.159' y='274.61' width='120' height='8.46402'  fill='#D9D9D9'/>
-</g>
+<foreignObject x='90.0288' y='49.8437' width='56.7181' height='87.4615'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='1'> </div>
+</foreignObject>
 </svg>
 "
 );
@@ -142,32 +141,32 @@ end
 " seeds have been created"
 user = User.find_by(last_name: "kel")
 
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-01-15 09:00:00", end_at: "2024-01-15 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-01-16 09:00:00", end_at: "2024-01-16 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-01-27 09:00:00", end_at: "2024-01-27 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 19).id, start_at: "2024-01-28 09:00:00", end_at: "2024-01-28 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-01-29 09:00:00", end_at: "2024-01-29 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-05 09:00:00", end_at: "2024-02-05 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-06 09:00:00", end_at: "2024-02-06 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-02-07 09:00:00", end_at: "2024-02-07 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 20).id, start_at: "2024-02-14 09:00:00", end_at: "2024-02-14 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-15 09:00:00", end_at: "2024-02-15 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-16 09:00:00", end_at: "2024-02-16 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-19 09:00:00", end_at: "2024-02-19 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 8).id, start_at: "2024-02-20 09:00:00", end_at: "2024-02-20 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-21 09:00:00", end_at: "2024-02-21 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 15).id, start_at: "2024-02-26 09:00:00", end_at: "2024-02-26 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 17).id, start_at: "2024-02-27 09:00:00", end_at: "2024-02-27 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-02-29 09:00:00", end_at: "2024-02-29 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-03-04 09:00:00", end_at: "2024-03-04 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 18).id, start_at: "2024-03-05 09:00:00", end_at: "2024-03-05 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 13).id, start_at: "2024-03-06 09:00:00", end_at: "2024-03-06 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-11 09:00:00", end_at: "2024-03-11 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 4).id, start_at: "2024-03-12 09:00:00", end_at: "2024-03-12 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-14 09:00:00", end_at: "2024-03-14 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-19 09:00:00", end_at: "2024-03-19 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-20 09:00:00", end_at: "2024-03-20 18:00:00")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-22 09:00:00", end_at: "2024-03-22 18:00:00")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-01-15")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-01-16")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-01-27")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 19).id, start_at: "2024-01-28")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-01-29")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-05")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-06")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-02-07")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 20).id, start_at: "2024-02-14")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-15")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-16")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-19")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 8).id, start_at: "2024-02-20")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-21")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 15).id, start_at: "2024-02-26")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 17).id, start_at: "2024-02-27")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-02-29")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-03-04")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 18).id, start_at: "2024-03-05")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 13).id, start_at: "2024-03-06")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-11")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 4).id, start_at: "2024-03-12")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-14")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-19")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-20")
+Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-22")
 
 puts " appointment in created"
 
