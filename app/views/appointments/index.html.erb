@@ -16,7 +16,7 @@
             <div class="card-desks">
               <p data-action="click->appointment-historic#open" data-id=<%= appointment.desk.id %> class="card-desk clickable"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
               <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
-              <i data-action="click->appointment-historic#remove" data-id=<%= appointment.id %> class="clickable fa-regular fa-trash-can"></i>
+              <i data-action="click->appointment-historic#remove" data-id=<%= appointment.id %> class="purple clickable fa-regular fa-trash-can fa-2x"></i>
             </div>
             </div>
             <% end %>

@@ -1,0 +1,78 @@
+.team-banner{
+  position: relative;
+  padding: 50px 0;
+}
+
+
+.team-design{
+  background-color: rgba(255,255,255,0.3)!important;
+  padding: 16px!important;
+}
+
+.team-table {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 16px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.team-thead th:nth-child(1) {
+  width: 20%;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
+}
+
+.team-thead  th:nth-child(2) {
+  width: 20%;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
+}
+
+.team-thead  th:nth-child(3) {
+  width: 20%;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
+}
+
+.team-thead  th:nth-child(4) {
+  width: 20%;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
+}
+
+.team-thead  th:nth-child(5) {
+  width: 20%;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
+}
+
+.team-th,
+.team-td td{
+  padding: 20px;
+  border-bottom: 1px solid white;
+  font-size: 50px;
+}
+
+.team-table th:not(:last-child),
+.team-table td:not(:last-child) {
+ border-right: 0px dashed white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.6)!important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.team-text{
+  font-size: 20px;
+}

@@ -21,5 +21,8 @@ Rails.application.routes.draw do
       get :available
     end
   end
+
   resources :users
+  resources :teams
+  resources :team_users
 end
