@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @appointment = Appointment.new
     @desks = Desk.where(user: params[:id])
     @desk = Desk.new
+    @desks = Desk.all
   end
 
   def new

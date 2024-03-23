@@ -28,6 +28,12 @@
       margin-bottom: 0;
     }
   }
+
+  .btn-purple {
+    --bs-btn-bg: rgb(168, 16, 161);
+    --bs-btn-border-color: rgb(168, 16, 161);
+    color: white;
+  }
 }
 
 
