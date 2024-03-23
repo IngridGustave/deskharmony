@@ -9,6 +9,7 @@
 #   end
 #
 
+
 puts " destroy in progress"
 User.destroy_all
 Desk.destroy_all
@@ -16,8 +17,85 @@ Appointment.destroy_all
 Level.destroy_all
 puts "destroy finished"
 " seeds in progress"
-User.create!(email:"moi@deskharmony.com", password: "coucou", first_name: "Mikael", last_name: "kel", job_title: "esclave", nickname: "paulo" )
-User.create!(email:"toi@deskharmony.com", password: "coucou", first_name: "Mikaellette", last_name: "kellette", job_title: "maitre", nickname: "paulette" )
+
+puts "creating users"
+
+laura = User.new(email:"laura@deskharmony.com", password: "coucou", first_name: "Laura", last_name: "Vidal", job_title: "Dev", nickname: "Laura" )
+laura_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png')
+laura.photo.attach(io: laura_file, filename: "laura.png", content_type: "image/png")
+laura.save
+
+fabien = User.new(email:"fabien@deskharmony.com", password: "coucou", first_name: "Fabien", last_name: "Pittiani", job_title: "Dev", nickname: "Fabien" )
+fabien_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/fabien_smrycv.jpg')
+fabien.photo.attach(io: fabien_file, filename: "fabien.png", content_type: "image/png")
+fabien.save
+
+ingrid = User.new(email:"ingrid@deskharmony.com", password: "coucou", first_name: "Ingrid", last_name: "Gustave", job_title: "Dev", nickname: "Ingrid" )
+ingrid_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/ingrid_vszkta.jpg')
+ingrid.photo.attach(io: ingrid_file, filename: "ingrid.png", content_type: "image/png")
+ingrid.save
+
+
+ines = User.new(email:"ines@deskharmony.com", password: "coucou", first_name: "Ines", last_name: "Alvergne", job_title: "Data analyst", nickname: "Ines" )
+ines_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/ines_uqlmow.jpg')
+ines.photo.attach(io: ines_file, filename: "ines.png", content_type: "image/png")
+ines.save
+
+seb = User.new(email:"seb@deskharmony.com", password: "coucou", first_name: "Sebastien", last_name: "Saunier", job_title: "Data analyst", nickname: "Seb" )
+seb_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194829/seb_gujojg.jpg')
+seb.photo.attach(io: seb_file, filename: "seb.png", content_type: "image/png")
+seb.save
+
+alex = User.new(email:"alex@deskharmony.com", password: "coucou", first_name: "Alex", last_name: "Platteeuw", job_title: "Business analyst", nickname: "Alex" )
+alex_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/alex_ezurq3.jpg')
+alex.photo.attach(io: alex_file, filename: "alex.png", content_type: "image/png")
+alex.save
+
+florine = User.new(email:"florine@deskharmony.com", password: "coucou", first_name: "Florine", last_name: "Humbert", job_title: "Manager", nickname: "Florine" )
+florine_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/florine_wxmen7.png')
+florine.photo.attach(io: florine_file, filename: "florine.png", content_type: "image/png")
+florine.save
+
+charlie = User.new(email:"charlie@deskharmony.com", password: "coucou", first_name: "Charlie", last_name: "Bertrand", job_title: "Manager", nickname: "Charlie" )
+charlie_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/charlie_ujx7tz.png')
+charlie.photo.attach(io: charlie_file, filename: "charlie.png", content_type: "image/png")
+charlie.save
+
+maelie = User.new(email:"maelie@deskharmony.com", password: "coucou", first_name: "Maelie", last_name: "Poussier", job_title: "Business analyst", nickname: "Maelie" )
+maelie_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194827/maelie_l7ojtt.png')
+maelie.photo.attach(io: maelie_file, filename: "maelie.png", content_type: "image/png")
+maelie.save
+
+gwendal = User.new(email:"gwendal@deskharmony.com", password: "coucou", first_name: "Gwendal", last_name: "Le Bris", job_title: "Data scientist", nickname: "Gwendal" )
+gwendal_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/gwendal_fee8jy.jpg')
+gwendal.photo.attach(io: gwendal_file, filename: "gwendal.png", content_type: "image/png")
+gwendal.save
+
+julien = User.new(email:"julien@deskharmony.com", password: "coucou", first_name: "Julien", last_name: "Marchand", job_title: "Data scientist", nickname: "Julien" )
+julien_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/julien_sdevve.jpg')
+julien.photo.attach(io: julien_file, filename: "julien.png", content_type: "image/png")
+julien.save
+
+kevin = User.new(email:"kevin@deskharmony.com", password: "coucou", first_name: "Kevin", last_name: "Abergel", job_title: "Data engineer", nickname: "Kevin" )
+kevin_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/kevin_mvgiuo.jpg')
+kevin.photo.attach(io: kevin_file, filename: "kevin.png", content_type: "image/png")
+kevin.save
+
+alexis = User.new(email:"alexis@deskharmony.com", password: "coucou", first_name: "Alexis", last_name: "Stephan", job_title: "Data engineer", nickname: "Alexis" )
+alexis_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/alexis_jurpju.jpg')
+alexis.photo.attach(io: alexis_file, filename: "alexis.png", content_type: "image/png")
+alexis.save
+
+pierreyves = User.new(email:"pierreyves@deskharmony.com", password: "coucou", first_name: "Pierre-Yves", last_name: "Le Guennec", job_title: "Data engineer", nickname: "Pierre-Yves" )
+pierreyves_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711196374/pierre-yves_vdzz70.jpg')
+pierreyves.photo.attach(io: pierreyves_file, filename: "alexis.png", content_type: "image/png")
+pierreyves.save
+
+puts "users created"
+
+puts "creating levels"
+
+
 Level.create!(name: "1", svg:
   "<svg width='939' height='555' viewBox='0 0 939 555' fill='none' xmlns='http://www.w3.org/2000/svg'>
 
@@ -191,8 +269,9 @@ Level.create!(name: "2", svg:
 );
 
 
+puts "levels created"
 
-
+puts "creating desks"
 
 level = Level.find_by(name: "etage1")
 for n in 1..19
@@ -210,36 +289,59 @@ end
 #for n in 60..78
 #  Desk.create!(name: n, level: 4, description: "super!" , level_id:level)
 #end
-" seeds have been created"
-user = User.find_by(last_name: "kel")
 
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-01-15")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-01-16")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-01-27")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 19).id, start_at: "2024-01-28")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-01-29")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-05")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-06")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-02-07")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 20).id, start_at: "2024-02-14")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-15")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-16")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-19")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 8).id, start_at: "2024-02-20")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-21")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 15).id, start_at: "2024-02-26")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 17).id, start_at: "2024-02-27")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-02-29")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-03-04")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 18).id, start_at: "2024-03-05")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 13).id, start_at: "2024-03-06")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-11")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 4).id, start_at: "2024-03-12")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-14")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-19")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-20")
-Appointment.create!(user_id: user.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-22")
+puts "desks created"
 
-puts " appointment in created"
+puts "creating appointments"
+
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-01-15")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-01-16")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-01-27")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 19).id, start_at: "2024-01-28")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-01-29")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-05")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-06")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-02-07")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 20).id, start_at: "2024-02-14")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-02-15")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-16")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-19")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 8).id, start_at: "2024-02-20")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-21")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 15).id, start_at: "2024-02-26")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 17).id, start_at: "2024-02-27")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-02-29")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-03-04")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 18).id, start_at: "2024-03-05")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 13).id, start_at: "2024-03-06")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-11")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 4).id, start_at: "2024-03-12")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-14")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-19")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-20")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-22")
+
+puts " appointment created"
 
 Chatroom.create!(name: 1);
+
+data_team = Team.create!(name: "Equipe Data", description: "Equipe Data de choc")
+
+puts " teams users created"
+
+team_laura = TeamUser.create!(team_id: data_team.id, user_id: laura.id)
+team_fabien = TeamUser.create!(team_id: data_team.id, user_id: fabien.id)
+team_ingrid = TeamUser.create!(team_id: data_team.id, user_id: ingrid.id)
+team_ines = TeamUser.create!(team_id: data_team.id, user_id: ines.id)
+team_seb = TeamUser.create!(team_id: data_team.id, user_id: seb.id)
+team_alex = TeamUser.create!(team_id: data_team.id, user_id: alex.id)
+team_florine= TeamUser.create!(team_id: data_team.id, user_id: florine.id)
+team_charlie = TeamUser.create!(team_id: data_team.id, user_id: charlie.id)
+team_maelie = TeamUser.create!(team_id: data_team.id, user_id: maelie.id)
+team_gwendal = TeamUser.create!(team_id: data_team.id, user_id: gwendal.id)
+team_julien = TeamUser.create!(team_id: data_team.id, user_id: julien.id)
+team_kevin = TeamUser.create!(team_id: data_team.id, user_id: kevin.id)
+team_alexis = TeamUser.create!(team_id: data_team.id, user_id: alexis.id)
+team_pierreyves = TeamUser.create!(team_id: data_team.id, user_id: pierreyves.id)
+
+puts "seed created"

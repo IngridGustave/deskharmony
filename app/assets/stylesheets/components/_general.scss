@@ -52,3 +52,14 @@ body{
 .space{
   margin: 8px 0;
 }
+
+.photo-profil{
+  & > img {
+    border-radius: 50%;
+  }
+}
+
+
+.purple{
+  color: rgb(178, 67, 187);
+}
