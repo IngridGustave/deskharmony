@@ -12,18 +12,23 @@
       <li>
         <%= link_to "", "/appointments", class: "fa-solid fa-folder-open fa-xl" %>
       </li>
+      
+
       <li>
         <%= link_to "", "/teams", class: "fa-solid fa-users fa-xl" %>
       </li>
-      <li class="nav-item dropright">
-        <%= link_to "", "", class: "fa-solid fa-desktop fa-xl dropdown-toggle", id: "dropDownDesktop", data: { bs_toggle: "dropdown" } %>
-        <div class="dropdown-menu dropdown-menu--scroll" aria-labelledby="dropDownDesktop">
-          <% desks.each do |desk| %>
-            <div class="dropdown-item-container">
-              <i class="fa-solid fa-desktop"></i>
-              <%= link_to "Bureau #{desk.name}", desk_path(desk), class: "dropdown-item" %>
-            </div>
-          <% end %>
+     
+      <li  class="nav-item dropdown" >
+
+        <%= link_to "", "", class: "fa-solid fa-desktop fa-xl dropdown-toggle", id: "dropDown1", data:{bs_toggle:"dropdown"} %>
+        <div class="dropdown-menu " aria-labelledby="dropDown1">
+          <p>Bureau</p>
+            <a class="dropdown-item width-210" >
+              <% desks.each do |desk| %>
+              <%= link_to " #{desk.name}", desk_path(desk) , class:"a-dropdown" %>
+              <% end %>
+            </a>
+
         </div>
       </li>
       <li class="nav-item dropright">
