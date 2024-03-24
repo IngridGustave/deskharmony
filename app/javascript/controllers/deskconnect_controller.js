@@ -109,8 +109,10 @@ export default class extends Controller {
 
 
   _fetchForm(e) {
+    console.log(e.target.parentNode);
     const formData = new FormData(e.target.parentNode);
     const parent = e.target.parentNode.parentNode.parentNode.parentNode;
+
 
     const url = this.formModalTarget.action;
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -124,7 +126,7 @@ export default class extends Controller {
     fetch("/appointments", {
       method: "POST",
       headers: { "Accept": "text/plain" },
-      body: new FormData(this.formModalTarget)
+      body: formData
     })
       .then(response => response.text())
       .then(data => {

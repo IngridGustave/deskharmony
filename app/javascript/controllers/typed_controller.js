@@ -9,26 +9,26 @@ export default class extends Controller {
     console.log("connect");
     var typed = new Typed(this.book1Target, {
       // Placez vos options ici
-      strings: ["Pierrot", "Votre réservation a été confirmée"],
+      strings: ["Paul", "Pense à valider ta réservation"],
       typeSpeed: 30,
       loop: true
     });
     var typed = new Typed(this.book2Target, {
       // Placez vos options ici
-      strings: ["Ruth", "Vous avez reçu un message"],
-      typeSpeed: 30,
+      strings: ["Paulette, hier j'ai mangé une pomme!"],
+      typeSpeed: 50,
       loop: true
     });
     var typed = new Typed(this.book3Target, {
       // Placez vos options ici
-      strings: ["Huguette", "Votre bureau a été réservée"],
-      typeSpeed: 30,
+      strings: ["Non.. pas vrai!"],
+      typeSpeed: 100,
       loop: true
     });
     var typed = new Typed(this.book4Target, {
       // Placez vos options ici
-      strings: ["Paulette", "Votre réservation a été annulée"],
-      typeSpeed: 30,
+      strings: ["Ok! astronaute"],
+      typeSpeed: 100,
       loop: true
     });
   }

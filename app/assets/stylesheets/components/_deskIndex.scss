@@ -151,7 +151,7 @@
 .bureau-information{
   z-index: -1;
   position: absolute;
-  bottom:-40px;
+  top:-40px;
   height: 40px;
   width: 100%;
   text-align: center;
@@ -330,7 +330,6 @@ rect{
   display: block;
   position: absolute;
   left:110%;
-
   min-width: 300px;
   background-color: $sky;
   border-radius: 16px;
@@ -362,7 +361,7 @@ rect{
    display: flex;
    justify-content: start;
    text-align: center;
-   gap:16px;
+   gap:8px;
 
 
 

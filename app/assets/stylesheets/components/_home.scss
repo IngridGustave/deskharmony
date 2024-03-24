@@ -132,47 +132,59 @@
 }
 .info-booking{
   position: absolute;
-  top: 0%;
-  left: 20%;
-  width:300px;
-  height:50px;
-  background-color:rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  box-shadow:5px 5px 15px 5px rgba(0,0,0,0.1);
+  top: 170px;
+  left: -100px;
+  width:200px;
+  height:150px;
+  background: url('bulle-reverse.png');
+  background-size: 200px 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px 16px;
+
 }
 
 
 .info-booking2{
   position: absolute;
-  top: 25%;
-  left: 40%;
-  width:300px;
-  height:50px;
-  background-color:rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  box-shadow:5px 5px 15px 5px rgba(0,0,0,0.1);
+  top: 80px;
+  left: 420px;
+  width:200px;
+  height:200px;
+  background: url('bulle.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 16px;
+
 }
 
 .info-booking3{
   position: absolute;
-  top: 50%;
-  left: 30%;
-  width:300px;
-  height:50px;
-  background-color:rgba(255, 255, 255, 0.9);
-  border-radius: 4px;
-  box-shadow:5px 5px 15px 5px rgba(0,0,0,0.3);
+  top: 180px;
+  left: 340px;
+  width:100px;
+  height:100px;
+  background: url('bulle.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding:16px 8px;
 }
 
 .info-booking4{
   position: absolute;
-  top: 75%;
-  left: 40%;
-  width:300px;
-  height:50px;
-  background-color:rgba(255, 255, 255, 0.9);
-  border-radius: 4px;
-  box-shadow:5px 5px 15px 5px rgba(0,0,0,0.3);
+  top: 240px;
+  left: 90px;
+  width:100px;
+  height:100px;
+  background: url('bulle-reverse.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding:16px 8px;
+
+
 }
 
 .img-team{

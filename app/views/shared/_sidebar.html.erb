@@ -16,11 +16,13 @@
         <%= link_to "", "", class: "fa-solid fa-users fa-xl" %>
       </li>
       <li  class="nav-item dropdown" >
+
         <%= link_to "", "", class: "fa-solid fa-desktop fa-xl dropdown-toggle", id: "dropDown1", data:{bs_toggle:"dropdown"} %>
-        <div class="dropdown-menu" aria-labelledby="dropDown1">
-            <a class="dropdown-item" >
+        <div class="dropdown-menu " aria-labelledby="dropDown1">
+          <p>Bureau</p>
+            <a class="dropdown-item width-210" >
               <% desks.each do |desk| %>
-              <%= link_to "bureau #{desk.name}", desk_path(desk) %>
+              <%= link_to " #{desk.name}", desk_path(desk) , class:"a-dropdown" %>
               <% end %>
             </a>
         </div>

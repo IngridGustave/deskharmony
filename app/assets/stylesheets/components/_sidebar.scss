@@ -60,7 +60,38 @@
     border-radius: 8px;
     color: #122133;
     box-shadow: 0 0 10px 0 rgba(#000000, .75);
+    left: 110%!important;
+    padding: 8px;
+
+    p{
+      font-weight: 400;
+    }
   }
+
+
+}
+
+
+.a-dropdown{
+     display: inline-block !important;
+     border: 1px solid white!important;
+     text-align: center;
+    width:40px!important;
+    height: 40px!important;
+    transition: all 0.3s;
+
+    &:hover{
+       border: 1px solid $sky!important;
+       background-color: white;
+    }
+}
+.width-210{
+  width: 210px;
+}
+
+.dropdown-flex{
+  display: flex;
+
 }
 
 .sousmenu{
