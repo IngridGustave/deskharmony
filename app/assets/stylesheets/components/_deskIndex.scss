@@ -313,8 +313,11 @@ svg{
  font-weight: bolder;
  color: white;
  padding:8px;
+ transition: all 0.3s;
 
-
+&:hover{
+  background-color: purple;
+}
 
 }
 
