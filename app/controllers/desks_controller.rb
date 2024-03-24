@@ -66,6 +66,7 @@ class DesksController < ApplicationController
   end
 
   def show
+    @desks = Desk.all
     @desk = Desk.find(params[:id])
     @appointment = Appointment.new
     @appointment_comings = Appointment.where("desk_id = ? AND start_at >= ?", @desk.id, Date.today )

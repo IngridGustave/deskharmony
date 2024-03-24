@@ -55,11 +55,24 @@
     }
   }
 
-  .dropdown-menu {
-    background-color: #00FFFF;
-    border-radius: 8px;
-    color: #122133;
-    box-shadow: 0 0 10px 0 rgba(#000000, .75);
+  .dropdown {
+    &-menu {
+      background-color: #00FFFF;
+      border-radius: 8px;
+      color: #122133;
+      box-shadow: 0 0 10px 0 rgba(#000000, .75);
+
+      &--scroll {
+        height: 300px;
+        overflow-y: scroll;
+      }
+    }
+
+    &-item-container {
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+    }
   }
 }
 
