@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="rightbluehalofeat"></div>
+  <div class="leftbluehalofeat"></div>
+  <div class="topbluehalo"></div>
+<div class="team-banner">
+  <div class="container">
+    <div class="title">
+      <p>Ma <span class="blue-title">recherche</span></p>
+    </div>
+  </div>
+
+<div class="search neon-effect">
+<form action="" class="form-search" data-action="submit->search#clear">
+  <div class="input_search">
+      <%= form_with url: desks_path, method: :get, class: "input-search" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Bureau recherché",
+          data: {action: "input->search#clear"},
+          style: "border-radius: 16px"
+        %>
+  </div>
+      <%= submit_tag "Rechercher", name: "", class: "btn-sky" %>
+      <% end %>
+      </form>
+</div>
+
+<div class="title">
+  <p><span class="blue-title">Bureaux</span></p>
+</div>
+
+<div class="container">
+  <div class="cards-appointments">
+    <% @search_desks.each do |desk| %>
+
+          <div class="card-appointments neon-effect">
+          <div class="card-desks">
+            <p class="card-desk clickable"><b><%= "Bureau n°#{desk.name}"%></b></p>
+          </div>
+          </div>
+    <% end %>
+  </div>
+</div>
+
+</div>
+</div>
