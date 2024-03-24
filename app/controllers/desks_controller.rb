@@ -66,6 +66,7 @@ class DesksController < ApplicationController
   end
 
   def show
+    @desks = Desk.all
     @desk = Desk.find(params[:id])
     @appointment = Appointment.new
     @appointment_comings = Appointment.where("desk_id = ? AND start_at >= ?", @desk.id, Date.today )
@@ -77,6 +78,19 @@ class DesksController < ApplicationController
     data.gsub!(";", "")
     @levelSvg = data.html_safe
   end
+
+  def search
+    @desks = Desk.all
+
+    if params[:query].present?
+      query = params[:query].split(" ").last
+      sql_query = "name ILIKE :query"
+      @search_desks = Desk.where(sql_query, query: "%#{query}%")
+    else
+      @search_desks = Desk.all
+    end
+  end
+
 
 
 
@@ -118,6 +132,4 @@ class DesksController < ApplicationController
     end
     return data
   end
-
-
 end
