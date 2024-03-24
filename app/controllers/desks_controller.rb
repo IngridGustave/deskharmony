@@ -79,6 +79,19 @@ class DesksController < ApplicationController
     @levelSvg = data.html_safe
   end
 
+  def search
+    @desks = Desk.all
+
+    if params[:query].present?
+      query = params[:query].split(" ").last
+      sql_query = "name ILIKE :query"
+      @search_desks = Desk.where(sql_query, query: "%#{query}%")
+    else
+      @search_desks = Desk.all
+    end
+  end
+
+
 
 
   private
