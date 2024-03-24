@@ -1,0 +1,29 @@
+<div class="container neon-effect users">
+  <h1 class="titre-level">Utilisateurs</h1>
+  <table >
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Fonction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <img class="avatar " src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <%= user.first_name %>
+          </td>
+          <td>
+            <%= user.last_name %>
+          </td>
+          <td>
+            <%= user.job_title %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= render "shared/sidebar", desks: @desks %>
+</div>

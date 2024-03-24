@@ -119,6 +119,4 @@ class DesksController < ApplicationController
     end
     return data
   end
-
-
 end

@@ -248,6 +248,13 @@ svg{
     padding: 16px;
     height: 100%;
     overflow-y: scroll;
+
+
+    .btn-purple {
+    --bs-btn-bg: rgb(168, 16, 161);
+    --bs-btn-border-color: rgb(168, 16, 161);
+    color: white;
+    }
   }
 }
 
@@ -375,7 +382,5 @@ rect{
     font-weight: 300;
     text-decoration: none;
     border: 1px solid white;
-
-
    }
 }
