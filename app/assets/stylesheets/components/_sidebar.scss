@@ -32,6 +32,7 @@
 
   li {
     position: relative;
+    transition: all 0.3s;
 
     &:first-child {
       margin-bottom: 32px;
@@ -52,6 +53,10 @@
       &::after{
         display: none;
       }
+    }
+
+    &:hover{
+      transform: scale(1.2);
     }
   }
 
