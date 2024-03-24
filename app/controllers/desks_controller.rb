@@ -39,7 +39,7 @@ class DesksController < ApplicationController
   def index
     @desks = Desk.all
     @appointment = Appointment.new
-    @chatroom = Chatroom.find(1)
+    @chatroom = Chatroom.find_by(name: "1")
     @message = Message.new
 
 # variable calendrier + recherche calendrier
