@@ -38,4 +38,22 @@ export default class extends Controller {
       })
   }
 
+  previousWeek(event) {
+    event.preventDefault();
+    console.log("previous week")
+    const dateParam = this.dateTarget.dataset.date
+    const url =  "/desks/weekcalendar?date=" + dateParam.replace(/"/g, '')
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/plain" },
+    })
+      .then(response => response.text())
+      .then((data) => {
+        console.log(data);
+        let weekCalendar = document.querySelector('.calendar-design.neon-effect');
+        console.log(weekCalendar)
+        weekCalendar.outerHTML = data;
+      })
+  }
+
 }
