@@ -8,10 +8,10 @@
       <div style="display: flex; align-items: center" class ="photo-profil">
         <%= cl_image_tag @user.photo.key, width: 100, height: 100, crop: :fill %>
       </div>
-      <div class="users-content">
-        <p><%= @user.first_name %> <%= @user.last_name %></p>
-        <p><%= @user.job_title %></p>
-        <p><%= @user.email %></p>
+      <div>
+        <p class="users-content"><%= @user.first_name %> <%= @user.last_name %></p>
+        <p class="users-content"><%= @user.job_title %>
+        <p class="users-content"><%= @user.email %></p>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
       <thead class="users-thead">
         <tr>
           <th><div class="card-users-title">Reservations passées</div></th>
-          <th ><div class="card-users-title">Reservations à venir</div></th>
+          <th ><div class="card-users-title">Reservations à venir</th>
         </tr>
     </thead>
     <tbody>
