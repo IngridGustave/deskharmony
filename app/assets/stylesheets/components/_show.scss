@@ -1,0 +1,47 @@
+.blink{
+  animation-duration: 1s;
+  animation-name: blinkColor;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinkColor {
+  0%{
+    background-color: white;
+  }
+
+    100%{
+    background-color: rgb(200, 19, 245);
+  }
+}
+
+.booking-svg{
+  svg{
+  border: 2px solid white;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 8px;
+  }
+
+}
+
+
+.booking-container-form-show{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 32px;
+  border-radius: 16px;
+
+  background-color: $sky;
+  padding:16px 32px;
+    h2{
+      color: white;
+      font-weight: bolder;
+    }
+}
+
+.booking-form-show{
+  display: flex;
+  gap: 16px;
+
+
+}

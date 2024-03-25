@@ -1,42 +1,43 @@
 
-<div class="container">
-  <div class="booking">
+<div class="container ">
+  <div class="booking" data-controller="svgdesk">
     <div class="booking-title">
-       <h2><%= "Bureau n°#{ @desk.name}"%></h2>
-       <div class="booking-svg">
+       <h2>Bureau n°  <span class="name-desk" data-svgdesk-target="span"><%=  @desk.name%></span></h2>
+       <div class="booking-svg" data-svgdesk-target="svg">
           <%= render partial: "desks/svg" , locals: {levelSvg: @levelSvg } %>
        </div>
      </div>
-     <div class="booking-container-form">
-      <h2>Réservation en 3 clics!</h2>
-      <form class="booking-form">
-<%= simple_form_for @appointment, html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
-      <%= f.input :start_at,
-        as: :string,
-        label: false,
-        placeholder: "Début de réservation",
-        input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}
-        }
-      %>
-      <%= f.input :end_at,
-        as: :string,
-        label: false,
-        placeholder: "Fin de réservation",
-        input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}
-      }
-      %>
-      <%= f.input :desk_id,
-        as: :hidden,
-        label: false,
-        input_html: { data: {deskconnect_target: "bureauid"}}
-      %>
+     <div class="booking-container-form-show">
 
-      <%= f.submit "Réserver",
-        class: "btn-white",
-        data: {action: "click->deskconnect#submit"} %>
+      <h2>Réservation en 3 clics!</h2>
+      <div class="booking-form-show" data-controller="postformshow" >
+        <%= simple_form_for @appointment,  data:{ postformshow_target: 'form'} do |f| %>
+        <%= f.input :start_at,
+          as: :string,
+          label: false,
+          placeholder: "Début de réservation",
+          input_html: { value: Date.today ,data: { controller: "datepicker", postformshow_target: "inputstart"}}
+        %>
+        <% f.input :end_at,
+          as: :hidden,
+          as: :string,
+          label: false,
+          placeholder: "Fin de réservation",
+          input_html: { data: { controller: "datepicker", postformshow_target: "inputend"}}
+        %>
+        <%= f.input :desk_id,
+          as: :hidden,
+          label: false,
+          input_html: { value: @desk.id}
+        %>
+        <%= f.submit "Réserver",
+          class: "btn-form",
+          data: {action: "click->postformshow#submit"}
+        %>
+
       <% end %>
 
-      </form>
+      </div>
     </div>
   </div>
 
@@ -51,8 +52,6 @@
     <div class="first-row-booking-list">
       <span>Nom</span>
       <span>Jour</span>
-      <span>De</span>
-      <span>A</span>
     </div>
         <% if !@appointment_comings.empty?%>
           <div class="row-booking-list">
@@ -77,8 +76,7 @@
     <div class="first-row-booking-list">
       <span>Nom</span>
       <span>Jour</span>
-      <span>De</span>
-      <span>A</span>
+
     </div>
      <% if !@appointment_passed.empty?%>
        <div class="row-booking-list">
@@ -94,4 +92,3 @@
   </div>
 </div>
 <%= render "shared/sidebar", desks: @desks %>
-

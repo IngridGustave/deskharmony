@@ -117,3 +117,26 @@
 .active{
   display: flex!important;
 }
+
+
+.nav-item.dropdown{
+  margin: 0!important;
+  padding: 0!important;
+}
+
+.nav-item.dropright{
+  margin: 0!important;
+  padding: 0!important;
+}
+
+.dropdown-menu.level.show{
+  bottom :0!important;
+  height: 130px;
+  transform: translate3d(0px, 0px, 0px)!important;
+}
+
+.dropdown-item-container{
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+}

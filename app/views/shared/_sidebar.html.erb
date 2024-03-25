@@ -15,9 +15,11 @@
       <li>
         <%= link_to "", "/appointments", class: "fa-solid fa-folder-open fa-xl" %>
       </li>
+
       <li>
         <%= link_to "", "/teams", class: "fa-solid fa-users fa-xl" %>
       </li>
+
       <li  class="nav-item dropdown" >
         <%= link_to "", "", class: "fa-solid fa-desktop fa-xl dropdown-toggle", id: "dropDown1", data:{bs_toggle:"dropdown"} %>
         <div class="dropdown-menu " aria-labelledby="dropDown1">
@@ -31,12 +33,16 @@
       </li>
       <li class="nav-item dropright">
         <%= link_to "", "", class: "fa-solid fa-stairs fa-xl dropdown-toggle",  id: "dropDownFloor", data: { bs_toggle: "dropdown" } %>
-        <div class="dropdown-menu" aria-labelledby="dropDownFloor" >
+        <div class="dropdown-menu level" aria-labelledby="dropDownFloor" >
           <div class="dropdown-item-container">
-          <a class="dropdown-item">Etage 1</a>
+
+            <i class="fa-solid fa-stairs"></i>
+          <a class="dropdown-item" href="/desks?level=1">Etage 1</a>
           </div>
           <div class="dropdown-item-container">
-          <a class="dropdown-item">Etage 2</a>
+            <i class="fa-solid fa-stairs"></i>
+          <a class="dropdown-item" href="/desks?level=2">Etage 2</a>
+
           </div>
         </div>
       </li>

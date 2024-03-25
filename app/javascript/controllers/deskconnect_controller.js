@@ -1,4 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+
 
 // Connects to data-controller="deskconnect"
 export default class extends Controller {
@@ -109,33 +112,54 @@ export default class extends Controller {
 
 
   _fetchForm(e) {
-    console.log(e.target.parentNode);
+
     const formData = new FormData(e.target.parentNode);
     const parent = e.target.parentNode.parentNode.parentNode.parentNode;
+    const form = e.target.parentNode;
+    const input = form.querySelector('input[name="appointment[start_at]"')
+
+    this.start_dateTarget.value = input.value;
 
 
     const url = this.formModalTarget.action;
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
     const foreignObjects = document.querySelectorAll("foreignObject");
     foreignObjects.forEach((foreignObject) => {
       foreignObject.style.display = "block";
     })
+    Swal.fire({
+      title: 'Confirmer votre réservation?',
+      text: "oui oui oui oui! je le veux",
+      iconHtml: '<img src="assets/astronaut-ok.png" style="width: 180px; height: 150px;">',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirmer',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        fetch("/appointments", {
+          method: "POST",
+          headers: { "Accept": "text/plain" },
+          body: formData
+        })
+          .then(response => response.text())
+          .then(data => {
+            const fetchUrl = `/desks?startdate=${input.value}`;
+            const level = parseInt(this.infoNiveauTarget.textContent.charAt(this.infoNiveauTarget.textContent.length - 1));
+            this.loadingLevel({ url: fetchUrl, level: level });
+            let weekCalendar = document.querySelector('.calendar-design.neon-effect');
+            weekCalendar.outerHTML = data;
+            const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
+            this._fetchSvg(url);
+            parent.remove();
 
 
-    fetch("/appointments", {
-      method: "POST",
-      headers: { "Accept": "text/plain" },
-      body: formData
-    })
-      .then(response => response.text())
-      .then(data => {
-        let weekCalendar = document.querySelector('.calendar-design.neon-effect');
-        weekCalendar.outerHTML = data;
-        const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
-        this._fetchSvg(url);
-        parent.remove();
-      });
+
+          });
+
+      }
+    });
 
 
   }
