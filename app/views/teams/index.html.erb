@@ -46,5 +46,38 @@
         </table>
 </div>
 </div>
+<div class="chatroom__container neon-effect">
+          <h1 class="titre-level">Chat</h1>
+          <div
+            class="chatroom__subscription"
+            data-controller="chatroom-subscription"
+            data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+            data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+            <div data-chatroom-subscription-target="messages" class="chatroom__messages">
+              <% @chatroom.messages.each do |message| %>
+                <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+                  <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                    <%= render "messages/message", message: message %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <%= simple_form_for [@chatroom, @message],
+              html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex chatroom__form" } do |f|
+            %>
+              <%= f.input :content,
+                label: false,
+                placeholder: "Message",
+                wrapper_html: {class: "flex-grow-1"}
+              %>
+              <%= f.submit "Envoyer", class: "btn btn-purple mb-3" %>
+            <% end %>
+          </div>
+        </div>
+
+
+
+
+
 </div>
 <%= render "shared/sidebar", desks: @desks %>

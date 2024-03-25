@@ -1,8 +1,11 @@
 <div class="sidebar" data-controller="sousmenu">
     <ul>
-      <li>
-        <img class="avatar " src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png" />
-      </li>
+      <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
+        <li>
+          <img class="avatar" src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png" />
+          <%= link_to "", user_path(current_user), class: "avatar" %> <!-- Utilise current_user au lieu de user -->
+        </li>
+      <% end %>
       <li>
         <%= link_to "", desks_path, class: "fa-solid fa-house fa-xl" %>
       </li>
@@ -12,14 +15,10 @@
       <li>
         <%= link_to "", "/appointments", class: "fa-solid fa-folder-open fa-xl" %>
       </li>
-      
-
       <li>
         <%= link_to "", "/teams", class: "fa-solid fa-users fa-xl" %>
       </li>
-     
       <li  class="nav-item dropdown" >
-
         <%= link_to "", "", class: "fa-solid fa-desktop fa-xl dropdown-toggle", id: "dropDown1", data:{bs_toggle:"dropdown"} %>
         <div class="dropdown-menu " aria-labelledby="dropDown1">
           <p>Bureau</p>
@@ -28,18 +27,15 @@
               <%= link_to " #{desk.name}", desk_path(desk) , class:"a-dropdown" %>
               <% end %>
             </a>
-
         </div>
       </li>
       <li class="nav-item dropright">
         <%= link_to "", "", class: "fa-solid fa-stairs fa-xl dropdown-toggle",  id: "dropDownFloor", data: { bs_toggle: "dropdown" } %>
         <div class="dropdown-menu" aria-labelledby="dropDownFloor" >
           <div class="dropdown-item-container">
-            <i class="fa-solid fa-stairs"></i>
           <a class="dropdown-item">Etage 1</a>
           </div>
           <div class="dropdown-item-container">
-            <i class="fa-solid fa-stairs"></i>
           <a class="dropdown-item">Etage 2</a>
           </div>
         </div>
