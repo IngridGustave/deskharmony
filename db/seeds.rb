@@ -12,9 +12,16 @@
 
 puts " destroy in progress"
 User.destroy_all
+puts " 1"
 Desk.destroy_all
+puts " 2"
 Appointment.destroy_all
+puts " 3"
 Level.destroy_all
+puts " 4"
+TeamUser.destroy_all
+puts " 5"
+Team.destroy_all
 puts "destroy finished"
 " seeds in progress"
 
@@ -308,7 +315,7 @@ Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 3).id, start_
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-02-19")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 8).id, start_at: "2024-02-20")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-21")
-Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 15).id, start_at: "2024-02-26")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-02-26")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 17).id, start_at: "2024-02-27")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-02-29")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-03-04")
