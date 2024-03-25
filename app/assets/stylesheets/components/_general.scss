@@ -73,3 +73,11 @@ body{
 .photo {
   margin-left: 50px;
 }
+
+.photo-sidebar{
+  &  > img {
+  border-radius: 50%;
+}
+  font-size: 20px;
+  padding: 40px;
+}
