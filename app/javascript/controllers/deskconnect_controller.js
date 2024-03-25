@@ -212,6 +212,7 @@ export default class extends Controller {
       console.log("boucle");
       svg.forEach((item) => {
         item.style.strokeWidth = 0;
+
       })
     }
   }

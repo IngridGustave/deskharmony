@@ -4,4 +4,5 @@ class Desk < ApplicationRecord
 
   validates :name, presence: true
   validates :description, length: { minimum: 6 }
+
 end
