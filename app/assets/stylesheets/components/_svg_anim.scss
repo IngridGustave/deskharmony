@@ -1,0 +1,106 @@
+
+
+
+
+svg path:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[width="56.7181"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[width="83.7268"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[width="27.0086"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[width="13"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[width="28.2134"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[height="11.2854"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg rect[height="8.46402"]:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: draw 3.5s forwards;
+}
+
+svg path {
+  stroke-dasharray: 2940;
+  stroke-dashoffset:2940;
+}
+
+svg rect[width="56.7181"] {
+  stroke-dasharray: 275;
+  stroke-dashoffset:275;
+}
+
+svg rect[width="27.0086"] {
+  stroke-dasharray: 110;
+  stroke-dashoffset:110;
+}
+
+svg rect[width="28.2134"] {
+  stroke-dasharray: 110;
+  stroke-dashoffset:110;
+}
+
+svg rect[width="83.7268"] {
+  stroke-dasharray: 110;
+  stroke-dashoffset:110;
+}
+
+svg rect[width="13"] {
+  stroke-dasharray: 1000;
+  stroke-dashoffset:1000;
+}
+
+svg rect[height="11.2854"] {
+  stroke-dasharray: 1000;
+  stroke-dashoffset:1000;
+}
+
+svg rect[height="8.46402"] {
+  stroke-dasharray: 1000;
+  stroke-dashoffset:1000;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+
+  }
+}

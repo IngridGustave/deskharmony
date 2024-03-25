@@ -5,6 +5,8 @@
   border-radius: 8px;
   background-color: #44F4EC;
   box-shadow: 0 4px 30px 0 #44F4EC;
+  height:auto;
+
 
   &__container {
     position: relative;
@@ -139,4 +141,38 @@
   display: flex!important;
   align-items: center!important;
   justify-content: center!important;
+}
+
+
+.anim-sidebar{
+  max-height: 80px;
+  animation:grow linear 0.3s forwards ;
+  animation-delay: 1s;
+  ul{
+    opacity: 0;
+    animation:slideUl linear 0.3s forwards;
+    animation-delay: 1.3s;
+  }
+}
+
+
+
+@keyframes grow {
+  from{
+    max-height: 80px;
+  }
+
+  to{
+    max-height: 1000px;
+  }
+}
+
+@keyframes slideUl {
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity:1
+  }
 }
