@@ -11,7 +11,7 @@ class DesksController < ApplicationController
     end
   end
 
-  def weekcalendar
+  def previousweekcalendar
     @date = Date.parse(params.fetch(:date, Date.today.to_s))- 1.week
     @appointments_week = Appointment.where(user: current_user).where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
     respond_to do |format|
@@ -88,15 +88,17 @@ class DesksController < ApplicationController
 
   def search
     @desks = Desk.all
+    @teamsusers = User.all
 
     if params[:query].present?
       query = params[:query].split(" ").last
-      sql_query = "name ILIKE :query"
-      @search_desks = Desk.where(sql_query, query: "%#{query}%")
+      sql_query = "first_name ILIKE :query"
+      @users = User.where(sql_query, query: "%#{query}%")
     else
-      @search_desks = Desk.all
+      @users = User.all
     end
   end
+
 
 
 
