@@ -11,6 +11,16 @@ export default class extends Controller {
     const level = 1
     this.loadingLevel({ url: url, level: level });
 
+    const queryString = window.location.search;
+    console.log(queryString);
+    if (queryString == "?anim=true") {
+      const svgContainer = document.querySelector('.container-svg.neon-effect')
+      svgContainer.classList.remove('neon-effect');
+      const divDispo = document.querySelector('.bureau-information')
+      divDispo.style.display = "none";
+      const titreLevel = document.querySelector('.titre-level')
+      titreLevel.style.display = "none";
+    }
   }
 
   form(e) {
@@ -40,17 +50,47 @@ export default class extends Controller {
   }
 
   _fetchSvg(url) {
+
     fetch(url, {
       method: "GET",
       headers: { "Accept": "application/json" },
     })
       .then(response => response.json())
       .then((data) => {
-        this._addStyleToSvg(data);
+        const queryString = window.location.search;
+        console.log(queryString);
+        if (queryString == "?anim=true") {
+          console.log('oui');
+          const delay = setTimeout(() => {
+            this._addStyleToSvg(data);
+          }, 3000);
+        }
+        else {
+          console.log('non');
+          this._addStyleToSvg(data);
+        }
+
+
       })
   }
 
   _addStyleToSvg(data) {
+    const queryString = window.location.search;
+    if (queryString == "?anim=true") {
+      const svg = document.querySelector('.container-svg')
+      svg.classList.add('neon-effect');
+      const divDispo = document.querySelector('.bureau-information')
+      divDispo.style.display = "block";
+      const titreLevel = document.querySelector('.titre-level')
+      titreLevel.style.display = "block";
+      const svgrect = document.querySelectorAll('rect');
+      document.querySelector('path').style.strokeWidth = 0;
+      svgrect.forEach((item) => {
+        item.style.strokeWidth = 0;
+        item.style.fill = '#D9D9D9'
+      })
+    }
+    ;
     const desks_drawing = Array.from(document.querySelectorAll('rect[data-bureau]'));
     desks_drawing.forEach((desk_drawing) => {
       data.forEach((desk) => {
@@ -62,10 +102,12 @@ export default class extends Controller {
               this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value}`;
             } else {
               this.infoDispoTarget.innerText = "disponibilité actuel"
+              this._clearStroke();
             }
 
           } else {
             desk_drawing.style.fill = "#B243BB"
+
           }
         }
       })
@@ -112,14 +154,11 @@ export default class extends Controller {
 
 
   _fetchForm(e) {
-
     const formData = new FormData(e.target.parentNode);
     const parent = e.target.parentNode.parentNode.parentNode.parentNode;
     const form = e.target.parentNode;
-    const input = form.querySelector('input[name="appointment[start_at]"')
-
+    const input = form.querySelector('input[name="appointment[start_at]"');
     this.start_dateTarget.value = input.value;
-
 
     const url = this.formModalTarget.action;
     const foreignObjects = document.querySelectorAll("foreignObject");
@@ -164,7 +203,18 @@ export default class extends Controller {
 
   }
 
-
+  _clearStroke() {
+    const queryString = window.location.search;
+    console.log(queryString);
+    if (queryString != "?anim=true") {
+      const svg = document.querySelectorAll('rect');
+      document.querySelector('path').style.strokeWidth = 0;
+      console.log("boucle");
+      svg.forEach((item) => {
+        item.style.strokeWidth = 0;
+      })
+    }
+  }
 
 
 }
