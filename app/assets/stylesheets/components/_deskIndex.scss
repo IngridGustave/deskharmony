@@ -157,9 +157,10 @@
   text-align: center;
 
   span{
-    background-color:#ADFF00 ;
-    color: white;
+    background-color:$sky;
+    color: black;
     font-size: 24px;
+    font-weight: bold;
     text-align: center;
     padding: 8px 16px;
     height: 100%;

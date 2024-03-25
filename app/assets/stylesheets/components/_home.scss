@@ -117,7 +117,7 @@
     text-decoration: none;
     font-weight: 400;
     text-align: center;
-    width: 150px;
+    width: 250px;
     background-color: #D3FD3E;
     color: $bg-main;
     padding: 8px 16px;
@@ -267,5 +267,27 @@
       background-color: $sky;
       padding:4px 8px;
     }
+  }
+}
+
+
+.logo-title-navbar{
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+  align-items: center;
+
+  img{
+    height:40px;
+    width:40px;
+    object-fit: cover;
+  }
+
+  p{
+    color:white;
+    font-size:24px;
+    line-height: 1.2rem;
+    padding: 0;
+    margin: 0;
   }
 }

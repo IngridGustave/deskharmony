@@ -13,8 +13,8 @@
 }
 
 .booking-svg{
-  width:200px;
-  height:200px;
+  width:300px;
+
 }
 
 .booking-container-form{
@@ -67,7 +67,7 @@
 
 .first-row-booking-list{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr ;
   column-gap: 16px;
 
   span{
@@ -83,7 +83,7 @@
 
 .row-booking-list{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr ;
   column-gap: 16px;
 
   p{

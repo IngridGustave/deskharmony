@@ -1,4 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
+import Swal from 'sweetalert2';
+window.Swal = Swal;
 
 // Connects to data-controller="appointment-historic"
 export default class extends Controller {
@@ -13,25 +15,32 @@ export default class extends Controller {
   }
 
   remove(event) {
-    console.log("remove")
-    console.log(event.currentTarget.dataset.id);
-    if (window.confirm("supprimes tu le rdv?")) {
-      const appointmentId = event.currentTarget.dataset.id;
-      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-      const url = '/appointments/' + appointmentId;
-      console.log(url)
-      fetch('/appointments/' + appointmentId, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRF-Token": csrfToken
-        }
-      })
-        .then(response => {
-          window.location.reload();
-        });
-    }
-
-
+    const appointmentId = event.currentTarget.dataset.id;
+    Swal.fire({
+      title: 'Êtes-vous sûr?',
+      text: "Voulez-vous vraiment supprimer ce rendez-vous?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Supprimer',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        const url = '/appointments/' + appointmentId;
+        fetch('/appointments/' + appointmentId, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken
+          }
+        })
+          .then(response => {
+            window.location.reload();
+          });
+      }
+    });
   }
+
 }

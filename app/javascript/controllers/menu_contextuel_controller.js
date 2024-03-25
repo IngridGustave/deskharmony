@@ -1,4 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
+import Swal from 'sweetalert2';
+window.Swal = Swal;
 
 // Connects to data-controller="menu-contextuel"
 export default class extends Controller {
@@ -23,8 +25,6 @@ export default class extends Controller {
         div.style.right = "110px";
         div.style.left = "auto";
         div.style.top = "-40px";
-
-
       }
 
       e.target.appendChild(div);
@@ -34,7 +34,6 @@ export default class extends Controller {
   }
 
   display(e) {
-    console.log("bureau menu")
     if (e.target.classList.contains("svginsertion")) {
       const foreignObjects = document.querySelectorAll("foreignObject");
       foreignObjects.forEach((foreignObject) => {
