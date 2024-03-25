@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
     @user = User.find(params[:id])
     @appointment = Appointment.new
     @desks = Desk.where(user: params[:id])

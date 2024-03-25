@@ -1,7 +1,7 @@
 <div class="sidebar" data-controller="sousmenu">
     <ul>
       <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
-        <li>
+        <li >
           <img class="avatar" src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png" />
           <%= link_to "", user_path(current_user), class: "avatar" %> <!-- Utilise current_user au lieu de user -->
         </li>

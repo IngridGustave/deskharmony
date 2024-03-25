@@ -9,10 +9,10 @@
   <table class="users-table">
   <thead class="users-thead">
     <tr>
-      <th>Nom</th>
-      <th>Fonction</th>
-      <th>Reservations passées</th>
-      <th>Reservations à venir</th>
+      <th><div class="card-users-title">Nom</div></th>
+      <th><div class="card-users-title">Fonction</div></th>
+      <th><div class="card-users-title">Reservations passées</div></th>
+      <th><div class="card-users-title">Reservations à venir</div></th>
     </tr>
   </thead>
   <tbody>
@@ -30,8 +30,7 @@
             <% @user.appointments.each do |appointment| %>
               <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date < Date.today %>
                 <div class="card-desks">
-                  <p>Bureau n°<%= appointment.desk.name %></p>
-                  <p>Pour le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
+                  <p>Bureau n°<%= appointment.desk.name %> le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
                 </div>
               <% end %>
             <% end %>
@@ -40,8 +39,7 @@
             <% @user.appointments.each do |appointment| %>
               <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date >= Date.today %>
                 <div class="card-desks">
-                  <p>Bureau n°<%= appointment.desk.name %></p>
-                  <p>Pour le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
+                  <p>Bureau n°<%= appointment.desk.name %> le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
                 </div>
               <% end %>
             <% end %>

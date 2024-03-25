@@ -9,42 +9,69 @@
       <p>Mon <span class="blue-title">équipe</span></p>
     </div>
   </div>
-
-<div class="team-design neon-effect">
-          <table class="team-table">
-          <thead class ="team-thead">
+  <div class="team-design neon-effect">
+    <table class="team-table">
+      <thead class ="team-thead">
+        <tr>
+          <th><div class="card-team-title">Nom</div></th>
+          <th><div class="card-team-title">Rôle</div></th>
+          <th><div class="card-team-title">Emplacement du jour</div></th>
+          <th><div class="card-team-title">Prochaines réservations</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @team_users.each do |user| %>
           <tr>
-            <th><div class="card-team-title">Nom</div></th>
-            <th><div class="card-team-title">Rôle</div></th>
-            <th><div class="card-team-title">Emplacement du jour</div></th>
-            <th><div class="card-team-title">Prochaines réservations</div></th>
-          </tr>
-          </thead>
-          <tbody>
-                <% @team_users.each do |user| %>
-                <tr>
-                    <td class="team-text">
-                      <div style="display: flex; align-items: center" class ="photo-profil">
-                      <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
-                      <%= "#{user.first_name}" %>
-                      <%= "#{user.last_name}"  %>
-                      </div>
-                    </td>
-                    <td class="team-text"><%= "#{user.job_title}" %></td>
-                    <td class="team-text">
-                      <% user.appointments.pluck(:id).each do |appointment_id| %>
-                        <% appointment = Appointment.find(appointment_id) %>
-                        <% if appointment.start_at.to_date == Date.today - 1 %>
-                            <%= "Bureau n°#{appointment.desk.name}" %>
-                        <% end %>
-                      <% end  %>
-                    </td>
-                    <td class="team-text">Voir son profil</td>
-                </tr>
+            <td class="team-text">
+            <div style="display: flex; align-items: center" class ="photo-profil">
+              <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
+              <%= "#{user.first_name}" %>
+              <%= "#{user.last_name}"  %>
+            </div>
+            </td>
+            <td class="team-text"><%= "#{user.job_title}" %></td>
+            <td class="team-text">
+              <% user.appointments.pluck(:id).each do |appointment_id| %>
+              <% appointment = Appointment.find(appointment_id) %>
+                <% if appointment.start_at.to_date == Date.today - 1 %>
+                <%= "Bureau n°#{appointment.desk.name}" %>
                 <% end %>
-          </tbody>
-        </table>
+              <% end  %>
+            </td>
+            <td class="team-text">Voir son profil</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
+<div class="chatroom__container neon-effect">
+    <h1 class="titre-level">Chat</h1>
+    <div
+      class="chatroom__subscription"
+      data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+      data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+      <div data-chatroom-subscription-target="messages" class="chatroom__messages">
+          <% @chatroom.messages.each do |message| %>
+            <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+              <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                <%= render "messages/message", message: message %>
+              </div>
+            </div>
+          <% end %>
+          </div>
+          <%= simple_form_for [@chatroom, @message],
+          html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex chatroom__form" } do |f|
+          %>
+          <%= f.input :content,
+            label: false,
+            placeholder: "Message",
+            wrapper_html: {class: "flex-grow-1"}
+          %>
+          <%= f.submit "Envoyer", class: "btn btn-purple mb-3" %>
+          <% end %>
+      </div>
+  </div>
+  <%= render "shared/sidebar", desks: @desks %>
 </div>
-</div>
-<%= render "shared/sidebar", desks: @desks %>

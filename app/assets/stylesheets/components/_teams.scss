@@ -76,3 +76,41 @@ tbody tr:nth-child(even) {
 .team-text{
   font-size: 20px;
 }
+
+.chatroom {
+  &__container {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  &__subscription {
+    position: relative;
+    padding: 1rem 0 3rem 0;
+    height: 100%;
+
+    .btn-purple {
+      --bs-btn-bg: rgb(168, 16, 161);
+      --bs-btn-border-color: rgb(168, 16, 161);
+      color: white;
+    }
+  }
+
+  &__messages {
+    height: 100%;
+    overflow-y: auto;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 1rem;
+  }
+
+
+}
