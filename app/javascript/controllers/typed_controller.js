@@ -9,7 +9,7 @@ export default class extends Controller {
     console.log("connect");
     var typed = new Typed(this.book1Target, {
       // Placez vos options ici
-      strings: ["Paul", "Pense à valider ta réservation"],
+      strings: ["Tu as vu le nouvel émoticone de Julien?"],
       typeSpeed: 30,
       loop: true
     });
@@ -27,7 +27,7 @@ export default class extends Controller {
     });
     var typed = new Typed(this.book4Target, {
       // Placez vos options ici
-      strings: ["Ok! astronaute"],
+      strings: ["Oui, Oui !!", "il fait croa!"],
       typeSpeed: 100,
       loop: true
     });

@@ -17,7 +17,7 @@ Vivez des journées de travail fluides grâce à notre application de réservati
 votre espace de travail idéal n'est qu'à une portée de clics
       </h2>
       <% if  user_signed_in? %>
-        <a href="/desks?anim=true">Connectez-vous</a>
+      <a href="/desks?anim=true">Connectez-vous</a>
       <% else  %>
         <%= link_to "Enregistrez-vous", new_user_session_path %>
       <% end %>
