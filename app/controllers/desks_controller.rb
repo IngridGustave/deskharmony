@@ -39,6 +39,7 @@ class DesksController < ApplicationController
     @chatroom = Chatroom.find_by(name: "1")
     @message = Message.new
 
+
 # variable calendrier + recherche calendrier
     @start_of_last_week = Date.today.prev_week.beginning_of_week
     @end_of_last_week = Date.today.prev_week.end_of_week
