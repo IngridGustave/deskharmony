@@ -1,3 +1,20 @@
-.users {
+.users-design{
   margin-top: 250px;
+  background-color: rgba(255,255,255,0.3)!important;
+  padding: 16px!important;
+}
+.users-table {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 16px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.users-thead th:nth-child(1) {
+  width: 20%;
+  border-bottom: 1px solid white;
+  opacity: 0.7;
 }

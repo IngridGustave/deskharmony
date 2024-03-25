@@ -84,14 +84,14 @@
 }
 
 .desk_book{
- position: absolute;
- top:-20px;
- left:20px;
- background-color: $sky;
- color: white;
- font-size: 18px;
- font-weight: 600;
- padding:0 16px;
+  position: absolute;
+  top:-20px;
+  left:20px;
+  background-color: $sky;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding:0 16px;
 }
 
 .bureau-level{
@@ -109,7 +109,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2px;
- width:100%;
+  width:100%;
     height:100%;
     padding: 16px ;
   }
@@ -172,7 +172,7 @@
   position: relative;
   width: 70%;
   margin-bottom: 75px;
-   background-color: rgba(255,255,255,0.3)!important;
+  background-color: rgba(255,255,255,0.3)!important;
 
 }
 
@@ -233,8 +233,8 @@ svg{
   display: flex;
   row-gap: 32px;
   justify-content: space-between;
-   min-height:300px;
-   margin-bottom: 100px;
+  min-height:300px;
+  margin-bottom: 100px;
 }
 
 .chatroom {
@@ -245,17 +245,34 @@ svg{
   }
 
   &__subscription {
-    padding: 16px;
+    position: relative;
+    padding: 1rem 0 3rem 0;
     height: 100%;
-    overflow-y: scroll;
-
 
     .btn-purple {
-    --bs-btn-bg: rgb(168, 16, 161);
-    --bs-btn-border-color: rgb(168, 16, 161);
-    color: white;
+      --bs-btn-bg: rgb(168, 16, 161);
+      --bs-btn-border-color: rgb(168, 16, 161);
+      color: white;
     }
   }
+
+  &__messages {
+    height: 100%;
+    overflow-y: auto;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 1rem;
+  }
+
+
 }
 
 .calendar-container{
@@ -284,7 +301,7 @@ svg{
   background-size: 800px 800px;
   background-repeat: no-repeat;
 
-   filter: drop-shadow(0 -6mm 4mm rgb(255, 238, 89));
+  filter: drop-shadow(0 -6mm 4mm rgb(255, 238, 89));
   z-index: -1;
   opacity: 1;
 
@@ -306,6 +323,7 @@ svg{
 }
 
 .svginsertion{
+
  position:absolute;
  width:100%;
  height:100%;
@@ -327,8 +345,6 @@ foreignObject{
   z-index: 1000;
   position: relative;
   overflow: visible;
-
-
 }
 
 rect{
@@ -343,9 +359,9 @@ rect{
   min-width: 300px;
   background-color: $sky;
   border-radius: 16px;
-   padding: 24px;
-   border: 2px solid white;
-   z-index: 1000;
+  padding: 24px;
+  border: 2px solid white;
+  z-index: 1000;
 }
 
 .active{
@@ -367,15 +383,14 @@ rect{
 }
 
 .direct-book{
-   position: relative;
-   display: flex;
-   justify-content: start;
-   text-align: center;
-   gap:8px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  text-align: center;
+  gap:8px;
 
 
-
-   a{
+  a{
     position: relative;
     display: block;
     padding: 8px;
@@ -384,5 +399,5 @@ rect{
     font-weight: 300;
     text-decoration: none;
     border: 1px solid white;
-   }
+  }
 }
