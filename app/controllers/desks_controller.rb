@@ -11,6 +11,16 @@ class DesksController < ApplicationController
     end
   end
 
+  def weekcalendar
+    @date = Date.parse(params.fetch(:date, Date.today.to_s))- 1.week
+    @appointments_week = Appointment.where(user: current_user).where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
+    respond_to do |format|
+      format.html
+      format.text { render partial: "desks/week_calendar", locals: {appointments_week: @appointments_week}, formats: [:html] }
+    end
+  end
+
+
   def available
     nameDesk = params[:bureau];
     @desk = Desk.find_by(name: nameDesk );
