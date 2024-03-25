@@ -98,7 +98,7 @@
             data-controller="chatroom-subscription"
             data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
             data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-            <div data-chatroom-subscription-target="messages">
+            <div data-chatroom-subscription-target="messages" class="chatroom__messages">
               <% @chatroom.messages.each do |message| %>
                 <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
                   <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
@@ -108,7 +108,7 @@
               <% end %>
             </div>
             <%= simple_form_for [@chatroom, @message],
-              html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+              html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex chatroom__form" } do |f|
             %>
               <%= f.input :content,
                 label: false,

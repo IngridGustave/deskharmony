@@ -1,29 +1,40 @@
-<div class="container neon-effect users">
-  <h1 class="titre-level">Utilisateurs</h1>
-  <table >
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Fonction</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td>
-            <img class="avatar " src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            <%= user.first_name %>
-          </td>
-          <td>
-            <%= user.last_name %>
-          </td>
-          <td>
-            <%= user.job_title %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= render "shared/sidebar", desks: @desks %>
+<div class="container">
+  <div class="rightbluehalofeat"></div>
+  <div class="leftbluehalofeat"></div>
+  <div class="topbluehalo"></div>
+  <div class="team-banner">
+    <div class="container neon-effect">
+
+
+      <h1 class="titre-level">Utilisateurs</h1>
+      <table class="users-table">
+        <thead class="users-thead">
+          <tr>
+            <th><div class="card-users-title">Nom</div></th>
+            <th><div class="card-users-title">Prénom</div></th>
+            <th><div class="card-users-title">Fonction</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <div style="display: flex; align-items: center" class ="photo-profil">
+                <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
+                <%= user.first_name %>
+                </div>
+              </td>
+              <td>
+                <%= user.last_name %>
+              </td>
+              <td>
+                <%= user.job_title %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= render "shared/sidebar", desks: @desks %>
+    </div>
+  </div>
 </div>
