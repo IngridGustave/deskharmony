@@ -19,8 +19,8 @@
           </li>
 
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png", class: "avatar", alt: "dropdown menu" %>
+          <a href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center" class ="photo-profil">
+            <%= cl_image_tag current_user.photo.key, width: 100, height: 100, crop: :fill, class: "photo-profil", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
