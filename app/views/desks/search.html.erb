@@ -11,12 +11,12 @@
 
 <div class="search neon-effect">
 <form action="" class="form-search" data-action="submit->search#clear">
-  <div class="input_search">
-      <%= form_with url: desks_path, method: :get, class: "input-search" do %>
+  <div class="input-search">
+      <%= form_with url: teams_path, method: :get, class: "search-input" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Bureau recherché",
+          placeholder: "Rechercher un collègue",
           data: {action: "input->search#clear"},
           style: "border-radius: 16px"
         %>
@@ -26,22 +26,24 @@
       </form>
 </div>
 
-<div class="title">
-  <p><span class="blue-title">Bureaux</span></p>
-</div>
-
 <div class="container">
   <div class="cards-appointments">
-    <% @search_desks.each do |desk| %>
+    <% @users.each do |user| %>
 
           <div class="card-appointments neon-effect">
-          <div class="card-desks">
-            <p class="card-desk clickable"><b><%= "Bureau n°#{desk.name}"%></b></p>
+          <div class="card-desks" data-controller="search" data-action="click->search#open" data-id=<%= user.id %> >
+                      <div style="display: flex; align-items: center" class ="photo-profil clickable">
+                      <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
+                      <%= "#{user.first_name}" %>
+                      <br>
+                      <%= "#{user.last_name}"  %>
+                      </div>
           </div>
           </div>
     <% end %>
   </div>
 </div>
-  <%= render "shared/sidebar", desks: @desks %>
+<%= render "shared/sidebar", desks: @desks %>
+
 </div>
 </div>
