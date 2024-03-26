@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :desks do
     collection do
       get :weekcalendar
+      get :previousweekcalendar
       get :available
     end
   end
