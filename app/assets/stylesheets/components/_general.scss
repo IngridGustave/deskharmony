@@ -55,10 +55,15 @@ body{
 }
 
 .photo-profil{
-  & > img {
-    border-radius: 50%;
+    & > img {
+      border-radius: 50%;
+      margin-right: 50px;
+    }
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
-}
+
 
 
 .purple{
@@ -66,6 +71,8 @@ body{
 }
 
 
+
 .neon-effect-orange{
   box-shadow: 0 0 30px 8px rgb(255, 72, 0)!important;
+
 }

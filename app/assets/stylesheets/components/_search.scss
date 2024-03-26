@@ -1,0 +1,8 @@
+.nav-item.dropright.searchicon {
+  position: relative;
+  width: 200px; /* Élargit l'élément li à 200px */
+  right: 0; /* Positionne l'élément li à droite de son parent le plus proche positionné */
+}
+.search-input{
+  display:none;
+}

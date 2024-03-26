@@ -10,7 +10,7 @@
 
 
   <div class="button-calendar">
-        <%= link_to "<<", desks_path(date: @date - 1.week), data:{action: "click->week-calendar#nextWeek", week_calendar_target: "date", date: @date} %>
+        <%= link_to "<<", desks_path(date: @date - 1.week), data:{action: "click->week-calendar#previousWeek", week_calendar_target: "date", date: @date} %>
       <%= link_to ">>", desks_path(date: @date + 1.week), data:{action: "click->week-calendar#nextWeek", week_calendar_target: "date", date: @date} %>
   </div>
 
@@ -20,20 +20,23 @@
         <table>
           <thead>
           <tr>
-            <th class="<%= "bg-white-transparent" if Date.today.monday? %>"><div class="card-weekday">Lundi</div></th>
-            <th class="<%= "bg-white-transparent" if Date.today.tuesday? %>"><div class="card-weekday">Mardi</div></th>
-            <th class="<%= "bg-white-transparent" if Date.today.wednesday? %>"><div class="card-weekday">Mercredi</div></th>
-            <th class="<%= "bg-white-transparent" if Date.today.thursday? %>"><div class="card-weekday">Jeudi</div></th>
-            <th class="<%= "bg-white-transparent" if Date.today.friday? %>"><div class="card-weekday">Vendredi</div></th>
+            <th><div class="card-weekday">Lundi</div></th>
+            <th><div class="card-weekday">Mardi</div></th>
+            <th><div class="card-weekday">Mercredi</div></th>
+            <th><div class="card-weekday">Jeudi</div></th>
+            <th><div class="card-weekday">Vendredi</div></th>
+            <th><div class="card-weekday">Samedi</div></th>
+            <th><div class="card-weekday">Dimanche</div></th>
           </tr>
           </thead>
           <tbody>
             <tr>
-              <% @date.all_week.to_a.reject { |date| date.saturday? || date.sunday? }.each do |day| %>
+              <% @date.all_week.to_a.reject.each do |day| %>
                 <td class="<%= "bg-white-transparent" if day == Date.today %>">
                   <% @appointments_week.where(start_at: day.all_day).each do |appointment_week| %>
-                    <div data-action="click->week-calendar#open" data-id= "<%= appointment_week.id %>"data-bureau ="<%= appointment_week.desk.id %>" class="rounded-pill bg-purple text-center mb-2 p-2 clickable">
-                      <%= "Bureau n°#{appointment_week.desk.name} Etage n°#{appointment_week.desk.level}" %>
+                    <div data-action="click->week-calendar#open" data-id= "<%= appointment_week.id %>"data-bureau ="<%= appointment_week.desk.id %>" class="card-weekday-purple clickable">
+                      <%= "Bureau n°#{appointment_week.desk.name}" %><br>
+                      <%= "Etage n°#{appointment_week.desk.level}" %>
                       <% appointment_week.id %>
                        <%# <%= link_to "Plus d'information", appointment_path(appointment_week), class:"button-pink btn-center" %>
                       <%# <p><i class="bi bi-trash d-none"></i></p> %>

@@ -139,8 +139,18 @@
   background-color: white;
   text-align: center;
   justify-content: center;
-  padding: 8px;
+  padding: 4px;
   margin-bottom: 0px;
+}
+
+.card-weekday-purple{
+  border-radius: 16px;
+  text-align: center;
+  justify-content: center;
+  padding: 6px;
+  margin-bottom: 0px;
+  background-color: rgb(178, 67, 187);
+  color: white;
 }
 
 .card-search{

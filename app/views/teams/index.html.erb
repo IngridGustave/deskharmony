@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="rightbluehalofeat"></div>
   <div class="leftbluehalofeat"></div>
@@ -10,14 +9,13 @@
     </div>
   </div>
 
-<div class="team-design neon-effect">
+<div class="team-design neon-effect" data-controller="teams">
           <table class="team-table">
           <thead class ="team-thead">
           <tr>
             <th><div class="card-team-title">Nom</div></th>
             <th><div class="card-team-title">Rôle</div></th>
             <th><div class="card-team-title">Emplacement du jour</div></th>
-            <th><div class="card-team-title">Prochaines réservations</div></th>
           </tr>
           </thead>
           <tbody>
@@ -25,21 +23,21 @@
                 <tr>
                     <td class="team-text">
                       <div style="display: flex; align-items: center" class ="photo-profil">
-                      <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
-                      <%= "#{user.first_name}" %>
-                      <%= "#{user.last_name}"  %>
+                      <%= cl_image_tag user.photo.key, width: 70, height: 70, crop: :fill, class: 'clickable', data: { action: "click->teams#openProfile", id: user.id } %>
+                      <%= "#{user.first_name} #{user.last_name}" %>
                       </div>
                     </td>
                     <td class="team-text"><%= "#{user.job_title}" %></td>
-                    <td class="team-text">
+                    <td class="team-text clickable">
                       <% user.appointments.pluck(:id).each do |appointment_id| %>
                         <% appointment = Appointment.find(appointment_id) %>
-                        <% if appointment.start_at.to_date == Date.today - 1 %>
+                        <% if appointment.start_at.to_date == Date.today %>
+                          <div data-action="click->teams#openDesk" data-id=<%=appointment.desk.name %>>
                             <%= "Bureau n°#{appointment.desk.name}" %>
+                          </div>
                         <% end %>
                       <% end  %>
                     </td>
-                    <td class="team-text">Voir son profil</td>
                 </tr>
                 <% end %>
           </tbody>

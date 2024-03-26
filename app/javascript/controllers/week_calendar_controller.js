@@ -42,7 +42,8 @@ export default class extends Controller {
     event.preventDefault();
     console.log("previous week")
     const dateParam = this.dateTarget.dataset.date
-    const url =  "/desks/weekcalendar?date=" + dateParam.replace(/"/g, '')
+    const url =  "/desks/previousweekcalendar?date=" + dateParam.replace(/"/g, '')
+    console.log(url)
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/plain" },
