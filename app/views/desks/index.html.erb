@@ -19,6 +19,9 @@
       <p>Votre <span class="blue-title">dashboard</span></p>
     </div>
     <div class="search neon-effect">
+         <svg  class= "calendar-svg" width="100%" height="100%"  fill="none" xmlns="http://www.w3.org/2000/svg">%%
+        <rect width="100%" height="100%" rx="16" />
+    </svg>
       <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" }  do |f| %>
           <%= f.input :start_at,
             as: :string,

@@ -109,6 +109,9 @@ export default class extends Controller {
           }, 2000);
 
           setTimeout(() => {
+            const searchSvg = document.querySelector('.search');
+            searchSvg.classList.add('neon-effect');
+            searchSvg.classList.add('neon-effect-anim')
             const calendarSvg = document.querySelector('.calendar-design');
             const calendarblock = document.querySelector('.calendar-block');
             calendarSvg.classList.add('neon-effect');
@@ -120,6 +123,8 @@ export default class extends Controller {
             strokeCalendar.style.strokeWidth = 0;
             calendarblock.style.opacity = 1;
             const strokeLevel = document.querySelector('.svg-niveau rect');
+            const search = document.querySelector('.search form');
+            search.style.opacity = 1;
 
             strokeLevel.style.strokeWidth = 0;
             containerSvg.dataset.first = "anim";
@@ -238,6 +243,7 @@ export default class extends Controller {
   }
 
   _StrokeAnim() {
+    const searchSvg = document.querySelector('.search.neon-effect');
     const containerSvg = document.querySelector('.container-svg.neon-effect');
     const calendarSvg = document.querySelector('.calendar-design.neon-effect');
     const chatroomSvg = document.querySelector('.chatroom__container.neon-effect');
@@ -248,8 +254,9 @@ export default class extends Controller {
       const niveauSvgAnim = document.querySelector('.sidebar');
       sidebar.classList.add('anim-sidebar');
       const levelUl = document.querySelector('.bureau-level ul');
-      console.log(levelUl)
       levelUl.style.opacity = 0;
+      const search = document.querySelector('.search form');
+      search.style.opacity = 0;
       const titres = document.querySelectorAll('.titre-level');
       titres.forEach((titre) => {
         titre.style.opacity = 0;
@@ -263,6 +270,7 @@ export default class extends Controller {
       containerSvg.classList.remove('neon-effect');
       calendarSvg.classList.remove('neon-effect');
       chatroomSvg.classList.remove('neon-effect');
+      searchSvg.classList.remove('neon-effect');
       calendarblock.style.opacity = 0;
 
 
