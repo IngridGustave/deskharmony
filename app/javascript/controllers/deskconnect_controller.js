@@ -119,8 +119,12 @@ export default class extends Controller {
             const chatroomSvg = document.querySelector('.chatroom__container');
             chatroomSvg.classList.add('neon-effect');
             chatroomSvg.classList.add('neon-effect-anim');
-            const strokeCalendar = document.querySelector('.calendar-svg rect');
-            strokeCalendar.style.strokeWidth = 0;
+            const strokesCalendar = document.querySelectorAll('.calendar-svg rect');
+            strokesCalendar.forEach((stroke) => {
+              stroke.style.strokeWidth = 0;
+            })
+
+
             calendarblock.style.opacity = 1;
             const strokeLevel = document.querySelector('.svg-niveau rect');
             const search = document.querySelector('.search form');
@@ -151,6 +155,11 @@ export default class extends Controller {
 
 
         } else {
+
+          const strokesCalendar = document.querySelectorAll('.calendar-svg rect');
+          strokesCalendar.forEach((stroke) => {
+            stroke.style.strokeWidth = 0;
+          })
           this.levelTarget.innerHTML = data;
           this._fetchSvg(url);
         }
