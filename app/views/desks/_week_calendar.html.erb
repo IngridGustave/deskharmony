@@ -18,7 +18,7 @@
   </div>
 
 
-    <p class="current-week">Semaine du <%= @date.beginning_of_week.strftime('%d/%m/%Y') %> au <%= (@date.beginning_of_week + 4.days).strftime('%d/%m/%Y') %></p>
+    <p class="current-week">Semaine du <%= @date.beginning_of_week.strftime('%d/%m/%Y') %> au <%= (@date.end_of_week ).strftime('%d/%m/%Y') %></p>
 
         <table>
           <thead>

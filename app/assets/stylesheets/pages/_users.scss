@@ -48,10 +48,13 @@
   flex-direction: column;
 }
 
-.card-desks{
+.card-users-show{
   background-color: rgba($color: #ffffff, $alpha: 0.3);
   border-radius: 8px;
   margin: 4px;
   font-weight: bold;
   padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

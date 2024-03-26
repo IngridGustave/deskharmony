@@ -44,6 +44,7 @@ class DesksController < ApplicationController
 
 
   def index
+    @teamsusers = User.all
     @desks = Desk.all
     @appointment = Appointment.new
     @chatroom = Chatroom.find_by(name: "1")

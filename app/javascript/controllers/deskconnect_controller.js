@@ -63,9 +63,13 @@ export default class extends Controller {
             desk_drawing.style.fill = "#00D0DD"
             this.infoNiveauTarget.innerText = `Niveau ${desk.level}`;
             if (this.start_dateTarget.value) {
-              this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value}`;
+              const arrayDate = this.start_dateTarget.value.split('-');
+
+              this.infoDispoTarget.innerText = `${arrayDate[2]}/${arrayDate[1]}/${arrayDate[0]}`;
+
+              console.log(this.start_dateTarget.value);
             } else {
-              this.infoDispoTarget.innerText = "disponibilité actuel"
+              this.infoDispoTarget.innerText = "disponibilité actuelle"
 
             }
 
@@ -119,10 +123,7 @@ export default class extends Controller {
             const chatroomSvg = document.querySelector('.chatroom__container');
             chatroomSvg.classList.add('neon-effect');
             chatroomSvg.classList.add('neon-effect-anim');
-            const strokesCalendar = document.querySelectorAll('.calendar-svg rect');
-            strokesCalendar.forEach((stroke) => {
-              stroke.style.strokeWidth = 0;
-            })
+
 
 
             calendarblock.style.opacity = 1;
@@ -135,6 +136,10 @@ export default class extends Controller {
             this.levelTarget.classList.remove('svg-anim');
             containerSvg.classList.add('neon-effect');
             containerSvg.classList.add('neon-effect-anim');
+            const strokesCalendar = document.querySelectorAll('.calendar-svg ');
+            strokesCalendar.forEach((stroke) => {
+              stroke.remove();
+            })
 
             const titres = document.querySelectorAll('.titre-level');
             titres.forEach((titre) => {
@@ -155,9 +160,9 @@ export default class extends Controller {
 
         } else {
 
-          const strokesCalendar = document.querySelectorAll('.calendar-svg rect');
+          const strokesCalendar = document.querySelectorAll('.calendar-svg ');
           strokesCalendar.forEach((stroke) => {
-            stroke.style.strokeWidth = 0;
+            stroke.remove();
           })
           this.levelTarget.innerHTML = data;
           this._fetchSvg(url);

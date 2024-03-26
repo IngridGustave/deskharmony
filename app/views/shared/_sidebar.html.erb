@@ -46,8 +46,22 @@
           </div>
         </div>
       </li>
-      <li>
-        <%= link_to "", "/search", class: "fa-solid fa-magnifying-glass fa-xl" %>
+      <li class= "search-btn" data-controller="search-bar" data-action= "click->search-bar#display">
+        <%= link_to "", "", class: "fa-solid fa-magnifying-glass fa-xl"  %>
+        <div class="nav-search-form neon-effect" data-search-bar-target="searchForm">
+              <div class="input-search">
+              <%= form_with url: search_path, method: :get, class: "search-input" do %>
+                 <%= text_field_tag :query,
+                     params[:query],
+                     class: "form-control",
+                     placeholder: "Rechercher un collègue",
+                     style: "border-radius: 16px"
+                 %>
+
+             <%= submit_tag "Rechercher", name: "", class: "btn-sky" %>
+         <% end %>
+      </form>
+        </div>
       </li>
     </ul>
   </div>
