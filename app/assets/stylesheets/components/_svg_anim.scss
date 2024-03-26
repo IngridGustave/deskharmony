@@ -119,7 +119,7 @@ svg rect[width="13"] {
 
 }
 
-.calendar-svg rect[height="100%"]:not([fill="none"]){
+.calendar-svg rect{
   fill: transparent;
   stroke-width: 1;
   stroke: white;
