@@ -147,7 +147,6 @@ export default class extends Controller {
             const level = document.querySelector('.bureau-level');
             level.classList.add('neon-effect');
             level.classList.add('neon-effect-anim');
-
             this.levelTarget.innerHTML = data;
             this._fetchSvg(url);
           }, 3500);
