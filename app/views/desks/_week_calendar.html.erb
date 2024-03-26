@@ -1,7 +1,10 @@
 <div class="calendar-design neon-effect">
+   <svg  class= "calendar-svg" width="100%" height="100%"  fill="none" xmlns="http://www.w3.org/2000/svg">%%
+            <rect width="100%" height="100%" rx="16" />
+           </svg>
   <h1 class="titre-level">Calendrier</h1>
 
-  <div data-controller="week-calendar">
+  <div class="calendar-block" data-controller="week-calendar">
   <div data-week-calendar-target="dialog">
     <P>Do you want to delete this appointment?</h1>
     <button data-action="click->week-calendar#close">No</button>

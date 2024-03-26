@@ -7,24 +7,8 @@ window.Swal = Swal;
 export default class extends Controller {
   static targets = ['formModal', 'link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level", "levelid", "desk_book"]
   connect() {
-
-    const containerSvg = document.querySelector('.container-svg.neon-effect');
-    console.log(containerSvg.dataset.first)
-    const queryString = window.location.search;
-    if (queryString == "?anim=true" && !containerSvg.dataset.first) {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.add('anim-sidebar');
-      const containerSvg = document.querySelector('.container-svg.neon-effect');
-      console.log(containerSvg)
-      const titre = document.querySelector('.titre-level');
-      const info = document.querySelector('.bureau-information');
-      titre.style.opacity = 0;
-      info.style.opacity = 0;
-      containerSvg.classList.remove('neon-effect');
-    }
-    const url = '/desks'
-    const level = 1
-    this.loadingLevel({ url: url, level: level });
+    this._StrokeAnim();
+    this.loadingLevel({ url: '/desks', level: 1 });
   }
 
   form(e) {
@@ -125,14 +109,32 @@ export default class extends Controller {
           }, 2000);
 
           setTimeout(() => {
-
+            const calendarSvg = document.querySelector('.calendar-design');
+            const calendarblock = document.querySelector('.calendar-block');
+            calendarSvg.classList.add('neon-effect');
+            calendarSvg.classList.add('neon-effect-anim');
+            const strokeCalendar = document.querySelector('.calendar-svg');
+            strokeCalendar.style.strokeWidth = 0;
+            calendarblock.style.opacity = 1;
+            const strokeLevel = document.querySelector('.svg-niveau rect');
+            console.log(strokeLevel);
+            strokeLevel.style.strokeWidth = 0;
             containerSvg.dataset.first = "anim";
             this.levelTarget.classList.remove('svg-anim');
             containerSvg.classList.add('neon-effect');
-            const titre = document.querySelector('.titre-level');
+            containerSvg.classList.add('neon-effect-anim');
+
+            const titres = document.querySelectorAll('.titre-level');
+            titres.forEach((titre) => {
+              titre.style.opacity = 1;
+            })
             const info = document.querySelector('.bureau-information');
-            titre.style.opacity = 1;
             info.style.opacity = 1;
+            const levelUl = document.querySelector('.bureau-level ul');
+            levelUl.style.opacity = 1;
+            const level = document.querySelector('.bureau-level');
+            level.classList.add('neon-effect');
+            level.classList.add('neon-effect-anim');
 
             this.levelTarget.innerHTML = data;
             this._fetchSvg(url);
@@ -189,7 +191,6 @@ export default class extends Controller {
     const form = e.target.parentNode;
     const input = form.querySelector('input[name="appointment[start_at]"');
     this.start_dateTarget.value = input.value;
-
     const url = this.formModalTarget.action;
 
     Swal.fire({
@@ -233,17 +234,33 @@ export default class extends Controller {
 
   }
 
-  _clearStroke() {
+  _StrokeAnim() {
+    const containerSvg = document.querySelector('.container-svg.neon-effect');
+    const calendarSvg = document.querySelector('.calendar-design.neon-effect');
+    const calendarblock = document.querySelector('.calendar-block');
     const queryString = window.location.search;
-    console.log(queryString);
-    if (queryString != "?anim=true") {
-      const svg = document.querySelectorAll('rect');
-      document.querySelector('path').style.strokeWidth = 0;
-      console.log("boucle");
-      svg.forEach((item) => {
-        item.style.strokeWidth = 0;
-
+    if (queryString == "?anim=true" && !containerSvg.dataset.first) {
+      const sidebar = document.querySelector('.sidebar');
+      const niveauSvgAnim = document.querySelector('.sidebar');
+      sidebar.classList.add('anim-sidebar');
+      const levelUl = document.querySelector('.bureau-level ul');
+      console.log(levelUl)
+      levelUl.style.opacity = 0;
+      const titres = document.querySelectorAll('.titre-level');
+      titres.forEach((titre) => {
+        titre.style.opacity = 0;
       })
+
+      const info = document.querySelector('.bureau-information');
+      info.style.opacity = 0;
+      const level = document.querySelector('.bureau-level');
+      level.classList.remove('neon-effect');
+
+      containerSvg.classList.remove('neon-effect');
+      calendarSvg.classList.remove('neon-effect');
+      calendarblock.style.opacity = 0;
+
+
     }
   }
 
