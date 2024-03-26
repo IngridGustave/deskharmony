@@ -173,7 +173,10 @@ export default class extends Controller {
         data = data.replaceAll("&gt;", ">")
         data = data.replaceAll("&#39", "'")
         data = data.replaceAll(";", "")
+        console.log(data);
+        console.log(this.levelTarget)
         this.levelTarget.innerHTML = data;
+
         this._fetchSvg('/desks');
       })
   }

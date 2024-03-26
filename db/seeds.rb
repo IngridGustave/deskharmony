@@ -233,44 +233,118 @@ Level.create!(name: "2", svg:
 <rect x='315' y='230' width='8' height='33' fill='#D9D9D9'/>
 <rect y='255' width='319' height='8' fill='#D9D9D9'/>
 <rect x='461' y='251' width='277' height='8' fill='#D9D9D9'/>
-<rect x='426' y='53.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='20' data-action='click->deskconnect#book'/>
-<rect x='496' y='53.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='21' data-action='click->deskconnect#book'/>
-<rect x='566' y='53.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='22' data-action='click->deskconnect#book'/>
+<rect x='426' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='20' data-action='click->deskconnect#book'/>
+<rect x='496' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='21' data-action='click->deskconnect#book'/>
+<rect x='566' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='22' data-action='click->deskconnect#book'/>
 <rect x='452' y='42.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 452 42.0677)' fill='#D9D9D9'/>
 <rect x='588' y='39.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 588 39.0677)' fill='#D9D9D9'/>
-<rect x='636' y='53.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='23' data-action='click->deskconnect#book'/>
+<rect x='636' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='23' data-action='click->deskconnect#book'/>
 <rect x='658' y='39.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 658 39.0677)' fill='#D9D9D9'/>
 <rect x='518' y='41.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 518 41.0677)' fill='#D9D9D9'/>
-<rect x='496' y='164' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='24' data-action='click->deskconnect#book'/>
-<rect x='566' y='164' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='25' data-action='click->deskconnect#book'/>
+<rect x='496' y='164' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='24' data-action='click->deskconnect#book'/>
+<rect x='566' y='164' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='25' data-action='click->deskconnect#book'/>
 <rect x='588' y='149.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 588 149.068)' fill='#D9D9D9'/>
-<rect x='636' y='164' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='26' data-action='click->deskconnect#book'/>
+<rect x='636' y='164' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='26' data-action='click->deskconnect#book'/>
 <rect x='658' y='149.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 658 149.068)' fill='#D9D9D9'/>
 <rect x='518' y='151.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 518 151.068)' fill='#D9D9D9'/>
-<rect x='66' y='48.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='27' data-action='click->deskconnect#book'/>
-<rect x='136' y='48.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='28' data-action='click->deskconnect#book'/>
-<rect x='206' y='48.9999' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='29' data-action='click->deskconnect#book'/>
+<rect x='66' y='48.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='27' data-action='click->deskconnect#book'/>
+<rect x='136' y='48.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='28' data-action='click->deskconnect#book'/>
+<rect x='206' y='48.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='29' data-action='click->deskconnect#book'/>
 <rect x='92' y='37.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 92 37.0677)' fill='#D9D9D9'/>
 <rect x='228' y='34.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 228 34.0677)' fill='#D9D9D9'/>
 <rect x='158' y='36.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 158 36.0677)' fill='#D9D9D9'/>
-<rect x='67' y='153' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='30' data-action='click->deskconnect#book'/>
-<rect x='137' y='153' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='31' data-action='click->deskconnect#book'/>
-<rect x='207' y='153' width='65.49' height='46.34' rx='16' fill='#D9D9D9' data-bureau='32' data-action='click->deskconnect#book'/>
+<rect x='67' y='153' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='30' data-action='click->deskconnect#book'/>
+<rect x='137' y='153' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='31' data-action='click->deskconnect#book'/>
+<rect x='207' y='153' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='32' data-action='click->deskconnect#book'/>
 <rect x='93' y='141.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 93 141.068)' fill='#D9D9D9'/>
 <rect x='229' y='138.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 229 138.068)' fill='#D9D9D9'/>
 <rect x='159' y='140.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 159 140.068)' fill='#D9D9D9'/>
-<rect x='54' y='358' width='46.34' height='65.49' rx='16' fill='#D9D9D9' data-bureau='33' data-action='click->deskconnect#book'/>
+<rect x='54' y='358' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='33' data-action='click->deskconnect#book'/>
 <rect x='17' y='402.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 17 402.068)' fill='#D9D9D9'/>
-<rect x='54' y='284' width='46.34' height='65.49' rx='16' fill='#D9D9D9' data-bureau='34' data-action='click->deskconnect#book'/>
+<rect x='54' y='284' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='34' data-action='click->deskconnect#book'/>
 <rect x='17' y='328.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 17 328.068)' fill='#D9D9D9'/>
-<rect x='166' y='362' width='46.34' height='65.49' rx='16' fill='#D9D9D9' data-bureau='35' data-action='click->deskconnect#book'/>
+<rect x='166' y='362' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='35' data-action='click->deskconnect#book'/>
 <rect x='129' y='406.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 129 406.068)' fill='#D9D9D9'/>
-<rect x='166' y='288' width='46.34' height='65.49' rx='16' fill='#D9D9D9' data-bureau='36' data-action='click->deskconnect#book'/>
+<rect x='166' y='288' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='36' data-action='click->deskconnect#book'/>
 <rect x='129' y='332.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 129 332.068)' fill='#D9D9D9'/>
-<rect x='273' y='362' width='46.34' height='65.49' rx='16' fill='#D9D9D9' data-bureau='37' data-action='click->deskconnect#book'/>
+<rect x='273' y='362' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='37' data-action='click->deskconnect#book'/>
 <rect x='236' y='406.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 236 406.068)' fill='#D9D9D9'/>
-<rect x='273' y='288' width='46.34' height='65.49' rx='16' fill='#D9D9D9' data-bureau='38' data-action='click->deskconnect#book'/>
+<rect x='273' y='288' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='38' data-action='click->deskconnect#book'/>
 <rect x='236' y='332.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 236 332.068)' fill='#D9D9D9'/>
+<foreignObject x='426' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='20' data-position='right' > 20 </div>
+</foreignObject>
+<foreignObject x='496' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='21' data-position='right' > 21 </div>
+</foreignObject>
+<foreignObject x='566' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='22' data-position='right' > 22 </div>
+</foreignObject>
+
+<foreignObject x='636' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='23' data-position='right' > 23 </div>
+</foreignObject>
+
+<foreignObject x='496' y='164' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='24' data-position='right' > 24 </div>
+</foreignObject>
+
+<foreignObject x='566' y='164' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='25' data-position='right' > 25 </div>
+</foreignObject>
+
+<foreignObject x='636' y='164' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='26' data-position='right' > 26 </div>
+</foreignObject>
+
+<foreignObject x='66' y='48.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='27' data-position='right' > 27 </div>
+</foreignObject>
+
+<foreignObject x='136' y='48.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='28' data-position='right' > 28 </div>
+</foreignObject>
+
+<foreignObject x='206' y='48.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='29' data-position='right' > 29 </div>
+</foreignObject>
+
+<foreignObject x='67' y='153' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='30' data-position='right' > 30 </div>
+</foreignObject>
+
+<foreignObject x='137' y='153' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='31' data-position='right' > 31 </div>
+</foreignObject>
+
+<foreignObject x='207' y='153' width='65.49' height='46.34' >
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='32' data-position='right' > 32 </div>
+</foreignObject>
+
+<foreignObject x='54' y='358' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='33' data-position='right' > 33 </div>
+</foreignObject>
+
+<foreignObject x='54' y='284' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='34' data-position='right' > 34 </div>
+</foreignObject>
+
+<foreignObject x='166' y='362' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='35' data-position='right' > 35 </div>
+</foreignObject>
+
+<foreignObject x='166' y='288' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='36' data-position='right' > 36 </div>
+</foreignObject>
+
+<foreignObject x='273' y='362' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='37' data-position='right' > 37 </div>
+</foreignObject>
+
+<foreignObject x='273' y='288' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='38' data-position='right' > 38 </div>
+</foreignObject>
+
 </svg>"
 );
 
