@@ -31,7 +31,6 @@ export default class extends Controller {
     }).then((result) => {
       if (result.isConfirmed) {
         const url = this.formTarget.action;
-        console.log(this.formTarget.action);
         fetch("/appointments", {
           method: "POST",
           headers: { "Accept": "text/plain" },
