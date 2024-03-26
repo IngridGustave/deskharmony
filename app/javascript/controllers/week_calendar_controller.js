@@ -43,6 +43,7 @@ export default class extends Controller {
     console.log("previous week")
     const dateParam = this.dateTarget.dataset.date
     const url =  "/desks/previousweekcalendar?date=" + dateParam.replace(/"/g, '')
+    console.log(url)
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/plain" },
