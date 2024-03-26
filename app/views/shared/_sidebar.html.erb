@@ -1,9 +1,11 @@
 <div class="sidebar " data-controller="sousmenu">
     <ul>
-        <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
-        <div style="display: flex; align-items: center" class ="photo-sidebar">
-          <%= cl_image_tag current_user.photo.key, width: 100, height: 100, crop: :fill %>
-        <% end %></div>
+      <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
+        <li>
+          <img class="avatar" src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png" />
+          <%= link_to "", user_path(current_user), class: "avatar" %> <!-- Utilise current_user au lieu de user -->
+        </li>
+      <% end %>
       <li>
         <%= link_to "", desks_path, class: "fa-solid fa-house fa-xl" %>
       </li>
