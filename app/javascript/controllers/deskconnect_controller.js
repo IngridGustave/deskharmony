@@ -113,11 +113,14 @@ export default class extends Controller {
             const calendarblock = document.querySelector('.calendar-block');
             calendarSvg.classList.add('neon-effect');
             calendarSvg.classList.add('neon-effect-anim');
-            const strokeCalendar = document.querySelector('.calendar-svg');
+            const chatroomSvg = document.querySelector('.chatroom__container');
+            chatroomSvg.classList.add('neon-effect');
+            chatroomSvg.classList.add('neon-effect-anim');
+            const strokeCalendar = document.querySelector('.calendar-svg rect');
             strokeCalendar.style.strokeWidth = 0;
             calendarblock.style.opacity = 1;
             const strokeLevel = document.querySelector('.svg-niveau rect');
-            console.log(strokeLevel);
+
             strokeLevel.style.strokeWidth = 0;
             containerSvg.dataset.first = "anim";
             this.levelTarget.classList.remove('svg-anim');
@@ -237,6 +240,7 @@ export default class extends Controller {
   _StrokeAnim() {
     const containerSvg = document.querySelector('.container-svg.neon-effect');
     const calendarSvg = document.querySelector('.calendar-design.neon-effect');
+    const chatroomSvg = document.querySelector('.chatroom__container.neon-effect');
     const calendarblock = document.querySelector('.calendar-block');
     const queryString = window.location.search;
     if (queryString == "?anim=true" && !containerSvg.dataset.first) {
@@ -258,6 +262,7 @@ export default class extends Controller {
 
       containerSvg.classList.remove('neon-effect');
       calendarSvg.classList.remove('neon-effect');
+      chatroomSvg.classList.remove('neon-effect');
       calendarblock.style.opacity = 0;
 
 

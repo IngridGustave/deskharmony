@@ -1,3 +1,7 @@
+<div class="container-halo">
+      <div class="toprightbluehalo"></div>
+      <div class="pattern patternUser"></div>
+  </div>
 <div class="container">
   <div class="rightbluehalofeat"></div>
   <div class="leftbluehalofeat"></div>
@@ -12,9 +16,9 @@
         <%= cl_image_tag @user.photo.key, width: 100, height: 100, crop: :fill %>
       </div>
       <div>
-        <p class="users-content"><%= @user.first_name %> <%= @user.last_name %></p>
-        <p class="users-content"><%= @user.job_title %>
-        <p class="users-content"><%= @user.email %></p>
+        <p class="users-content"><span><%= @user.first_name %> <%= @user.last_name %></span></p>
+        <p class="users-content"><span><%= @user.job_title %></span></p>
+        <p class="users-content"><span><%= @user.email %></span></p>
       </div>
     </div>
     <div class="container">
