@@ -7,26 +7,29 @@ window.Swal = Swal;
 export default class extends Controller {
   static targets = ['formModal', 'link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level", "levelid", "desk_book"]
   connect() {
+
+    const containerSvg = document.querySelector('.container-svg.neon-effect');
+    console.log(containerSvg.dataset.first)
+    const queryString = window.location.search;
+    if (queryString == "?anim=true" && !containerSvg.dataset.first) {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.add('anim-sidebar');
+      const containerSvg = document.querySelector('.container-svg.neon-effect');
+      console.log(containerSvg)
+      const titre = document.querySelector('.titre-level');
+      const info = document.querySelector('.bureau-information');
+      titre.style.opacity = 0;
+      info.style.opacity = 0;
+      containerSvg.classList.remove('neon-effect');
+    }
     const url = '/desks'
     const level = 1
     this.loadingLevel({ url: url, level: level });
-
-    const queryString = window.location.search;
-    console.log(queryString);
-    if (queryString == "?anim=true") {
-      const svgContainer = document.querySelector('.container-svg.neon-effect')
-      svgContainer.classList.remove('neon-effect');
-      const divDispo = document.querySelector('.bureau-information')
-      divDispo.style.display = "none";
-      const titreLevel = document.querySelector('.titre-level')
-      titreLevel.style.display = "none";
-    }
   }
 
   form(e) {
     e.preventDefault();
     const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
-    console.log(url)
     const level = parseInt(this.infoNiveauTarget.textContent.charAt(this.infoNiveauTarget.textContent.length - 1));
     this.loadingLevel({ url: url, level: level });
   }
@@ -57,40 +60,17 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        const queryString = window.location.search;
-        console.log(queryString);
-        if (queryString == "?anim=true") {
-          console.log('oui');
-          const delay = setTimeout(() => {
-            this._addStyleToSvg(data);
-          }, 3000);
-        }
-        else {
-          console.log('non');
-          this._addStyleToSvg(data);
-        }
 
-
+        this._addStyleToSvg(data);
       })
+
+
+
+
   }
 
   _addStyleToSvg(data) {
-    const queryString = window.location.search;
-    if (queryString == "?anim=true") {
-      const svg = document.querySelector('.container-svg')
-      svg.classList.add('neon-effect');
-      const divDispo = document.querySelector('.bureau-information')
-      divDispo.style.display = "block";
-      const titreLevel = document.querySelector('.titre-level')
-      titreLevel.style.display = "block";
-      const svgrect = document.querySelectorAll('rect');
-      document.querySelector('path').style.strokeWidth = 0;
-      svgrect.forEach((item) => {
-        item.style.strokeWidth = 0;
-        item.style.fill = '#D9D9D9'
-      })
-    }
-    ;
+
     const desks_drawing = Array.from(document.querySelectorAll('rect[data-bureau]'));
     desks_drawing.forEach((desk_drawing) => {
       data.forEach((desk) => {
@@ -102,7 +82,7 @@ export default class extends Controller {
               this.infoDispoTarget.innerText = `de ${this.start_dateTarget.value}`;
             } else {
               this.infoDispoTarget.innerText = "disponibilité actuel"
-              this._clearStroke();
+
             }
 
           } else {
@@ -127,15 +107,62 @@ export default class extends Controller {
         data = data.replaceAll("&gt;", ">")
         data = data.replaceAll("&#39", "'")
         data = data.replaceAll(";", "")
-        this.levelTarget.innerHTML = data;
-        this._fetchSvg(url);
+        const queryString = window.location.search;
+        const containerSvg = document.querySelector('.container-svg');
+
+        if (queryString == "?anim=true" && !containerSvg.dataset.first) {
+          this.levelTarget.classList.add('svg-anim')
+          this.levelTarget.innerHTML = data;
+          const allRect = this.levelTarget.querySelectorAll("rect");
+          setTimeout(() => {
+            allRect.forEach((rect, index) => {
+              setTimeout(() => {
+                setInterval(() => {
+                  rect.style.fill = "white";
+                }, 200);
+              }, index * 20);
+            });
+          }, 2000);
+
+          setTimeout(() => {
+
+            containerSvg.dataset.first = "anim";
+            this.levelTarget.classList.remove('svg-anim');
+            containerSvg.classList.add('neon-effect');
+            const titre = document.querySelector('.titre-level');
+            const info = document.querySelector('.bureau-information');
+            titre.style.opacity = 1;
+            info.style.opacity = 1;
+
+            this.levelTarget.innerHTML = data;
+            this._fetchSvg(url);
+          }, 3500);
+
+
+
+        } else {
+          this.levelTarget.innerHTML = data;
+          this._fetchSvg(url);
+        }
+
       })
   }
 
   changeLevel(event) {
+    const containerSvg = document.querySelector('.container-svg.neon-effect');
+
     const url = `/desks?startdate=${this.start_dateTarget.value}`;
-    console.log(event.target.dataset.etage);
-    const url_level = '/desks?level=' + event.target.dataset.etage
+    const etage = event.target.dataset.etage
+    console.log(etage)
+    console.log(typeof (etage))
+
+    if (etage == "2") {
+      containerSvg.classList.add('neon-effect-orange');
+    }
+    else {
+      containerSvg.classList.remove('neon-effect-orange');
+    }
+    const url_level = '/desks?level=' + etage
     fetch(url_level, {
       method: "GET",
       headers: { "Accept": "text/plain" },
@@ -146,7 +173,10 @@ export default class extends Controller {
         data = data.replaceAll("&gt;", ">")
         data = data.replaceAll("&#39", "'")
         data = data.replaceAll(";", "")
+        console.log(data);
+        console.log(this.levelTarget)
         this.levelTarget.innerHTML = data;
+
         this._fetchSvg('/desks');
       })
   }
@@ -161,10 +191,7 @@ export default class extends Controller {
     this.start_dateTarget.value = input.value;
 
     const url = this.formModalTarget.action;
-    const foreignObjects = document.querySelectorAll("foreignObject");
-    foreignObjects.forEach((foreignObject) => {
-      foreignObject.style.display = "block";
-    })
+
     Swal.fire({
       title: 'Confirmer votre réservation?',
       text: "oui oui oui oui! je le veux",
@@ -192,7 +219,10 @@ export default class extends Controller {
             const url = `${this.formTarget.action}?startdate=${this.start_dateTarget.value}`;
             this._fetchSvg(url);
             parent.remove();
-
+            const foreignObjects = document.querySelectorAll("foreignObject");
+            foreignObjects.forEach((foreignObject) => {
+              foreignObject.style.display = "block";
+            })
 
 
           });

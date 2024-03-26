@@ -136,6 +136,14 @@
       }
 
   }
+
+   ul li:nth-child(2) p{
+    background-color:  rgb(255, 72, 0);
+   }
+
+      ul li:nth-child(2) .etage-shape{
+    background-color:  rgb(255, 72, 0);
+   }
 }
 
 .etage-shape{
@@ -332,6 +340,7 @@ svg{
  color: white;
  padding:8px;
  transition: all 0.3s;
+ border-radius: 8px;
 
 &:hover{
   background-color: purple;

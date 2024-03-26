@@ -140,12 +140,12 @@ Level.create!(name: "1", svg:
 <rect x='482.554' y='386.524' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
 <rect x='307.898' y='385.583' width='27.0086' height='28.2134' rx='8' fill='#D9D9D9'/>
 <rect x='545' y='6' width='13' height='438'  fill='#D9D9D9'/>
-<rect x='611.596' y='120' width='83.7268' height='59.2482' rx='8'' fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
-<rect x='642.206' y='50' width='28.2134' height='27.0086' rx='8' ' fill='#D9D9D9'/>
-<rect x='700.725' y='120' width='83.7268' height='59.2482' rx='8' ' fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>
-<rect x='731.334' y='50' width='28.2134' height='27.0086' rx='8' ' fill='#D9D9D9'/>
-<rect x='789.853' y='120' width='83.7268' height='59.2482' rx='8' ' fill='#D9D9D9' data-bureau='19' data-action='click->deskconnect#book'/>
-<rect x='820.463' y='50' width='28.2134' height='27.0086' rx='8' ' fill='#D9D9D9'/>
+<rect x='611.596' y='120' width='83.7268' height='59.2482' rx='8''fill='#D9D9D9' data-bureau='17' data-action='click->deskconnect#book'/>
+<rect x='642.206' y='50' width='28.2134' height='27.0086' rx='8'  fill='#D9D9D9'/>
+<rect x='700.725' y='120' width='83.7268' height='59.2482' rx='8'  fill='#D9D9D9' data-bureau='18' data-action='click->deskconnect#book'/>
+<rect x='731.334' y='50' width='28.2134' height='27.0086' rx='8'  fill='#D9D9D9'/>
+<rect x='789.853' y='120' width='83.7268' height='59.2482' rx='8' 'fill='#D9D9D9' data-bureau='19' data-action='click->deskconnect#book'/>
+<rect x='820.463' y='50' width='28.2134' height='27.0086' rx='8'  fill='#D9D9D9'/>
 <rect x='551.876' y='271.789' width='190.861' height='11.2854'  fill='#D9D9D9'/>
 <rect x='811.159' y='274.61' width='120' height='8.46402'  fill='#D9D9D9'/>
 <foreignObject x='90.0288' y='49.8437' width='56.7181' height='87.4615'>
@@ -227,51 +227,124 @@ Level.create!(name: "1", svg:
 "
 );
 Level.create!(name: "2", svg:
-  "
-<svg width='942' height='559' viewBox='0 0 942 559' fill='none'  xmlns='http://www.w3.org/2000/svg'>
-<path d='M2 10.0001C2 5.58178 5.58172 2.00006 10 2.00006H932.007C936.426 2.00006 940.007 5.58178 940.007 10.0001V548.864C940.007 553.282 936.426 556.864 932.007 556.864H9.99999C5.58171 556.864 2 553.282 2 548.864V10.0001Z' fill='white' fill-opacity='50%'/>
-<rect x='659.509' y='499.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 659.509 499.727)' fill='#D9D9D9' data-bureau='20' data-action='click->deskconnect#book'/>
-<rect x='585.214' y='469.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 585.214 469.117)' fill='#D9D9D9'/>
-<rect x='548.509' y='501.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 548.509 501.727)' fill='#D9D9D9' data-bureau='21' data-action='click->deskconnect#book'/>
-<rect x='474.214' y='471.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 474.214 471.117)' fill='#D9D9D9'/>
-<rect x='0.199463' y='22.6899' width='32.4104' height='504.079' rx='8' fill='#D9D9D9'/>
-<rect x='909.237' y='27.8077' width='32.4104' height='504.079' rx='8' fill='#D9D9D9'/>
-<rect y='34' width='34' height='942' rx='8' transform='rotate(-90 0 34)' fill='#D9D9D9'/>
-<rect y='559' width='34' height='938' rx='8' transform='rotate(-90 0 559)' fill='#D9D9D9'/>
-<rect x='168.509' y='260.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 260.727)' fill='#D9D9D9' data-bureau='22' data-action='click->deskconnect#book'/>
-<rect x='94.2134' y='230.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 230.117)' fill='#D9D9D9'/>
-<rect x='168.509' y='143.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 143.727)' fill='#D9D9D9' data-bureau='23' data-action='click->deskconnect#book'/>
-<rect x='94.2134' y='113.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 113.117)' fill='#D9D9D9'/>
-<rect x='168.509' y='498.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 498.727)' fill='#D9D9D9' data-bureau='24' data-action='click->deskconnect#book'/>
-<rect x='94.2134' y='468.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 468.117)' fill='#D9D9D9'/>
-<rect x='168.509' y='381.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 168.509 381.727)' fill='#D9D9D9' data-bureau='25' data-action='click->deskconnect#book'/>
-<rect x='94.2134' y='351.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 94.2134 351.117)' fill='#D9D9D9'/>
-<rect x='333.509' y='260.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 260.727)' fill='#D9D9D9' data-bureau='26' data-action='click->deskconnect#book'/>
-<rect x='259.213' y='230.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 230.117)' fill='#D9D9D9' />
-<rect x='333.509' y='143.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 143.727)' fill='#D9D9D9' data-bureau='28' data-action='click->deskconnect#book'/>
-<rect x='259.213' y='113.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 113.117)' fill='#D9D9D9'/>
-<rect x='333.509' y='498.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 498.727)' fill='#D9D9D9' data-bureau='29' data-action='click->deskconnect#book'/>
-<rect x='259.213' y='468.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 468.117)' fill='#D9D9D9' />
-<rect x='333.509' y='381.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 333.509 381.727)' fill='#D9D9D9' data-bureau='30' data-action='click->deskconnect#book'/>
-<rect x='259.213' y='351.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 259.213 351.117)' fill='#D9D9D9'/>
-<rect x='579' y='144.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 579 144.509)' fill='#D9D9D9' data-bureau='31' data-action='click->deskconnect#book'/>
-<rect x='609.61' y='70.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 609.61 70.2134)' fill='#D9D9D9'/>
-<rect x='465' y='141.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 465 141.509)' fill='#D9D9D9' data-bureau='32' data-action='click->deskconnect#book'/>
-<rect x='495.61' y='67.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 495.61 67.2134)' fill='#D9D9D9'/>
-<rect x='775.509' y='499.727' width='59.2482' height='83.7268' rx='8' transform='rotate(-180 775.509 499.727)' fill='#D9D9D9' data-bureau='33' data-action='click->deskconnect#book'/>
-<rect x='701.214' y='469.117' width='28.2134' height='27.0086' rx='8' transform='rotate(-180 701.214 469.117)' fill='#D9D9D9'/>
-<rect x='804' y='144.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 804 144.509)' fill='#D9D9D9' data-bureau='34' data-action='click->deskconnect#book'/>
-<rect x='834.61' y='70.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 834.61 70.2134)' fill='#D9D9D9'/>
-<rect x='687' y='145.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 687 145.509)' fill='#D9D9D9' data-bureau='35' data-action='click->deskconnect#book'/>
-<rect x='717.61' y='71.2134' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 717.61 71.2134)' fill='#D9D9D9'/>
-<rect x='581' y='260.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 581 260.509)' fill='#D9D9D9' data-bureau='36' data-action='click->deskconnect#book'/>
-<rect x='611.61' y='186.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 611.61 186.213)' fill='#D9D9D9'/>
-<rect x='467' y='257.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 467 257.509)' fill='#D9D9D9' data-bureau='37' data-action='click->deskconnect#book'/>
-<rect x='497.61' y='183.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 497.61 183.213)' fill='#D9D9D9'/>
-<rect x='806' y='260.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 806 260.509)' fill='#D9D9D9' data-bureau='38' data-action='click->deskconnect#book'/>
-<rect x='836.61' y='186.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 836.61 186.213)' fill='#D9D9D9'/>
-<rect x='689' y='261.509' width='59.2482' height='83.7268' rx='8' transform='rotate(-90 689 261.509)' fill='#D9D9D9' data-bureau='39' data-action='click->deskconnect#book'/>
-<rect x='719.61' y='187.213' width='28.2134' height='27.0086' rx='8' transform='rotate(-90 719.61 187.213)' fill='#D9D9D9'/>
+  "<svg width='738' height='434' viewBox='0 0 738 434' fill='none' xmlns='http://www.w3.org/2000/svg'>
+<path d='M4 16C4 7.16345 11.1634 0 20 0H721.685C730.522 0 737.685 7.16344 737.685 16V418C737.685 426.837 730.522 434 721.685 434H20C11.1635 434 4 426.837 4 418V16Z' />
+<rect x='315' width='8' height='159' fill='#D9D9D9'/>
+<rect x='315' y='230' width='8' height='33' fill='#D9D9D9'/>
+<rect y='255' width='319' height='8' fill='#D9D9D9'/>
+<rect x='461' y='251' width='277' height='8' fill='#D9D9D9'/>
+<rect x='426' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='20' data-action='click->deskconnect#book'/>
+<rect x='496' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='21' data-action='click->deskconnect#book'/>
+<rect x='566' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='22' data-action='click->deskconnect#book'/>
+<rect x='452' y='42.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 452 42.0677)' fill='#D9D9D9'/>
+<rect x='588' y='39.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 588 39.0677)' fill='#D9D9D9'/>
+<rect x='636' y='53.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='23' data-action='click->deskconnect#book'/>
+<rect x='658' y='39.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 658 39.0677)' fill='#D9D9D9'/>
+<rect x='518' y='41.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 518 41.0677)' fill='#D9D9D9'/>
+<rect x='496' y='164' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='24' data-action='click->deskconnect#book'/>
+<rect x='566' y='164' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='25' data-action='click->deskconnect#book'/>
+<rect x='588' y='149.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 588 149.068)' fill='#D9D9D9'/>
+<rect x='636' y='164' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='26' data-action='click->deskconnect#book'/>
+<rect x='658' y='149.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 658 149.068)' fill='#D9D9D9'/>
+<rect x='518' y='151.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 518 151.068)' fill='#D9D9D9'/>
+<rect x='66' y='48.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='27' data-action='click->deskconnect#book'/>
+<rect x='136' y='48.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='28' data-action='click->deskconnect#book'/>
+<rect x='206' y='48.9999' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='29' data-action='click->deskconnect#book'/>
+<rect x='92' y='37.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 92 37.0677)' fill='#D9D9D9'/>
+<rect x='228' y='34.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 228 34.0677)' fill='#D9D9D9'/>
+<rect x='158' y='36.0677' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 158 36.0677)' fill='#D9D9D9'/>
+<rect x='67' y='153' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='30' data-action='click->deskconnect#book'/>
+<rect x='137' y='153' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='31' data-action='click->deskconnect#book'/>
+<rect x='207' y='153' width='65.49' height='46.34' rx='8' fill='#D9D9D9' data-bureau='32' data-action='click->deskconnect#book'/>
+<rect x='93' y='141.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 93 141.068)' fill='#D9D9D9'/>
+<rect x='229' y='138.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 229 138.068)' fill='#D9D9D9'/>
+<rect x='159' y='140.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 159 140.068)' fill='#D9D9D9'/>
+<rect x='54' y='358' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='33' data-action='click->deskconnect#book'/>
+<rect x='17' y='402.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 17 402.068)' fill='#D9D9D9'/>
+<rect x='54' y='284' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='34' data-action='click->deskconnect#book'/>
+<rect x='17' y='328.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 17 328.068)' fill='#D9D9D9'/>
+<rect x='166' y='362' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='35' data-action='click->deskconnect#book'/>
+<rect x='129' y='406.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 129 406.068)' fill='#D9D9D9'/>
+<rect x='166' y='288' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='36' data-action='click->deskconnect#book'/>
+<rect x='129' y='332.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 129 332.068)' fill='#D9D9D9'/>
+<rect x='273' y='362' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='37' data-action='click->deskconnect#book'/>
+<rect x='236' y='406.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 236 406.068)' fill='#D9D9D9'/>
+<rect x='273' y='288' width='46.34' height='65.49' rx='8' fill='#D9D9D9' data-bureau='38' data-action='click->deskconnect#book'/>
+<rect x='236' y='332.068' width='22.0678' height='21.1255' rx='10.5627' transform='rotate(-90 236 332.068)' fill='#D9D9D9'/>
+<foreignObject x='426' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='20' data-position='right' > 20 </div>
+</foreignObject>
+<foreignObject x='496' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='21' data-position='right' > 21 </div>
+</foreignObject>
+<foreignObject x='566' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='22' data-position='right' > 22 </div>
+</foreignObject>
+
+<foreignObject x='636' y='53.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='23' data-position='right' > 23 </div>
+</foreignObject>
+
+<foreignObject x='496' y='164' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='24' data-position='right' > 24 </div>
+</foreignObject>
+
+<foreignObject x='566' y='164' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='25' data-position='right' > 25 </div>
+</foreignObject>
+
+<foreignObject x='636' y='164' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='26' data-position='right' > 26 </div>
+</foreignObject>
+
+<foreignObject x='66' y='48.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='27' data-position='right' > 27 </div>
+</foreignObject>
+
+<foreignObject x='136' y='48.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='28' data-position='right' > 28 </div>
+</foreignObject>
+
+<foreignObject x='206' y='48.9999' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='29' data-position='right' > 29 </div>
+</foreignObject>
+
+<foreignObject x='67' y='153' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='30' data-position='right' > 30 </div>
+</foreignObject>
+
+<foreignObject x='137' y='153' width='65.49' height='46.34'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='31' data-position='right' > 31 </div>
+</foreignObject>
+
+<foreignObject x='207' y='153' width='65.49' height='46.34' >
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='32' data-position='right' > 32 </div>
+</foreignObject>
+
+<foreignObject x='54' y='358' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='33' data-position='right' > 33 </div>
+</foreignObject>
+
+<foreignObject x='54' y='284' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='34' data-position='right' > 34 </div>
+</foreignObject>
+
+<foreignObject x='166' y='362' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='35' data-position='right' > 35 </div>
+</foreignObject>
+
+<foreignObject x='166' y='288' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='36' data-position='right' > 36 </div>
+</foreignObject>
+
+<foreignObject x='273' y='362' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='37' data-position='right' > 37 </div>
+</foreignObject>
+
+<foreignObject x='273' y='288' width='46.34' height='65.49'>
+    <div class='svginsertion' data-action='click->menu-contextuel#display' data-bureau='38' data-position='right' > 38 </div>
+</foreignObject>
+
 </svg>"
 );
 
@@ -285,7 +358,7 @@ for n in 1..19
   Desk.create!(name: n, level: 1, description: "super!" , level_id:level)
 end
 level = Level.find_by(name: "etage2")
-for n in 20..39
+for n in 20..38
   Desk.create!(name: n, level: 2, description: "super!" , level_id:level)
 end
 #level = Level.find_by(name: "etage3")
