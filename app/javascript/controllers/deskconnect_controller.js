@@ -113,11 +113,11 @@ export default class extends Controller {
             const calendarblock = document.querySelector('.calendar-block');
             calendarSvg.classList.add('neon-effect');
             calendarSvg.classList.add('neon-effect-anim');
-            const strokeCalendar = document.querySelector('.calendar-svg');
+            const strokeCalendar = document.querySelector('.calendar-svg rect');
             strokeCalendar.style.strokeWidth = 0;
             calendarblock.style.opacity = 1;
             const strokeLevel = document.querySelector('.svg-niveau rect');
-            console.log(strokeLevel);
+
             strokeLevel.style.strokeWidth = 0;
             containerSvg.dataset.first = "anim";
             this.levelTarget.classList.remove('svg-anim');

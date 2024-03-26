@@ -332,6 +332,16 @@ svg{
   z-index: 2;
 }
 
+.patternUser{
+  top:0px;
+  width:50%;
+  height: 70%;
+   background-size: cover;
+   transform: rotate(180deg);
+
+
+}
+
 .svginsertion{
 
  position:absolute;
