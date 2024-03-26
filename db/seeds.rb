@@ -42,16 +42,10 @@ ingrid_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v17111
 ingrid.photo.attach(io: ingrid_file, filename: "ingrid.png", content_type: "image/png")
 ingrid.save
 
-
-ines = User.new(email:"ines@deskharmony.com", password: "coucou", first_name: "Ines", last_name: "Alvergne", job_title: "Data analyst", nickname: "Ines" )
-ines_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/ines_uqlmow.jpg')
-ines.photo.attach(io: ines_file, filename: "ines.png", content_type: "image/png")
-ines.save
-
-seb = User.new(email:"seb@deskharmony.com", password: "coucou", first_name: "Sebastien", last_name: "Saunier", job_title: "Data analyst", nickname: "Seb" )
-seb_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194829/seb_gujojg.jpg')
-seb.photo.attach(io: seb_file, filename: "seb.png", content_type: "image/png")
-seb.save
+julien = User.new(email:"julien@deskharmony.com", password: "coucou", first_name: "Julien", last_name: "Marchand", job_title: "Data scientist", nickname: "Julien" )
+julien_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/julien_sdevve.jpg')
+julien.photo.attach(io: julien_file, filename: "julien.png", content_type: "image/png")
+julien.save
 
 alex = User.new(email:"alex@deskharmony.com", password: "coucou", first_name: "Alex", last_name: "Platteeuw", job_title: "Business analyst", nickname: "Alex" )
 alex_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/alex_ezurq3.jpg')
@@ -78,11 +72,6 @@ gwendal_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711
 gwendal.photo.attach(io: gwendal_file, filename: "gwendal.png", content_type: "image/png")
 gwendal.save
 
-julien = User.new(email:"julien@deskharmony.com", password: "coucou", first_name: "Julien", last_name: "Marchand", job_title: "Data scientist", nickname: "Julien" )
-julien_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/julien_sdevve.jpg')
-julien.photo.attach(io: julien_file, filename: "julien.png", content_type: "image/png")
-julien.save
-
 kevin = User.new(email:"kevin@deskharmony.com", password: "coucou", first_name: "Kevin", last_name: "Abergel", job_title: "Data engineer", nickname: "Kevin" )
 kevin_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/kevin_mvgiuo.jpg')
 kevin.photo.attach(io: kevin_file, filename: "kevin.png", content_type: "image/png")
@@ -97,6 +86,17 @@ pierreyves = User.new(email:"pierreyves@deskharmony.com", password: "coucou", fi
 pierreyves_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711196374/pierre-yves_vdzz70.jpg')
 pierreyves.photo.attach(io: pierreyves_file, filename: "alexis.png", content_type: "image/png")
 pierreyves.save
+
+ines = User.new(email:"ines@deskharmony.com", password: "coucou", first_name: "Ines", last_name: "Alvergne", job_title: "Data analyst", nickname: "Ines" )
+ines_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194822/ines_uqlmow.jpg')
+ines.photo.attach(io: ines_file, filename: "ines.png", content_type: "image/png")
+ines.save
+
+seb = User.new(email:"seb@deskharmony.com", password: "coucou", first_name: "Sebastien", last_name: "Saunier", job_title: "Data analyst", nickname: "Seb" )
+seb_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1711194829/seb_gujojg.jpg')
+seb.photo.attach(io: seb_file, filename: "seb.png", content_type: "image/png")
+seb.save
+
 
 puts "users created"
 
