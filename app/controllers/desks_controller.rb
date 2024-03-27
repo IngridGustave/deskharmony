@@ -114,10 +114,9 @@ class DesksController < ApplicationController
   end
 
   def generateJsonDesk(desks, start_at, level)
-    data = []
+    dataJson = []
     book_desks = []
     current_time = Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")
-
     if start_at
       date_start = Date.parse(start_at)
     else
@@ -125,27 +124,24 @@ class DesksController < ApplicationController
     end
     search_desks_book = Desk.joins(:appointments).where(appointments: { start_at: date_start })
     search_desks_book .each do |book_desk|
-    book_desks << book_desk.id
+      book_desks << book_desk.id
     end
-
 
    if book_desks.empty?
-    desks.each do |desk|
-        data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
-    end
+     desks.each do |desk|
+         dataJson << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
+     end
    else
-     desks_name =   Desk.includes(:desk).where(start_at: date_start)
      desks.each do |desk|
        book_desks.each do |book_desk|
          if desk.id == book_desk
-           data << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
+           dataJson << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
          else
-           data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
+           dataJson  << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
          end
        end
       end
    end
-
-    return data
+    return dataJson
   end
 end
