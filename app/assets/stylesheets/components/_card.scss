@@ -151,6 +151,12 @@
   margin-bottom: 0px;
   background-color: rgb(178, 67, 187);
   color: white;
+  transition: all 0.3s;
+
+  &:hover{
+  background-color:white;
+  color: rgb(178, 67, 187);
+  }
 }
 
 .card-search{

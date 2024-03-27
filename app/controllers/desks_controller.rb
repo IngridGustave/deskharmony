@@ -116,7 +116,7 @@ class DesksController < ApplicationController
   def generateJsonDesk(desks, start_at, level)
     dataJson = []
     book_desks = []
-    current_time = Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")
+    current_time = Time.now.strftime("%Y-%m-%d")
     if start_at
       date_start = Date.parse(start_at)
     else

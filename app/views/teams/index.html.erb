@@ -23,7 +23,7 @@
                   <tr>
                       <td class="team-text">
                         <div style="display: flex; align-items: center" class ="photo-profil">
-                        <%= cl_image_tag user.photo.key, width: 70, height: 70, crop: :fill, class: 'clickable', data: { action: "click->teams#openProfile", id: user.id } %>
+                        <%= cl_image_tag user.photo.key, width: 70, height: 70, crop: :fill, class: 'team-avatar clickable', data: { action: "click->teams#openProfile", id: user.id } %>
                         <%= "#{user.first_name} #{user.last_name}" %>
                         </div>
                       </td>
@@ -32,7 +32,7 @@
                         <% user.appointments.pluck(:id).each do |appointment_id| %>
                           <% appointment = Appointment.find(appointment_id) %>
                           <% if appointment.start_at.to_date == Date.today %>
-                            <div data-action="click->teams#openDesk" data-id=<%=appointment.desk.name %>>
+                            <div data-action="click->teams#openDesk" data-id=<%=appointment.desk.id %>>
                               <%= "Bureau n°#{appointment.desk.name}" %>
                           </div>
                           <% end %>
