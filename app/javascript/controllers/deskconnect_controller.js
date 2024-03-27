@@ -17,16 +17,6 @@ export default class extends Controller {
     this.loadingLevel({ url: url, level: level });
   }
 
-  book(e) {
-    this.modalstartTarget.value = this.start_dateTarget.value
-    this.bureauidTarget.value = e.target.dataset.bureau
-    this.desk_bookTarget.innerText = "Réservation bureau n°" + e.target.dataset.bureau
-    this.modalTarget.style.display = "flex";
-    this.modalTarget.style.width = (window.innerWidth) + "px";
-    this.modalTarget.style.height = (window.innerHeight) + 400 + "px";
-    document.body.classList.add('modal-open');
-  }
-
   submit(e) {
     document.body.classList.remove('modal-open');
     this.modalTarget.style.display = "none";
@@ -36,20 +26,14 @@ export default class extends Controller {
   }
 
   _fetchSvg(url) {
-
     fetch(url, {
       method: "GET",
       headers: { "Accept": "application/json" },
     })
       .then(response => response.json())
       .then((data) => {
-
         this._addStyleToSvg(data);
       })
-
-
-
-
   }
 
   _addStyleToSvg(data) {
@@ -84,122 +68,30 @@ export default class extends Controller {
   loadingLevel(options) {
     const { url, level } = options;
     const url_level = '/desks?level=' + level
+    this._changeLevelColor(level);
     fetch(url_level, {
       method: "GET",
       headers: { "Accept": "text/plain" },
     })
       .then(response => response.text())
-      .then((data) => {
-        data = data.replaceAll("&lt;", "<")
-        data = data.replaceAll("&gt;", ">")
-        data = data.replaceAll("&#39", "'")
-        data = data.replaceAll(";", "")
+      .then((docSvg) => {
+        docSvg = docSvg.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&#39", "'").replaceAll(";", "");
         const queryString = window.location.search;
         const containerSvg = document.querySelector('.container-svg');
-
         if (queryString == "?anim=true" && !containerSvg.dataset.first) {
-          this.levelTarget.classList.add('svg-anim')
-          this.levelTarget.innerHTML = data;
-          const allRect = this.levelTarget.querySelectorAll("rect");
-          setTimeout(() => {
-            allRect.forEach((rect, index) => {
-              setTimeout(() => {
-                setInterval(() => {
-                  rect.style.fill = "white";
-                }, 200);
-              }, index * 20);
-            });
-          }, 2000);
-
-          setTimeout(() => {
-            const searchSvg = document.querySelector('.search');
-            searchSvg.classList.add('neon-effect');
-            searchSvg.classList.add('neon-effect-anim')
-            const calendarSvg = document.querySelector('.calendar-design');
-            const calendarblock = document.querySelector('.calendar-block');
-            calendarSvg.classList.add('neon-effect');
-            calendarSvg.classList.add('neon-effect-anim');
-            const chatroomSvg = document.querySelector('.chatroom__container');
-            chatroomSvg.classList.add('neon-effect');
-            chatroomSvg.classList.add('neon-effect-anim');
-
-
-
-            calendarblock.style.opacity = 1;
-            const strokeLevel = document.querySelector('.svg-niveau rect');
-            const search = document.querySelector('.search form');
-            search.style.opacity = 1;
-
-            strokeLevel.style.strokeWidth = 0;
-            containerSvg.dataset.first = "anim";
-            this.levelTarget.classList.remove('svg-anim');
-            containerSvg.classList.add('neon-effect');
-            containerSvg.classList.add('neon-effect-anim');
-            const strokesCalendar = document.querySelectorAll('.calendar-svg ');
-            strokesCalendar.forEach((stroke) => {
-              stroke.remove();
-            })
-
-            const titres = document.querySelectorAll('.titre-level');
-            titres.forEach((titre) => {
-              titre.style.opacity = 1;
-            })
-            const info = document.querySelector('.bureau-information');
-            info.style.opacity = 1;
-            const levelUl = document.querySelector('.bureau-level ul');
-            levelUl.style.opacity = 1;
-            const level = document.querySelector('.bureau-level');
-            level.classList.add('neon-effect');
-            level.classList.add('neon-effect-anim');
-            this.levelTarget.innerHTML = data;
-            this._fetchSvg(url);
-          }, 3500);
-
-
-
+          this._endStrokeAnim(docSvg, url);
         } else {
-
-          this.levelTarget.innerHTML = data;
+          this.levelTarget.innerHTML = docSvg;
           this._fetchSvg(url);
         }
-
       })
   }
 
   changeLevel(event) {
-    const containerSvg = document.querySelector('.container-svg.neon-effect');
-
     const url = `/desks?startdate=${this.start_dateTarget.value}`;
-    const etage = event.target.dataset.etage
-    console.log(etage)
-    console.log(typeof (etage))
-
-    if (etage == "2") {
-      containerSvg.classList.add('neon-effect-orange');
-    }
-    else {
-      containerSvg.classList.remove('neon-effect-orange');
-    }
-    const url_level = '/desks?level=' + etage
-    fetch(url_level, {
-      method: "GET",
-      headers: { "Accept": "text/plain" },
-    })
-      .then(response => response.text())
-      .then((data) => {
-        data = data.replaceAll("&lt;", "<")
-        data = data.replaceAll("&gt;", ">")
-        data = data.replaceAll("&#39", "'")
-        data = data.replaceAll(";", "")
-        console.log(data);
-        console.log(this.levelTarget)
-        this.levelTarget.innerHTML = data;
-
-        this._fetchSvg('/desks');
-      })
+    const level = event.target.dataset.etage;
+    this.loadingLevel({ url: '/desks', level: level });
   }
-
-
 
   _fetchForm(e) {
     const formData = new FormData(e.target.parentNode);
@@ -257,7 +149,9 @@ export default class extends Controller {
     const chatroomSvg = document.querySelector('.chatroom__container.neon-effect');
     const calendarblock = document.querySelector('.calendar-block');
     const queryString = window.location.search;
+
     if (queryString == "?anim=true" && !containerSvg.dataset.first) {
+
       const strokesCalendar = document.querySelectorAll('.calendar-svg ');
       strokesCalendar.forEach((stroke) => {
         stroke.classList.add("anim");
@@ -270,6 +164,7 @@ export default class extends Controller {
       const search = document.querySelector('.search form');
       search.style.opacity = 0;
       const titres = document.querySelectorAll('.titre-level');
+
       titres.forEach((titre) => {
         titre.style.opacity = 0;
       })
@@ -289,5 +184,70 @@ export default class extends Controller {
     }
   }
 
+  _endStrokeAnim(docSvg, url) {
+    const containerSvg = document.querySelector('.container-svg');
+    this.levelTarget.classList.add('svg-anim')
+    this.levelTarget.innerHTML = docSvg;
+    const allRect = this.levelTarget.querySelectorAll("rect");
+    setTimeout(() => {
+      allRect.forEach((rect, index) => {
+        setTimeout(() => {
+          setInterval(() => {
+            rect.style.fill = "white";
+          }, 200);
+        }, index * 20);
+      });
+    }, 2000);
 
+    setTimeout(() => {
+      const searchSvg = document.querySelector('.search');
+      searchSvg.classList.add('neon-effect');
+      searchSvg.classList.add('neon-effect-anim')
+      const calendarSvg = document.querySelector('.calendar-design');
+      const calendarblock = document.querySelector('.calendar-block');
+      calendarSvg.classList.add('neon-effect');
+      calendarSvg.classList.add('neon-effect-anim');
+      const chatroomSvg = document.querySelector('.chatroom__container');
+      chatroomSvg.classList.add('neon-effect');
+      chatroomSvg.classList.add('neon-effect-anim');
+      calendarblock.style.opacity = 1;
+      const strokeLevel = document.querySelector('.svg-niveau rect');
+      const search = document.querySelector('.search form');
+      search.style.opacity = 1;
+      strokeLevel.style.strokeWidth = 0;
+      containerSvg.dataset.first = "anim";
+      this.levelTarget.classList.remove('svg-anim');
+      containerSvg.classList.add('neon-effect');
+      containerSvg.classList.add('neon-effect-anim');
+      const strokesCalendar = document.querySelectorAll('.calendar-svg ');
+      strokesCalendar.forEach((stroke) => {
+        stroke.remove();
+      })
+
+      const titres = document.querySelectorAll('.titre-level');
+      titres.forEach((titre) => {
+        titre.style.opacity = 1;
+      })
+      const info = document.querySelector('.bureau-information');
+      info.style.opacity = 1;
+      const levelUl = document.querySelector('.bureau-level ul');
+      levelUl.style.opacity = 1;
+      const level = document.querySelector('.bureau-level');
+      level.classList.add('neon-effect');
+      level.classList.add('neon-effect-anim');
+      this.levelTarget.innerHTML = docSvg;
+      this._fetchSvg(url);
+    }, 3500);
+
+  }
+
+  _changeLevelColor(num) {
+    const containerSvg = document.querySelector('.container-svg');
+    if (num == "2") {
+      containerSvg.classList.add('neon-effect-orange');
+    }
+    else {
+      containerSvg.classList.remove('neon-effect-orange');
+    }
+  }
 }
