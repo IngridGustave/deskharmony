@@ -8,13 +8,11 @@ export default class extends Controller {
 
   openProfile(event) {
     const userId = event.currentTarget.dataset.id;
-    console.log(userId)
     window.location.href = '/users/' + userId;
   }
 
   openDesk(event) {
     const deskId = event.currentTarget.dataset.id;
-    console.log(deskId)
     window.location.href = '/desks/' + deskId;
   }
 }
