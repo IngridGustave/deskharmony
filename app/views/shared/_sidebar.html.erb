@@ -2,7 +2,9 @@
     <ul>
       <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
         <li>
-          <img class="avatar" src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png" />
+
+        <%= cl_image_tag @current_user.photo.key, width: 100, height: 100, crop: :fill %>
+
 
         </li>
       <% end %>
