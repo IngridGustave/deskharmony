@@ -25,8 +25,10 @@ class DesksController < ApplicationController
     nameDesk = params[:bureau];
     @desk = Desk.find_by(name: nameDesk );
     date = Date.today
-    @desk_available =[]
-    # boucle
+    @desk_available =[];
+    @appointment= Appointment.new
+    @desks = @desk_available
+
     while @desk_available.size < 4 do
       appointment = Appointment.where(user: current_user).where(desk: @desk).where("DATE(start_at) = ? ", date);
       if !appointment.present?
@@ -34,30 +36,27 @@ class DesksController < ApplicationController
       end
       date = date + 1
     end
-    @appointment= Appointment.new
-    @desks = @desk_available
+
     respond_to do |format|
       format.html
       format.text { render partial: "desks/template_submenu", locals: {desks: @desks, desk: @desk}, formats: [:html] }
     end
+
   end
 
 
   def index
+
     @teamsusers = User.all
     @desks = Desk.all
     @appointment = Appointment.new
     @chatroom = Chatroom.find_by(name: "1")
     @message = Message.new
-
-# variable calendrier + recherche calendrier
     @start_of_last_week = Date.today.prev_week.beginning_of_week
     @end_of_last_week = Date.today.prev_week.end_of_week
     @last_week_dates = @start_of_last_week..@end_of_last_week
     @date = Date.parse(params.fetch(:date, Date.today.to_s))
     @appointments_week = Appointment.where(user: current_user).where("DATE(start_at) >= ? AND DATE(start_at) <= ?", @date.all_week.begin, @date.all_week.end)
-# ------------------------
-# génération des données pour l'envoyer au controller Stimulus au format json
     data = []
     start_at = params[:startdate] if params[:startdate].present?
     level = params[:level] if params[:level].present?
@@ -68,7 +67,6 @@ class DesksController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: data }
-      # format.json { render json: @date }
       format.text { render partial: "desks/svg", locals: {levelSvg: @levelSvg}, formats: [:html] }
     end
   end
@@ -101,9 +99,6 @@ class DesksController < ApplicationController
   end
 
 
-
-
-
   private
 
   def desk_params
@@ -120,26 +115,37 @@ class DesksController < ApplicationController
 
   def generateJsonDesk(desks, start_at, level)
     data = []
-    desks.each do |desk|
-      current_time = Time.now
-      time_rails = current_time.strftime("%Y-%m-%d %H:%M:%S UTC")
-   #récupération des paramètres, si il y en a
-      if start_at
-        date_start = Date.parse(start_at)
-      else
-        date_start =  time_rails
-      end
-# recherche des dispos
-      desk_id = Desk.where(name: desk.name)
-      desk_id = desk_id[(level.to_i - 1) || 0];
-      booked = Appointment.where("? = start_at AND desk_id = ?", date_start, desk_id).exists?
-# on remplit le tableau si il y a des créneaux ou non de trouvé
-      if booked
-        data << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
-      else
-        data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
-      end
+    book_desks = []
+    current_time = Time.now.strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    if start_at
+      date_start = Date.parse(start_at)
+    else
+      date_start =  current_time
     end
+    search_desks_book = Desk.joins(:appointments).where(appointments: { start_at: date_start })
+    search_desks_book .each do |book_desk|
+    book_desks << book_desk.id
+    end
+
+
+   if book_desks.empty?
+    desks.each do |desk|
+        data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
+    end
+   else
+     desks_name =   Desk.includes(:desk).where(start_at: date_start)
+     desks.each do |desk|
+       book_desks.each do |book_desk|
+         if desk.id == book_desk
+           data << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
+         else
+           data << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
+         end
+       end
+      end
+   end
+
     return data
   end
 end
