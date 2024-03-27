@@ -1,6 +1,6 @@
 body{
   background-color: $bg-main;
-  cursor: url('/assets/fusee-mouse.png') 32 0, pointer;
+
 
 }
 
@@ -70,10 +70,19 @@ opacity: 0.3;
 }
 
 .photo-profil{
-    & > img {
+    img {
       border-radius: 50%;
       margin-right: 20px;
+      border:2px solid white;
+      transition: all 0.3s;
+
+      &:hover{
+        border:5px solid $sky;
+        transform: scale(1.2);
+      }
     }
+
+
     font-size: 20px;
     padding-left: 10px;
     // padding-right: 20px;

@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
 
     appointment.desk_id = params[:appointment][:desk_id]
     appointment.user = current_user
-    appointment.save
+    appointment.save!
     respond_to do |format|
        format.html
        format.text { render partial: "desks/week_calendar", locals: {appointments_week: @appointments_week}, formats: [:html] }

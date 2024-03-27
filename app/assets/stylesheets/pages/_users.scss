@@ -14,7 +14,7 @@
 }
 
 .users-thead th:nth-child(1) {
-  border-bottom: 1px solid white;
+
   opacity: 0.7;
 }
 
@@ -57,4 +57,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  a{
+    color:black;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+
+  a:hover{
+    transform: scale(1.1);
+  }
 }
