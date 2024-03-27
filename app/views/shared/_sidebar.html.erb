@@ -46,8 +46,9 @@
           </div>
         </div>
       </li>
-      <li class= "search-btn" data-controller="search-bar" data-action= "click->search-bar#display">
-        <%= link_to "", "", class: "fa-solid fa-magnifying-glass fa-xl"  %>
+      <li class= "search-btn fa-solid fa-magnifying-glass fa-xl" data-controller="search-bar" data-action= "click->search-bar#display">
+        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+
         <div class="nav-search-form neon-effect" data-search-bar-target="searchForm">
               <div class="input-search">
               <%= form_with url: search_path, method: :get, class: "search-input" do %>

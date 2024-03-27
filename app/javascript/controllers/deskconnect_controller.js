@@ -3,7 +3,6 @@ import Swal from 'sweetalert2';
 window.Swal = Swal;
 
 
-// Connects to data-controller="deskconnect"
 export default class extends Controller {
   static targets = ['formModal', 'link', "modal", "end_date", "start_date", "form", "modalstart", "modalend", "bureauid", "infoNiveau", "infoDispo", "level", "levelid", "desk_book"]
   connect() {
@@ -160,10 +159,6 @@ export default class extends Controller {
 
         } else {
 
-          const strokesCalendar = document.querySelectorAll('.calendar-svg ');
-          strokesCalendar.forEach((stroke) => {
-            stroke.remove();
-          })
           this.levelTarget.innerHTML = data;
           this._fetchSvg(url);
         }
@@ -263,6 +258,10 @@ export default class extends Controller {
     const calendarblock = document.querySelector('.calendar-block');
     const queryString = window.location.search;
     if (queryString == "?anim=true" && !containerSvg.dataset.first) {
+      const strokesCalendar = document.querySelectorAll('.calendar-svg ');
+      strokesCalendar.forEach((stroke) => {
+        stroke.classList.add("anim");
+      })
       const sidebar = document.querySelector('.sidebar');
       const niveauSvgAnim = document.querySelector('.sidebar');
       sidebar.classList.add('anim-sidebar');

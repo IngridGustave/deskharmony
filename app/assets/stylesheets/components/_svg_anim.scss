@@ -106,27 +106,31 @@ svg rect[width="13"] {
 
 }
 
-.calendar-svg{
+
+
+.calendar-svg {
   position: absolute;
   width:100%!important;
   height: 100%!important;
+  z-index: -100;
+
 
 }
 
-.calendar-svg rect[height="100%"]{
+.calendar-svg.anim  rect[height="100%"]{
   stroke-dasharray: 3000;
   stroke-dashoffset:3000;
 
 }
 
-.calendar-svg rect{
+.calendar-svg.anim  rect{
   fill: transparent;
   stroke-width: 1;
   stroke: white;
   animation: draw 3.5s forwards;
 }
 
-.calendar-svg rect{
+.calendar-svg.anim rect{
   width:100%!important;
   height: 100%!important;
 
