@@ -51,7 +51,7 @@
                 <% @user.appointments.each do |appointment| %>
                   <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date >= Date.today %>
                     <div class="card-users-show">
-                      <%= link_to "Bureau n°  #{appointment.desk.name}", desks_path(appointment.desk.id)  %>
+                      <%= link_to "Bureau n°  #{appointment.desk.name}", desk_path(appointment.desk)%>
                       <p>Pour le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
                     </div>
                   <% end %>
