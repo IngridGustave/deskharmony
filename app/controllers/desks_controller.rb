@@ -91,7 +91,7 @@ class DesksController < ApplicationController
 
     if params[:query].present?
       query = params[:query].split(" ").last
-      sql_query = "first_name ILIKE :query"
+      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
       @users = User.where(sql_query, query: "%#{query}%")
     else
       @users = User.all

@@ -157,13 +157,13 @@
 
 
 .anim-sidebar{
-  max-height: 80px;
+  max-height: 0px;
   animation:grow linear 0.3s forwards ;
-  animation-delay: 1s;
+  animation-delay: 4s;
   ul{
     opacity: 0;
     animation:slideUl linear 0.3s forwards;
-    animation-delay: 1.3s;
+    animation-delay: 4.3s;
   }
 }
 

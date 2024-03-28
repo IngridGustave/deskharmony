@@ -406,6 +406,9 @@ Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 3).id, start_
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-19")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-20")
 Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-22")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-25")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-27")
+Appointment.create!(user_id: laura.id, desk_id: Desk.find_by(name: 23).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 11).id, start_at: "2024-01-15")
 Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-01-16")
@@ -433,6 +436,9 @@ Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 4).id, start
 Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-03-19")
 Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-20")
 Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-03-22")
+Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-03-25")
+Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-27")
+Appointment.create!(user_id: fabien.id, desk_id: Desk.find_by(name: 24).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 12).id, start_at: "2024-01-15")
 Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-01-16")
@@ -457,9 +463,9 @@ Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 15).id, star
 Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 27).id, start_at: "2024-03-11")
 Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-03-12")
 Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 5).id, start_at: "2024-03-14")
-Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-19")
-Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 4).id, start_at: "2024-03-20")
-Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-22")
+Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 25).id, start_at: "2024-03-25")
+Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 4).id, start_at: "2024-03-27")
+Appointment.create!(user_id: ingrid.id, desk_id: Desk.find_by(name: 2).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 13).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 26).id, start_at:  '2024-01-16')
@@ -486,8 +492,10 @@ Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 7).id, start
 Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 6).id, start_at:  '2024-03-14')
 Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 26).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 5).id, start_at:  '2024-03-20')
-Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 26).id, start_at:  '2024-03-22')
-
+Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 3).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 26).id, start_at: "2024-03-25")
+Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 5).id, start_at: "2024-03-27")
+Appointment.create!(user_id: julien.id, desk_id: Desk.find_by(name: 3).id, start_at: "2024-03-28")
 
 
 Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 14).id, start_at:  '2024-01-15')
@@ -516,6 +524,9 @@ Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 7).id, start_a
 Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 27).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 6).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 27).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 27).id, start_at: "2024-03-25")
+Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 6).id, start_at: "2024-03-27")
+Appointment.create!(user_id: alex.id, desk_id: Desk.find_by(name: 27).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 15).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 28).id, start_at:  '2024-01-16')
@@ -543,6 +554,9 @@ Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 8).id, star
 Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 28).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 7).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 28).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 28).id, start_at: "2024-03-25")
+Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 7).id, start_at: "2024-03-27")
+Appointment.create!(user_id: florine.id, desk_id: Desk.find_by(name: 28).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 16).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 29).id, start_at:  '2024-01-16')
@@ -570,6 +584,9 @@ Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 9).id, star
 Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 29).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 8).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 29).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 29).id, start_at: "2024-03-25")
+Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 8).id, start_at: "2024-03-27")
+Appointment.create!(user_id: charlie.id, desk_id: Desk.find_by(name: 29).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 17).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 30).id, start_at:  '2024-01-16')
@@ -597,6 +614,9 @@ Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 10).id, star
 Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 30).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 9).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 30).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 30).id, start_at: "2024-03-25")
+Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 9).id, start_at: "2024-03-27")
+Appointment.create!(user_id: maelie.id, desk_id: Desk.find_by(name: 30).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 18).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 31).id, start_at:  '2024-01-16')
@@ -624,6 +644,9 @@ Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 11).id, sta
 Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 31).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 10).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 31).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 31).id, start_at: "2024-03-25")
+Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 10).id, start_at: "2024-03-27")
+Appointment.create!(user_id: gwendal.id, desk_id: Desk.find_by(name: 31).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 19).id, start_at: '2024-01-15')
 Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 32).id, start_at: '2024-01-16')
@@ -651,7 +674,9 @@ Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 12).id, start
 Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 32).id, start_at: '2024-03-19')
 Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 11).id, start_at: '2024-03-20')
 Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 32).id, start_at: '2024-03-22')
-
+Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 32).id, start_at: "2024-03-25")
+Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 11).id, start_at: "2024-03-27")
+Appointment.create!(user_id: kevin.id, desk_id: Desk.find_by(name: 32).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 20).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 33).id, start_at:  '2024-01-16')
@@ -679,6 +704,9 @@ Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 13).id, star
 Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 33).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 12).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 33).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 33).id, start_at: "2024-03-25")
+Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 12).id, start_at: "2024-03-27")
+Appointment.create!(user_id: alexis.id, desk_id: Desk.find_by(name: 33).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 21).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 34).id, start_at:  '2024-01-16')
@@ -706,6 +734,9 @@ Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 14).id, sta
 Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 34).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 13).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 34).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 34).id, start_at: "2024-03-25")
+Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 13).id, start_at: "2024-03-27")
+Appointment.create!(user_id: thibaud.id, desk_id: Desk.find_by(name: 34).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 22).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 35).id, start_at:  '2024-01-16')
@@ -733,6 +764,9 @@ Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 15).id, 
 Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 35).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 14).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 35).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 35).id, start_at: "2024-03-25")
+Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 14).id, start_at: "2024-03-27")
+Appointment.create!(user_id: pierreyves.id, desk_id: Desk.find_by(name: 35).id, start_at: "2024-03-28")
 
 Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 23).id, start_at:  '2024-01-15')
 Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 36).id, start_at:  '2024-01-16')
@@ -760,6 +794,10 @@ Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 16).id, start_
 Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 36).id, start_at:  '2024-03-19')
 Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 15).id, start_at:  '2024-03-20')
 Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 36).id, start_at:  '2024-03-22')
+Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 36).id, start_at: "2024-03-25")
+Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 15).id, start_at: "2024-03-27")
+Appointment.create!(user_id: ines.id, desk_id: Desk.find_by(name: 36).id, start_at: "2024-03-28")
+
 
 puts " appointment created"
 
