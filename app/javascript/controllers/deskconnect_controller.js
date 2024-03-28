@@ -90,8 +90,10 @@ export default class extends Controller {
 
   changeLevel(event) {
     const url = `/desks?startdate=${this.start_dateTarget.value}`;
+    console.log(url)
     const level = event.target.dataset.etage;
-    this.loadingLevel({ url: '/desks', level: level });
+    console.log(level)
+    this.loadingLevel({ url: url, level: level });
   }
 
   _fetchForm(e) {
