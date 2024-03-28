@@ -18,8 +18,9 @@ export default class extends Controller {
     const appointmentId = event.currentTarget.dataset.id;
     Swal.fire({
       title: 'Êtes-vous sûr?',
-      text: "Voulez-vous vraiment supprimer ce rendez-vous?",
-      icon: 'warning',
+      text: "Voulez-vous vraiment supprimer cette réservation ?",
+      // icon: 'warning',
+      iconHtml: '<img src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711619777/fekc4xklg3sop21xbkkv.png" style="width: 150px; height: 150px;">',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',

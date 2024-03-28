@@ -21,8 +21,8 @@ export default class extends Controller {
     const formData = new FormData(e.target.parentNode);
     Swal.fire({
       title: 'Confirmer votre réservation?',
-      text: "oui oui oui oui! je le veux",
-      iconHtml: '<img src="../assets/astronaut-ok.png" style="width: 180px; height: 150px;">',
+      text: "Oui oui oui oui! je le veux",
+      iconHtml: '<img src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711619764/lyz9e0kbhmfvyte1gk7t.png" style="width: 150px; height: 150px;">',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
