@@ -2,48 +2,44 @@
   <div class="rightbluehalofeat"></div>
   <div class="leftbluehalofeat"></div>
   <div class="topbluehalo"></div>
-<div class="team-banner">
-  <div class="container">
-    <div class="title">
-      <p>Ma <span class="blue-title">recherche</span></p>
+  <div class="team-banner">
+    <div class="container">
+      <div class="title">
+        <p>Ma <span class="blue-title">recherche</span></p>
+      </div>
     </div>
-  </div>
-
-<div class="search neon-effect">
-<form action="" class="form-search" data-action="submit->search#clear">
-  <div class="input-search">
-      <%= form_with url: teams_path, method: :get, class: "search-input" do %>
-        <%= text_field_tag :query,
+    <div class="search neon-effect">
+      <form action="" class="form-search" data-action="submit->search#clear">
+        <div class="input-search">
+          <%= form_with url: teams_path, method: :get, class: "search-input" do %>
+            <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Rechercher un collègue",
           data: {action: "input->search#clear"},
           style: "border-radius: 16px"
         %>
-  </div>
-      <%= submit_tag "Rechercher", name: "", class: "btn-sky" %>
-      <% end %>
+          </div>
+          <%= submit_tag "Rechercher", name: "", class: "btn-sky" %>
+        <% end %>
       </form>
-</div>
-
-<div class="container">
-  <div class="cards-appointments">
-    <% @users.each do |user| %>
-
+    </div>
+    <div class="container">
+      <div class="cards-appointments">
+        <% @users.each do |user| %>
           <div class="card-appointments neon-effect">
-          <div class="card-desks" data-controller="search" data-action="click->search#open" data-id=<%= user.id %> >
-                      <div style="display: flex; align-items: center" class ="photo-profil clickable">
-                      <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
-                      <%= "#{user.first_name}" %>
-                      <br>
-                      <%= "#{user.last_name}"  %>
-                      </div>
+            <div class="card-desks" data-controller="search" data-action="click->search#open" data-id=<%= user.id %> >
+              <div style="display: flex; align-items: center" class ="photo-profil clickable">
+                <%= cl_image_tag user.photo.key, width: 100, height: 100, crop: :fill %>
+                <%= "#{user.first_name}" %>
+                <br>
+                <%= "#{user.last_name}"  %>
+              </div>
+            </div>
           </div>
-          </div>
-    <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%= render "shared/sidebar", desks: @desks %>
   </div>
-</div>
-<%= render "shared/sidebar", desks: @desks %>
-
-</div>
 </div>

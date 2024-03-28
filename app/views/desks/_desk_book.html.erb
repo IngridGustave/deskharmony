@@ -1,28 +1,28 @@
 <div class="bureau-modal" data-deskconnect-target="modal">
-    <div class="bureau-modal-container">
-      <span class="desk_book" data-deskconnect-target="desk_book"></span>
-      <%= simple_form_for @appointment,  html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
-        <%= f.input :start_at,
+  <div class="bureau-modal-container">
+    <span class="desk_book" data-deskconnect-target="desk_book"></span>
+    <%= simple_form_for @appointment,  html: {class: "", data:{ deskconnect_target: 'formModal'}} do |f| %>
+      <%= f.input :start_at,
           as: :string,
           label: false,
           placeholder: "Début de réservation",
           input_html: { data: { controller: "datepicker", deskconnect_target: "modalstart"}}
         %>
-        <%= f.input :end_at,
+      <%= f.input :end_at,
           as: :string,
           label: false,
           placeholder: "Fin de réservation",
           input_html: { data: { controller: "datepicker", deskconnect_target: "modalend"}}
         %>
-        <%= f.input :desk_id,
+      <%= f.input :desk_id,
            as: :hidden,
            label: false,
            input_html: { data: {deskconnect_target: "bureauid"}}
         %>
-        <%= f.submit "Réserver",
+      <%= f.submit "Réserver",
            class: "btn-light-sky",
           data: {action: "click->deskconnect#submit"}
         %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
+</div>

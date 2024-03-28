@@ -2,47 +2,46 @@
   <div class="rightbluehalofeat"></div>
   <div class="leftbluehalofeat"></div>
   <div class="topbluehalo"></div>
-<div class="hero_banner">
-  <div class="container">
-    <div class="title">
-      <p>Réservations <span class="blue-title">à venir</span></p>
+  <div class="hero_banner">
+    <div class="container">
+      <div class="title">
+        <p>Réservations <span class="blue-title">à venir</span></p>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="cards-appointments">
-      <% @appointments.each do |appointment| %>
-            <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date >= Date.today %>
+    <div class="container">
+      <div class="cards-appointments">
+        <% @appointments.each do |appointment| %>
+          <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date >= Date.today %>
             <div class="card-appointments neon-effect">
-            <div class="card-desks">
-              <p data-action="click->appointment-historic#open" data-id=<%= appointment.desk.id %> class="card-desk clickable"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
-              <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
-              <i data-action="click->appointment-historic#remove" data-id=<%= appointment.id %> class="purple clickable fa-regular fa-trash-can fa-2x"></i>
+              <div class="card-desks">
+                <p data-action="click->appointment-historic#open" data-id=<%= appointment.desk.id %> class="card-desk clickable"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
+                <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
+                <i data-action="click->appointment-historic#remove" data-id=<%= appointment.id %> class="purple clickable fa-regular fa-trash-can fa-2x"></i>
+              </div>
             </div>
-            </div>
-            <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="container mt-5 pt-5">
-    <div class="title">
-      <p>Réservations <span class="blue-title">passées</span></p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="cards-appointments ">
-      <% @appointments.each do |appointment| %>
-        <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date < Date.today %>
-        <div class="card-past-appointments neon-effect" data-id=<%= appointment.id %>>
-        <div class="card-desks">
-          <p class="card-desk"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
-          <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
-        </div>
-        </div>
+          <% end %>
         <% end %>
-    <% end %>
+      </div>
+    </div>
+    <div class="container mt-5 pt-5">
+      <div class="title">
+        <p>Réservations <span class="blue-title">passées</span></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cards-appointments ">
+        <% @appointments.each do |appointment| %>
+          <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date < Date.today %>
+            <div class="card-past-appointments neon-effect" data-id=<%= appointment.id %>>
+              <div class="card-desks">
+                <p class="card-desk"><b><%= "Bureau n°#{appointment.desk.name}"%></b></p>
+                <p class="card-booking-date"><%= "Pour le #{appointment.start_at.strftime("%d/%m/%y")}"%></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <%= render "shared/sidebar", desks: @desks %>

@@ -1,17 +1,16 @@
 <div id="index-content">
   <div class="container">
     <div class="title">
-  <p>Votre <span class="blue-title">réservation</span></p>
-</div>
-<div class="title">
-  <p><%= "Bureau n°#{@appointment.desk.name}" %></p>
-  <p><%= "Réservé pour le #{@appointment.start_at.strftime("%d/%m/%y")}"  %></p>
-  <%  @levelSvg %> <%# ne fonctionne pas  %>
-
-</div>
-<div class="div">
-  <%= link_to "Supprimer votre réservation", appointment_path(@appointment), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous vraiment vraiment sur?" }, class:"card-alink backgroundRed" %>
-</div>
-</div>
+      <p>Votre <span class="blue-title">réservation</span></p>
+    </div>
+    <div class="title">
+      <p><%= "Bureau n°#{@appointment.desk.name}" %></p>
+      <p><%= "Réservé pour le #{@appointment.start_at.strftime("%d/%m/%y")}"  %></p>
+      <%  @levelSvg %> <%# ne fonctionne pas  %>
+    </div>
+    <div class="div">
+      <%= link_to "Supprimer votre réservation", appointment_path(@appointment), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous vraiment vraiment sur?" }, class:"card-alink backgroundRed" %>
+    </div>
+  </div>
 </div>
 <%= render "shared/sidebar", desks: @desks %>

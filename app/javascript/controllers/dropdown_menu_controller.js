@@ -11,6 +11,5 @@ export default class extends Controller {
   display(e) {
     e.preventDefault();
     this.etageTarget.classList.toggle("active");
-
   }
 }

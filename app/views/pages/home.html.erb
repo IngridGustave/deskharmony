@@ -7,92 +7,88 @@
   <div class="container flex">
     <div class="banner-left">
       <h1 class="lato-bold ">
-       Harmonisez votre espace de travail <br>Simplifiez-vous la vie
+        Harmonisez votre espace de travail <br>
+        Simplifiez-vous la vie
       </h1>
       <h2 class=" lato-light">
-
-Vivez des journées de travail fluides grâce à notre application de réservation de bureau de pointe
+        Vivez des journées de travail fluides grâce à notre application de réservation de bureau de pointe
         <br>
-
-Votre espace de travail idéal n'est qu'à une portée de clics
+        Votre espace de travail idéal n'est qu'à une portée de clics
       </h2>
       <% if  user_signed_in? %>
-      <a href="/desks?anim=true" class="btn-home">Connectez-vous</a>
+        <a href="/desks?anim=true" class="btn-home">Connectez-vous</a>
       <% else  %>
         <%= link_to "Enregistrez-vous", new_user_session_path %>
       <% end %>
     </div>
     <div class="banner-right" data-controller="typed">
-
       <div class="img-team">
         <div class="info-booking" data-typed-target="book1"></div>
-      <div class="info-booking2" data-typed-target="book2"></div>
-      <div class="info-booking3" data-typed-target="book3"></div>
-      <div class="info-booking4" data-typed-target="book4"></div></div>
+        <div class="info-booking2" data-typed-target="book2"></div>
+        <div class="info-booking3" data-typed-target="book3"></div>
+        <div class="info-booking4" data-typed-target="book4"></div>
+      </div>
       <div class="img-team2"></div>
     </div>
   </div>
 </div>
 <section class="features">
-
   <div class="container">
     <div class="features-text">
-  <h2 class="lato-regular ">
-    Découvrez notre application, moderne, intuitive et
-    pourvue de nombreuses <span>fonctionnalités</span>
-  </h2>
-  </div>
-  <div class="cards-home">
-    <div class="card-home">
-     <%= image_tag('team-astronaute.png', class: "team-astronaute") %>
-    <div class="card-home-image">
-
+      <h2 class="lato-regular ">
+        Découvrez notre application, moderne, intuitive et
+        pourvue de nombreuses <span>fonctionnalités</span>
+      </h2>
     </div>
-    <div class="card-home-content">
-      <h3>
-        Réservation  en  3 clics
-      </h3>
-      <p>
-        Une ergonomie pratique et intuitive pour réserver
-         votre bureau rapidement
-      </p>
-    </div>
-    </div>
-    <div class="card-home">
-      <%= image_tag('fusee.png' , class: "fusee") %>
+    <div class="cards-home">
+      <div class="card-home">
+        <%= image_tag('team-astronaute.png', class: "team-astronaute") %>
         <div class="card-home-image">
-
-    </div>
-    <div class="card-home-content">
-      <h3>
-        Statut de votre équipe
-      </h3>
-      <p>
-        A tout moment, vous pouvez savoir les informations de votre équipe ( présence, réservation,..)
-      </p>
-    </div>
-    </div>
-    <div class="card-home">
-      <%= image_tag('one-astronaute.png', class: "one-astronaute") %>
+        </div>
+        <div class="card-home-content">
+          <h3>
+            Réservation  en  3 clics
+          </h3>
+          <p>
+            Une ergonomie pratique et intuitive pour réserver
+            votre bureau rapidement
+          </p>
+        </div>
+      </div>
+      <div class="card-home">
+        <%= image_tag('fusee.png' , class: "fusee") %>
         <div class="card-home-image">
-      <img src="" alt="">
-    </div>
-    <div class="card-home-content">
-      <h3>
-        Encore plus de fonctionnalités
-      </h3>
-      <p>
-       Calendrier, favori, réservation rapide, chat, recherche, ,...
-      </p>
-    </div>
+        </div>
+        <div class="card-home-content">
+          <h3>
+            Statut de votre équipe
+          </h3>
+          <p>
+            A tout moment, vous pouvez savoir les informations de votre équipe ( présence, réservation,..)
+          </p>
+        </div>
+      </div>
+      <div class="card-home">
+        <%= image_tag('one-astronaute.png', class: "one-astronaute") %>
+        <div class="card-home-image">
+          <img src="" alt="">
+        </div>
+        <div class="card-home-content">
+          <h3>
+            Encore plus de fonctionnalités
+          </h3>
+          <p>
+            Calendrier, favori, réservation rapide, chat, recherche, ,...
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-    <div class="rightbluehalofeat"></div>
+  <div class="rightbluehalofeat"></div>
   <div class="leftbluehalofeat"></div>
-  </section>
-  <section class="footer">
-    <div class="container flex center">
-       <%= image_tag "logo-blue.png" %>
-    </div>
-  </section>
+</section>
+<section class="footer">
+  <div class="container flex center">
+    <%= image_tag "logo-blue.png" %>
+  </div>
+</section>

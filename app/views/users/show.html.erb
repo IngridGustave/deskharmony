@@ -1,7 +1,7 @@
 <div class="container-halo">
-      <div class="toprightbluehalo"></div>
-      <div class="pattern patternUser"></div>
-  </div>
+  <div class="toprightbluehalo"></div>
+  <div class="pattern patternUser"></div>
+</div>
 <div class="container">
   <div class="rightbluehalofeat"></div>
   <div class="leftbluehalofeat"></div>
@@ -27,8 +27,12 @@
         <table >
           <thead class="users-thead">
             <tr>
-              <th><div class="card-users-title">Reservations passées</div></th>
-              <th><div class="card-users-title">Reservations à venir</div></th>
+              <th>
+                <div class="card-users-title">Reservations passées</div>
+              </th>
+              <th>
+                <div class="card-users-title">Reservations à venir</div>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -37,8 +41,7 @@
                 <% @user.appointments.each do |appointment| %>
                   <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date < Date.today %>
                     <div class="card-users-show">
-
-                          <%= link_to "Bureau n°  #{appointment.desk.name}", desk_path(appointment.desk)  %>
+                      <%= link_to "Bureau n°  #{appointment.desk.name}", desk_path(appointment.desk)  %>
                       <p>Pour le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
                     </div>
                   <% end %>
@@ -49,7 +52,6 @@
                   <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date >= Date.today %>
                     <div class="card-users-show">
                       <%= link_to "Bureau n°  #{appointment.desk.name}", desks_path(appointment.desk.id)  %>
-
                       <p>Pour le <%= appointment.start_at.strftime("%d/%m/%y") %></p>
                     </div>
                   <% end %>

@@ -1,7 +1,7 @@
 <div class="sidebar__container" id="index-content" data-controller="deskconnect">
   <div class="container-halo">
-      <div class="toprightbluehalo"></div>
-      <div class="pattern"></div>
+    <div class="toprightbluehalo"></div>
+    <div class="pattern"></div>
   </div>
   <div class="bureau-modal" data-deskconnect-target="modal">
     <div class="bureau-modal-container">
@@ -13,20 +13,20 @@
       <p>Votre <span class="blue-title">dashboard</span></p>
     </div>
     <div class="search neon-effect">
-         <svg  class= "calendar-svg" width="100%" height="100%"  fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg  class= "calendar-svg" width="100%" height="100%"  fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="100%" height="100%" rx="16" />
-    </svg>
+      </svg>
       <%= simple_form_for desks_path, method: :get , data: { deskconnect_target:"form" } do |f| %>
-          <%= f.input :start_at,
+        <%= f.input :start_at,
             as: :string,
             input_html: { data: { controller: "datepicker", deskconnect_target: "start_date" }, class: "start_at_input card-search" },
             label: false %>
-          <% f.input :end_at,
+        <% f.input :end_at,
           as: :hidden,
             as: :string,
             input_html: { data: { controller: "datepicker", deskconnect_target: "end_date" }, class: "end_at_input" },
             label: false %>
-          <%= f.submit "Rechercher", class: "btn-sky", data: {action: "click->deskconnect#form"}%>
+        <%= f.submit "Rechercher", class: "btn-sky", data: {action: "click->deskconnect#form"}%>
       <% end %>
     </div>
   </div>
@@ -34,25 +34,31 @@
     <div class="container flex ">
       <div class="container-svg neon-effect">
         <div class="titre-level">Bureau</div>
-          <div id="svg-container" data-deskconnect-target="level" data-controller="menu-contextuel">
-            <%= render "svg" , levelSvg: @levelSvg %>
-          </div>
-          <div class="bureau-information-niveau" >
-            <p><span class="b-rounded" data-deskconnect-target ="infoNiveau"></span></p>
-          </div>
-          <div class="bureau-information" >
-            <span class="b-rounded" data-deskconnect-target ="infoDispo">disponibilité actuelle</span>
-          </div>
+        <div id="svg-container" data-deskconnect-target="level" data-controller="menu-contextuel">
+          <%= render "svg" , levelSvg: @levelSvg %>
+        </div>
+        <div class="bureau-information-niveau" >
+          <p><span class="b-rounded" data-deskconnect-target ="infoNiveau"></span></p>
+        </div>
+        <div class="bureau-information" >
+          <span class="b-rounded" data-deskconnect-target ="infoDispo">disponibilité actuelle</span>
+        </div>
       </div>
       <div class="bureau-level neon-effect">
         <div class="titre-level">Etage</div>
-          <ul>
-            <li data-etage="1" data-action="click->deskconnect#changeLevel"><p data-etage="1">1</p> <div class="etage-shape" data-etage="1"></div></li>
-            <li data-etage="2" data-action="click->deskconnect#changeLevel"><p data-etage="2">2</p> <div class="etage-shape" data-etage="2"></div></li>
-          </ul>
-          <svg class ="svg-niveau" width="250" height="300" viewBox="0 0 250 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0.5" y="0.5" width="249" height="299" rx="15.5" />
-          </svg>
+        <ul>
+          <li data-etage="1" data-action="click->deskconnect#changeLevel">
+            <p data-etage="1">1</p>
+            <div class="etage-shape" data-etage="1"></div>
+          </li>
+          <li data-etage="2" data-action="click->deskconnect#changeLevel">
+            <p data-etage="2">2</p>
+            <div class="etage-shape" data-etage="2"></div>
+          </li>
+        </ul>
+        <svg class ="svg-niveau" width="250" height="300" viewBox="0 0 250 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="249" height="299" rx="15.5" />
+        </svg>
       </div>
     </div>
     <div class="container">
@@ -60,7 +66,7 @@
         <div class="calendar-container">
           <%= render "week_calendar", appointments_week: @appointments_week%>
         </div>
-      <div class="chatroom__container neon-effect">
+        <div class="chatroom__container neon-effect">
           <svg  class= "calendar-svg" width="100%" height="100%"  fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="100%" height="100%" rx="16" />
           </svg>
@@ -80,19 +86,20 @@
               <% end %>
             </div>
             <%= simple_form_for [@chatroom, @message],
-              html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex chatroom__form" } do |f|
+             html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" },
+             class: "d-flex chatroom__form" } do |f|
             %>
-              <%= f.input :content,
-                label: false,
-                placeholder: "Message",
-                wrapper_html: {class: "flex-grow-1"}
-              %>
-              <%= f.submit "Envoyer", class: "btn btn-purple mb-3" %>
-            <% end %>
-          </div>
+            <%= f.input :content,
+                  label: false,
+                  placeholder: "Message",
+                  wrapper_html: {class: "flex-grow-1"}
+                %>
+            <%= f.submit "Envoyer", class: "btn btn-purple mb-3" %>
+          <% end %>
         </div>
       </div>
-      <%= render "shared/sidebar", desks: @desks %>
     </div>
+    <%= render "shared/sidebar", desks: @desks %>
   </div>
+</div>
 </div>

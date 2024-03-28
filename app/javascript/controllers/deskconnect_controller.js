@@ -32,7 +32,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         this._addStyleToSvg(data);
       })
   }
@@ -150,7 +150,6 @@ export default class extends Controller {
     const chatroomSvg = document.querySelector('.chatroom__container.neon-effect');
     const calendarblock = document.querySelector('.calendar-block');
     const queryString = window.location.search;
-
     if (queryString == "?anim=true" && !containerSvg.dataset.first) {
 
       const strokesCalendar = document.querySelectorAll('.calendar-svg ');
@@ -165,23 +164,18 @@ export default class extends Controller {
       const search = document.querySelector('.search form');
       search.style.opacity = 0;
       const titres = document.querySelectorAll('.titre-level');
-
       titres.forEach((titre) => {
         titre.style.opacity = 0;
       })
-
       const info = document.querySelector('.bureau-information');
       info.style.opacity = 0;
       const level = document.querySelector('.bureau-level');
       level.classList.remove('neon-effect');
-
       containerSvg.classList.remove('neon-effect');
       calendarSvg.classList.remove('neon-effect');
       chatroomSvg.classList.remove('neon-effect');
       searchSvg.classList.remove('neon-effect');
       calendarblock.style.opacity = 0;
-
-
     }
   }
 

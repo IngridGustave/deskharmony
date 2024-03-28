@@ -1,94 +1,84 @@
-
 <div class="container ">
   <div class="booking" data-controller="svgdesk">
     <div class="booking-title">
-       <h2>Bureau n°  <span class="name-desk" data-svgdesk-target="span"><%=  @desk.name%></span></h2>
-       <div class="booking-svg" data-svgdesk-target="svg">
-          <%= render partial: "desks/svg" , locals: {levelSvg: @levelSvg } %>
-       </div>
-     </div>
-     <div class="booking-container-form-show">
-
+      <h2>Bureau n°  <span class="name-desk" data-svgdesk-target="span"><%=  @desk.name%></span></h2>
+      <div class="booking-svg" data-svgdesk-target="svg">
+        <%= render partial: "desks/svg" , locals: {levelSvg: @levelSvg } %>
+      </div>
+    </div>
+    <div class="booking-container-form-show">
       <h2>Réservation en 3 clics!</h2>
       <div class="booking-form-show" data-controller="postformshow" >
         <%= simple_form_for @appointment,  data:{ postformshow_target: 'form'} do |f| %>
-        <%= f.input :start_at,
+          <%= f.input :start_at,
           as: :string,
           label: false,
           placeholder: "Début de réservation",
           input_html: { value: Date.today ,data: { controller: "datepicker", postformshow_target: "inputstart"}}
         %>
-        <% f.input :end_at,
+          <% f.input :end_at,
           as: :hidden,
           as: :string,
           label: false,
           placeholder: "Fin de réservation",
           input_html: { data: { controller: "datepicker", postformshow_target: "inputend"}}
         %>
-        <%= f.input :desk_id,
+          <%= f.input :desk_id,
           as: :hidden,
           label: false,
           input_html: { value: @desk.id}
         %>
-        <%= f.submit "Réserver",
+          <%= f.submit "Réserver",
           class: "btn-form",
           data: {action: "click->postformshow#submit"}
         %>
-
-      <% end %>
-
+        <% end %>
       </div>
     </div>
   </div>
-
-
 </div>
-
-
 <div class="container">
-<div class="booking-list-container">
-  <div class="titre-booking">Réservations à venir</div>
-  <div class="booking-list-border">
-    <div class="first-row-booking-list">
-      <span>Nom</span>
-      <span>Jour</span>
-    </div>
-        <% if !@appointment_comings.empty?%>
-          <div class="row-booking-list">
-            <%@appointment_comings.each do |appointment|  %>
-               <p>
-                  <%=appointment.user.nickname  %>
-               </p>
-               <p>
-                 <%= appointment.start_at.strftime("%A %d %B")  %>
-               </p>
-             <% end %>
-           </div>
-         <% else %>
-          <p>Pas de réservation à venir</p>
-         <% end %>
-   </div>
-   </div>
-
-<div class="booking-list-container">
-    <div class="titre-booking">Réservations passées</div>
-  <div class="booking-list-border">
-    <div class="first-row-booking-list">
-      <span>Nom</span>
-      <span>Jour</span>
-
-    </div>
-     <% if !@appointment_passed.empty?%>
-       <div class="row-booking-list">
-        <%@appointment_passed.each do |appointment|  %>
-          <p><%=appointment.user.nickname  %></p>
-          <p><%= appointment.start_at.strftime("%A %d %B")  %></p>
+  <div class="booking-list-container">
+    <div class="titre-booking">Réservations à venir</div>
+    <div class="booking-list-border">
+      <div class="first-row-booking-list">
+        <span>Nom</span>
+        <span>Jour</span>
+      </div>
+      <% if !@appointment_comings.empty?%>
+        <div class="row-booking-list">
+          <%@appointment_comings.each do |appointment|  %>
+            <p>
+              <%=appointment.user.nickname  %>
+            </p>
+            <p>
+              <%= appointment.start_at.strftime("%A %d %B")  %>
+            </p>
           <% end %>
         </div>
       <% else %>
         <p>Pas de réservation à venir</p>
       <% end %>
-   </div>
+    </div>
+  </div>
+  <div class="booking-list-container">
+    <div class="titre-booking">Réservations passées</div>
+    <div class="booking-list-border">
+      <div class="first-row-booking-list">
+        <span>Nom</span>
+        <span>Jour</span>
+      </div>
+      <% if !@appointment_passed.empty?%>
+        <div class="row-booking-list">
+          <%@appointment_passed.each do |appointment|  %>
+            <p><%=appointment.user.nickname  %></p>
+            <p><%= appointment.start_at.strftime("%A %d %B")  %></p>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Pas de réservation à venir</p>
+      <% end %>
+    </div>
   </div>
 </div>
 <%= render "shared/sidebar", desks: @desks %>

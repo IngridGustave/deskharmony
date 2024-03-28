@@ -122,10 +122,13 @@ class DesksController < ApplicationController
     else
       date_start =  current_time
     end
+    puts date_start
     search_desks_book = Desk.joins(:appointments).where(appointments: { start_at: date_start })
     search_desks_book .each do |book_desk|
       book_desks << book_desk.id
     end
+    puts book_desks
+    puts"________________________________"
 
    if book_desks.empty?
      desks.each do |desk|
@@ -133,15 +136,15 @@ class DesksController < ApplicationController
      end
    else
      desks.each do |desk|
-       book_desks.each do |book_desk|
-         if desk.id == book_desk
+         if book_desks.include?(desk.id)
            dataJson << {id: desk.id, name: desk.name, level: desk.level, dispo: false}
          else
            dataJson  << {id: desk.id, name: desk.name, level: desk.level, dispo: true}
          end
-       end
+
       end
    end
+   puts dataJson
     return dataJson
   end
 end
