@@ -1,0 +1,99 @@
+#wagon{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.wagon-logo{
+  height:400px;
+  width: 800px;
+}
+
+.merci {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.st0 {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.st1 {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.st2 {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.merci:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: dash 10s forwards;
+}
+
+.st0:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: dash 2s forwards;
+}
+
+.st1:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: dash 2s forwards;
+}
+
+.st2:not([fill="none"]){
+  fill: transparent;
+  stroke-width: 1;
+  stroke: white;
+  animation: dash 3s forwards;
+}
+
+.wagon-color-red{
+   fill:#E60F05!important;
+   animation: appearwagon 1s forwards!important;
+  filter: drop-shadow(0 -6mm 50px rgb(255, 255, 255));
+
+}
+
+.wagon-color-white{
+  fill:#FFFFFF!important;
+  animation: appearwagon 1s forwards!important;
+  filter: drop-shadow(0 -6mm 50px rgb(255, 255, 255));
+
+
+}
+
+
+
+
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+
+@keyframes appearwagon {
+  from{
+    opacity: 0.3;
+  }
+  to{
+    opacity: 1!important;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 1));
+  }
+}

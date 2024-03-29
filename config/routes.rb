@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get :weekcalendar
       get :previousweekcalendar
       get :available
+      get :wagon
     end
   end
 

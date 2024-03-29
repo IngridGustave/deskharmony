@@ -2,7 +2,7 @@
   <ul data-controller="search-bar" >
     <% if user_signed_in? %> <!-- Vérifie si un utilisateur est connecté -->
       <li>
-        <img class="avatar" src="https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png" />
+        <%= link_to(image_tag("https://res.cloudinary.com/dvarz39fw/image/upload/v1711194826/laura_dyqsnu.png"), "/desks/wagon") %>
       </li>
     <% end %>
     <li>
