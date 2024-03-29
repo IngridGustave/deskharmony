@@ -37,7 +37,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td class="vertical-top">
                 <% @user.appointments.each do |appointment| %>
                   <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date < Date.today %>
                     <div class="card-users-show">
@@ -47,7 +47,7 @@
                   <% end %>
                 <% end %>
               </td>
-              <td>
+              <td class="vertical-top">
                 <% @user.appointments.each do |appointment| %>
                   <% if appointment.start_at.try(:to_date) && appointment.start_at.to_date >= Date.today %>
                     <div class="card-users-show">
